@@ -1,9 +1,20 @@
 <template>
 
-    <div class="content-wrapp">
+    <div class="content-wrap">
 
-        hello world
-        
+        <div class="content">
+
+            dsadas
+
+        </div>
+
     </div>
 
 </template>
+
+
+<style>
+
+@import url('../assets/content.scss');
+
+</style>

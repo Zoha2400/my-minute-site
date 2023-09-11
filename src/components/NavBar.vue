@@ -1,10 +1,15 @@
 <script setup lang="ts">
     import icon from '../img/icon.svg';
+    import NavMenu from './NavMenu.vue';
 </script>
 
 <template>
-    <nav class="navbar">
-        <img :src="icon">
+    <nav class="navbar-wrap">
+        <div class="navbar">
+            <img :src="icon">
+
+            <NavMenu/>
+        </div>
     </nav>
 </template>
 

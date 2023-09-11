@@ -1,3 +1,26 @@
-.navbar{
-    background-color: red;
+.navbar-wrap{
+    width: 400px;
+    height: 100%;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
+    .navbar{
+        width: 90%;
+        height: 95%;
+        margin: 35px;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        img{
+            width: 200px;
+            height: auto;
+        }
+    }
 }
