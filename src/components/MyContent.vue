@@ -1,11 +1,19 @@
+<script setup lang="ts">
+import MyDragonation from './MyDragonation.vue';
+
+
+</script>
+
 <template>
 
     <div class="content-wrap">
 
         <div class="content">
 
-            dsadas
+            <MyDragonation/>
+            <MyDragonation/>
 
+           
         </div>
 
     </div>
