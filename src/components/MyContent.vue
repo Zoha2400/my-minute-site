@@ -11,7 +11,6 @@ import MyDragonation from './MyDragonation.vue';
         <div class="content">
 
             <MyDragonation/>
-            <MyDragonation/>
 
            
         </div>
