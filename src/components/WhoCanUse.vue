@@ -6,6 +6,9 @@
 
     <div class="whocanuse">
 
+        <div class="light-design">
+            <div class="lgitem"></div>
+        </div>
         <div class="arrow">
             
             <a href="#offers">
@@ -43,6 +46,35 @@
             <p><span>НАША КОМПАНИЯ</span> В ЦИФРАХ</p>
         </div>
 
+        <div class="container-wrap ourNums-wrapper banner-wrap">
+                <div class="container ourNums banner">
+                    <div class="banner-item">
+                        <Icon icon="streamline:money-graph-arrow-increase-ascend-growth-up-arrow-stats-graph-right-grow" width="70"/>
+                        <div class="banner-text">
+                            <h3>11 лет</h3>
+                            <p>на рынке</p>
+                        </div>
+                    </div>
+                    <div class="banner-item">
+                        <Icon icon="ic:twotone-architecture" width="70"/>
+                        <div class="banner-text">
+                            <p>Архитекторы с <h3>19 летним</h3> опытом</p>
+                        </div>
+                    </div>
+                    <div class="banner-item">
+                        <Icon icon="octicon:project-template-16" width="70"/>
+                        <div class="banner-text">
+                            <p>Более <h3>250</h3> готовых проектов</p>
+                        </div>
+                    </div>
+                    <div class="banner-item">
+                        <Icon icon="mdi:house-outline" width="70"/>
+                        <div class="banner-text">
+                            <p>Более с <h3>1500</h3> релизованных домов</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
 
 </template>
