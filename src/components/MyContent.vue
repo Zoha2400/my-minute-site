@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import MyDragonation from './MyDragonation.vue';
+import WhoCanUseVue from './WhoCanUse.vue';
 
 
 </script>
@@ -11,7 +12,7 @@ import MyDragonation from './MyDragonation.vue';
         <div class="content">
 
             <MyDragonation/>
-
+            <WhoCanUseVue/>
            
         </div>
 
