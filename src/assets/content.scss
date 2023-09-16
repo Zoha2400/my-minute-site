@@ -26,6 +26,19 @@
   }
 
 
+.container-wrap{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+  .container{
+    max-width: 1000px;
+    width: 1000px;
+    min-width: 300px;
+    margin: 10px;
+  }
+}
+
 
 
 .content-wrap{
@@ -41,6 +54,7 @@
 
 .content{
     width: 100%;
+    height: auto;
 
     .draganation{
         width: 100%;
@@ -48,6 +62,8 @@
         img{
             width: 100%;
             height: auto;
+            border-bottom: solid 8px #3064df;
+
         }
 
         .draganation-absolute{
@@ -113,16 +129,47 @@
 
 .ourOffers{
   width: 100%;
-  height: 500px;
   display: flex;
   justify-content: center;
   margin-top: 25px;
   p{  
     font-size: 20px;
     color: white;
+    margin-bottom: 15px;
 
     span{
       font-weight: 700;
+    }
+  }
+}
+
+.banner-wrap{
+  height: auto;
+  margin: 15px 0 40px 0;
+
+  .banner{
+    height: 220px;
+    background-color: transparent;
+    border: solid 2px #324674;
+    border-radius: 75px;  
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .banner-item{
+      width: 130px;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      grid-gap: 10px;
+
+      p{
+        text-align: center;
+        font-size: 13px;
+        font-weight: 300;
+      }
     }
   }
 }
