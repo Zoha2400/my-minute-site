@@ -37,12 +37,15 @@
 
     .btn{
         width: 80%;
-        background-color: #DB3726;
-        color: white;
+        color: #132244;
         font-size: 15px;
         border-radius: 5px 0 0 5px;
         padding: 10px;
     }
+}
+
+.clickedNav{
+    background-color: #DB3726 !important;
 }
 
 
