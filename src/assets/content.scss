@@ -202,9 +202,13 @@
       .banner-text{
       border-left: solid white 1px;
       padding: 10px;
+      span{
+        font-weight: 700;
+      }
       }
       p{
         text-align: start;
+
       }
     }
   }

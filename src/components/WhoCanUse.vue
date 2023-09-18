@@ -51,26 +51,26 @@
                     <div class="banner-item">
                         <Icon icon="streamline:money-graph-arrow-increase-ascend-growth-up-arrow-stats-graph-right-grow" width="70"/>
                         <div class="banner-text">
-                            <h3>11 лет</h3>
+                            <span>11 лет</span>
                             <p>на рынке</p>
                         </div>
                     </div>
                     <div class="banner-item">
                         <Icon icon="ic:twotone-architecture" width="70"/>
                         <div class="banner-text">
-                            <p>Архитекторы с <h3>19 летним</h3> опытом</p>
+                            <p>Архитекторы с <span>19 летним</span> опытом</p>
                         </div>
                     </div>
                     <div class="banner-item">
                         <Icon icon="octicon:project-template-16" width="70"/>
                         <div class="banner-text">
-                            <p>Более <h3>250</h3> готовых проектов</p>
+                            <p>Более <span>250</span> готовых проектов</p>
                         </div>
                     </div>
                     <div class="banner-item">
                         <Icon icon="mdi:house-outline" width="70"/>
                         <div class="banner-text">
-                            <p>Более с <h3>1500</h3> релизованных домов</p>
+                            <p>Более с <span>1500</span> релизованных домов</p>
                         </div>
                     </div>
                 </div>
