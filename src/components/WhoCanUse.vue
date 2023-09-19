@@ -17,11 +17,11 @@
 
         </div>
 
-        <div class="ourOffers">
+        <div class="ourOffers"  id="offers">
             <p><span>ДЛЯ КОГО ПОДХДИТ</span> НАША УСЛУГА</p>
         </div>
 
-        <div class="container-wrap banner-wrap" id="offers">
+        <div class="container-wrap banner-wrap">
                 <div class="container banner">
                     <div class="banner-item">
                         <Icon icon="ic:baseline-percent" width="90"/>
@@ -75,6 +75,45 @@
                     </div>
                 </div>
             </div>
+
+            <div class="ourOffers">
+                <p>Приобретая готовый проект дома <span>Вы получаете:</span></p>
+            </div>
+
+            <div class="container-wrap banner-wrap nonBanner-wrap" id="offers">
+               <div class="nonBanner-container container">
+                <div class="container banner nonBanner">
+                    <div class="banner-item">
+                        <Icon icon="ic:baseline-percent" width="90"/>
+                        <p>Тем, кто хочет сэкономить деньги до 70%</p>
+                    </div>
+                    <div class="banner-item">
+                        <Icon icon="quill:calendar" width="90"/>
+                        <p>Тем, кто не хочет терять месяц на создание нового проекта</p>
+                    </div>
+                    <div class="banner-item">
+                        <Icon icon="tabler:checkup-list" width="90"/>
+                        <p>Тем, кто ищет проверенные решения</p>
+                    </div>
+                </div>
+                <div class="container banner nonBanner">
+                    <div class="banner-item">
+                        <Icon icon="ic:baseline-percent" width="90"/>
+                        <p>Тем, кто хочет сэкономить деньги до 70%</p>
+                    </div>
+                    <div class="banner-item">
+                        <Icon icon="quill:calendar" width="90"/>
+                        <p>Тем, кто не хочет терять месяц на создание нового проекта</p>
+                    </div>
+                    <div class="banner-item">
+                        <Icon icon="tabler:checkup-list" width="90"/>
+                        <p>Тем, кто ищет проверенные решения</p>
+                    </div>
+                </div>
+               </div>
+        </div>
+
+
     </div>
 
 </template>

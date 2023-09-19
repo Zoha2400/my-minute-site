@@ -213,3 +213,23 @@
     }
   }
 }
+
+.nonBanner-wrap{
+
+
+  .nonBanner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column !important;
+    background-color: transparent;
+    border: solid 2px #324674;
+    border-radius: 75px;  
+  }
+
+  .nonBanner{
+    background-color: transparent;
+    border: none !important;
+    border-radius: 0 !important;  
+  }
+}
