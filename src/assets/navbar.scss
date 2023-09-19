@@ -71,3 +71,12 @@
         grid-gap: 10px;
     }
 }
+
+.btn{
+    transition: 0.3s ease-in-out;
+}
+
+.btn:hover{
+    background-color: #DB3726;
+    color: white;
+}
