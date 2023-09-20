@@ -100,6 +100,11 @@
   *{
     z-index: 2;
   }
+
+  .shadow-verst{
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.336);
+  }
+
   .light-design{
     width: 100%;
     height: 300px;
@@ -113,7 +118,7 @@
     .lgitem{
       width: 300px;
       height: 300px;
-      background: radial-gradient(circle at center, #1f408d 0%, transparent 70%);
+      background: radial-gradient(circle at center, #006992c2 0%, transparent 70%);
     }
   }
 
@@ -163,6 +168,7 @@
 .banner-wrap{
   height: auto;
   margin: 15px 0 40px 0;
+
 
   .banner{
     height: 220px;
@@ -216,6 +222,8 @@
 
 .nonBanner-wrap{
 
+  position: relative;
+
 
   .nonBanner-container {
     display: flex;
@@ -232,4 +240,114 @@
     border: none !important;
     border-radius: 0 !important;  
   }
+}
+
+
+.faq{
+  height: 200px;
+  align-items: center;
+  position: relative;
+  margin: 25px 0;
+  grid-gap: 10px;
+  
+  img{
+    width: 100px;
+    height: auto;
+  }
+
+  .textFaq{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+  }
+
+  p{
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 25px;
+    font-weight: 700;
+  }
+}
+
+
+.faq-banner{
+  width: 100%;
+  height: 600px;
+  .faq-cont{
+    width: 100%;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .line{
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(0deg, #2fc3f456, #2FC2F4, #2fc3f456);
+    }
+
+    .faq-side{
+      height: 500px;
+      position: relative;
+      width: 100%;
+
+      .block-wrap{
+        width: 100%;
+        height: 110px;
+        position: relative;
+      }
+
+      .faq-block{
+        color: white;
+        width: 350px;
+        margin: 20px;
+        border-radius: 70px;
+        position: absolute;
+        display: flex;
+        justify-content: flex-end;
+        align-items:  center;
+        grid-gap: 5px;
+        font-size: 13px;
+
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.473);
+
+        span{
+          width: 100%;
+          font-weight: 900;
+          text-align: end;
+        }
+
+        .msg{
+          display: flex;
+          flex-direction: column;
+
+          p{
+            text-align: end;
+          }
+        }
+
+        img{
+          width: 20px;
+          height: auto;
+        }
+      }
+
+      .right{
+        right: 0;
+        background-color: #2279A3;
+        padding: 20px 10px;
+      }
+      .left{
+        left: 0;
+        background-color: transparent;
+        padding: 20px 30px;
+        border: solid 2px #324674;
+
+        *{
+          text-align: start !important;
+        }
+      }
+    }
+  }
+
 }

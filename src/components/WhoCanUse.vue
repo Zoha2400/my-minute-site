@@ -1,5 +1,7 @@
 <script setup lang="ts">
     import { Icon } from '@iconify/vue';
+    import  faqsvg  from '../img/faq.svg';
+    import  checked  from '../img/checked.svg';
 </script>
 
 <template>
@@ -22,7 +24,7 @@
         </div>
 
         <div class="container-wrap banner-wrap">
-                <div class="container banner">
+                <div class="container banner shadow-verst">
                     <div class="banner-item">
                         <Icon icon="ic:baseline-percent" width="90"/>
                         <p>Тем, кто хочет сэкономить деньги до 70%</p>
@@ -81,7 +83,8 @@
             </div>
 
             <div class="container-wrap banner-wrap nonBanner-wrap" id="offers">
-               <div class="nonBanner-container container">
+                
+                <div class="nonBanner-container container shadow-verst">
                 <div class="container banner nonBanner">
                     <div class="banner-item">
                         <Icon icon="ic:baseline-percent" width="90"/>
@@ -113,6 +116,104 @@
                </div>
         </div>
 
+
+        <div class="ourOffers faq">
+            <div class="light-design">
+                <div class="lgitem"></div>
+            </div>
+            <img :src="faqsvg">
+            <div class="textFaq">
+                <p>ЧАСТО</p>
+                <p>ЗАДАВАЕМЫЕ</p>
+                <p>ВОПРОСЫ</p>
+            </div>
+            <!-- <p>Приобретая готовый проект дома <span>Вы получаете:</span></p> -->
+        </div>
+
+
+        <div class="faq-banner container-wrap">
+
+            <div class="faq-cont container">
+                <div class="faq-side">
+                    <div class="block-wrap">
+                        <div class="faq-block right">
+
+                        <div class="msg">
+                            <span>вопрос:</span>
+                            <p>Можно ли внести корректировки в готовый проект?</p>
+                        </div>
+                        <img :src="checked">
+                    </div>
+                    </div>
+                    <div class="block-wrap">
+                        <div class="faq-block left">
+                            <div class="msg">
+                                <span>ответ:</span>
+                                <p>Можно ли внести корректировки в готовый проект?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-wrap">
+                        <div class="faq-block right">
+                            <div class="msg">
+                                <span>вопрос:</span>
+                                <p>Можно ли внести корректировки в готовый проект?</p>
+                            </div>
+                            <img :src="checked">
+                        </div>
+                    </div>
+
+                    <div class="block-wrap">
+                        <div class="faq-block left">
+                            <div class="msg">
+                                <span>ответ:</span>
+                                <p>Можно ли внести корректировки в готовый проект?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="faq-side">
+                    <div class="block-wrap">
+                        <div class="faq-block right">
+
+                        <div class="msg">
+                            <span>вопрос:</span>
+                            <p>Можно ли внести корректировки в готовый проект?</p>
+                        </div>
+                        <img :src="checked">
+                    </div>
+                    </div>
+                    <div class="block-wrap">
+                        <div class="faq-block left">
+                            <div class="msg">
+                                <span>ответ:</span>
+                                <p>Можно ли внести корректировки в готовый проект?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-wrap">
+                        <div class="faq-block right">
+                            <div class="msg">
+                                <span>вопрос:</span>
+                                <p>Можно ли внести корректировки в готовый проект?</p>
+                            </div>
+                            <img :src="checked">
+                        </div>
+                    </div>
+
+                    <div class="block-wrap">
+                        <div class="faq-block left">
+                            <div class="msg">
+                                <span>ответ:</span>
+                                <p>Можно ли внести корректировки в готовый проект?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
     </div>
 
