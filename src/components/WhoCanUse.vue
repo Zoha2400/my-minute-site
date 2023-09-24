@@ -19,15 +19,17 @@
     // };
 
     let datal = ref("https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2998.416743648826!2d69.2149025!3d41.2780337!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b863b3aaa6d%3A0xda62a6ffa353cae7!2sART%20DECO%20DESIGN!5e0!3m2!1sru!2s!4v1695546202261!5m2!1sru!2s"); 
+    let dataChekcer1 = ref(true);
 
     function changeLocateOne() {
         datal.value = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2998.416743648826!2d69.2149025!3d41.2780337!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b863b3aaa6d%3A0xda62a6ffa353cae7!2sART%20DECO%20DESIGN!5e0!3m2!1sru!2s!4v1695546202261!5m2!1sru!2s";
+        dataChekcer1.value = true;
     }
 
     function changeLocateTwo() {
         datal.value = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d189.95246291605815!2d71.7825938!3d40.3813863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bb835f7834e053%3A0xe9f8402c3e4e1953!2zOVFKTStINDQsINCk0LXRgNCz0LDQvdCw!5e0!3m2!1sru!2s!4v1695555359219!5m2!1sru!2s";
+        dataChekcer1.value = false;
     }
-
 
     
 
@@ -258,7 +260,7 @@
 
                 <div class="locations">
                     <div class="location">
-                        <div class="lc-g-1">
+                        <div :class="{'lc-g-1 checked': dataChekcer1, 'lc-g-1': !dataChekcer1}">
                             <p>ГОЛОВНОЙ ОФИС:</p>
                             <button class="loc-btn" @click="changeLocateOne">Локация</button>
                         </div>
@@ -266,12 +268,15 @@
                             <div class="text-lc">
                                 <p>г. Ташкент, Чиланзарский р-н, ул. Чиланзар 81.</p>
                                 <p>Ориентир: напротив мечети “Катта Козиробод”</p>
+                                <Icon icon="solar:map-point-linear" width="15" class="icon-lc"/>
                             </div>
-                            <p>+998 71 200 35 35 / +998 90 996 80 30</p>
+                            <p>+998 71 200 35 35 / +998 90 996 80 30
+                                <Icon icon="bxs:phone" width="15" class="icon-lc"/>
+                            </p>
                         </div>
                     </div>
                     <div class="location">
-                        <div class="lc-g-1">
+                        <div :class="{'lc-g-1 checked': !dataChekcer1, 'lc-g-1': dataChekcer1}">
                             <p>ГОЛОВНОЙ ОФИС:</p>
                             <button class="loc-btn" @click="changeLocateTwo">Локация</button>
                         </div>
@@ -279,8 +284,12 @@
                             <div class="text-lc">
                                 <p>г. Фергана, улица Комус, 18.</p>
                                 <p>Ориентир: рядом с кафе “Oybek”, ТРЦ “Central Festival”</p>
+                                <Icon icon="solar:map-point-linear" width="15" class="icon-lc"/>
                             </div>
-                            <p>+998 99 410 40 10</p>
+                            <p>+998 99 410 40 10 
+                                <Icon icon="bxs:phone" width="15" class="icon-lc"/>
+
+                            </p>
                         </div>
                     </div>
                 </div>

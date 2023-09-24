@@ -428,6 +428,9 @@
         border-radius: 70px !important;
         width: 400px !important;
       }
+      .location{
+        width: 400px !important;
+      }
     }
     @media (max-width: 415px) {
       iframe{
@@ -487,15 +490,20 @@
       flex-direction: column;
       grid-gap: 25px;
       .location{
+        padding: 10px;
+        transition: 0.3s ease-in-out;
         display: flex;
         justify-content: center;
         flex-direction: column;
         grid-gap: 5px;
         color: white;
         .lc-g-1{
+          padding: 5px;
           display: flex;
           justify-content: flex-start;
+          align-items: center;
           grid-gap: 10px;
+
           p{
             font-size: 18px;
             font-weight: 600;
@@ -511,6 +519,20 @@
             border-radius: 25px;
           }
         }
+        .icon-lc{
+          position: absolute !important;
+          left: -10px !important;
+          background-color:#132244;
+          padding: 2px;
+        }
+
+        .text-lc{
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: flex-start;
+          grid-gap: 5px;
+        }
 
         .lc-g-2{
           display: flex;
@@ -519,8 +541,16 @@
           grid-gap: 10px;
           border-left: solid 1px white;
           padding-left: 10px;
+          position: relative;
+
         }
       }
     }
   }
+}
+
+
+.checked{
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.129), transparent);
+  transition: 0.3s ease-in-out;
 }
