@@ -2,6 +2,7 @@
     import { Icon } from '@iconify/vue';
     import  faqsvg  from '../img/faq.svg';
     import  checked  from '../img/checked.svg';
+    import maps from '../img/maps.svg';
 </script>
 
 <template>
@@ -212,12 +213,50 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
 
         <div class="ourOffers dataContact">
             <h1>КОНТАКТНЫЕ ДАННЫЕ</h1>
+        </div>
+
+        <div class="container-wrap contacts-wrap">
+
+            <div class="container contacts">
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2998.416743648826!2d69.2149025!3d41.2780337!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b863b3aaa6d%3A0xda62a6ffa353cae7!2sART%20DECO%20DESIGN!5e0!3m2!1sru!2s!4v1695546202261!5m2!1sru!2s"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div class="locations">
+                    <div class="location">
+                        <div class="lc-g-1">
+                            <p>ГОЛОВНОЙ ОФИС:</p>
+                            <button class="loc-btn">Локация</button>
+                        </div>
+                        <div class="lc-g-2">
+                            <div class="text-lc">
+                                <p>г. Ташкент, Чиланзарский р-н, ул. Чиланзар 81.</p>
+                                <p>Ориентир: напротив мечети “Катта Козиробод”</p>
+                            </div>
+                            <p>+998 71 200 35 35 / +998 90 996 80 30</p>
+                        </div>
+                    </div>
+                    <div class="location">
+                        <div class="lc-g-1">
+                            <p>ГОЛОВНОЙ ОФИС:</p>
+                            <button class="loc-btn">Локация</button>
+                        </div>
+                        <div class="lc-g-2">
+                            <div class="text-lc">
+                                <p>г. Ташкент, Чиланзарский р-н, ул. Чиланзар 81.</p>
+                                <p>Ориентир: напротив мечети “Катта Козиробод”</p>
+                            </div>
+                            <p>+998 71 200 35 35 / +998 90 996 80 30</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>

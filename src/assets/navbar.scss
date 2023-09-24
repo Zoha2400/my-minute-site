@@ -7,7 +7,9 @@
     justify-content: center;
     align-items: center;
 
-
+    @media (max-width:1320px) {
+        display: none;
+    }
 
     .navbar{
         width: 100%;
