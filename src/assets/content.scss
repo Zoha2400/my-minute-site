@@ -683,11 +683,9 @@
 
       flex-direction: column;
 
-      @media (max-width: 1035px) {
+      @media (max-width: 1435px) {
         width: 450px !important;
-
       }
-      
 
       @media (max-width: 520px) {
         width: 350px !important;
