@@ -35,7 +35,7 @@
   .container{
     max-width: 1000px;
     width: 1000px;
-    min-width: 300px;
+    min-width: 280px;
     margin: 20px;
   }
 }
@@ -49,6 +49,7 @@
     justify-content: center;
     align-items: flex-start;
     overflow-y: auto;
+    overflow-x: hidden;
     @include scrollbars(5px, white, #132244);
 }
 
@@ -59,11 +60,22 @@
     .draganation{
         width: 100%;
         position: relative;
+        overflow: hidden;
         img{
             width: 100%;
             height: auto;
             border-bottom: solid 8px #3064df;
 
+        }
+
+        @media (max-width: 500px) {
+          img{
+            width: auto !important;
+            height: 90vh;
+          }
+          p{
+            font-size: 15px !important;
+          }
         }
 
         .draganation-absolute{
@@ -81,6 +93,7 @@
                 font-size: 21px;
                 font-weight: 700;
                 color: white;
+                text-align: center;
             }
 
             .marked{
@@ -108,18 +121,18 @@
 
   .light-design{
     width: 100%;
-    height: 300px;
+    height: 500px;
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: -50px;
+    top: -100px;
 
     .lgitem{
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle at center, #006992c2 0%, transparent 70%);
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle at center, #0a91c7c2 0%, transparent 70%);
     }
   }
 
@@ -155,6 +168,8 @@
   display: flex;
   justify-content: center;
   margin-top: 25px;
+  text-align: center;
+  position: relative;
   p{  
     font-size: 20px;
     color: white;
@@ -170,15 +185,83 @@
   height: auto;
   margin: 15px 0 40px 0;
 
+  .it-bn{
+    background-color: transparent;
+    border: solid 2px #324674;
+    border-radius: 75px;  
+    display: grid !important;
+    grid-template-areas: 'it it it it';
+    justify-content: space-around;
+    align-items: center;
+    grid-gap: 7px;
+    padding: 40px 0;}
 
   .banner{
-    height: 220px;
     background-color: transparent;
     border: solid 2px #324674;
     border-radius: 75px;  
     display: flex;
     justify-content: space-around;
     align-items: center;
+    grid-gap: 7px;
+    padding: 40px 0;
+
+    @media (max-width: 950px) {
+
+      grid-template-areas: 'it it' 'it it';
+      flex-direction: column;
+
+
+      .t{
+        width: 450px !important; 
+        display: flex;
+        justify-content: flex-start !important;
+        grid-gap: 10px;
+
+        .ticon-wrapper{
+          border-right: solid white 1px;
+          padding-right: 10px;
+        }
+
+        .ticon{
+          width: 60px !important;
+          height: auto;
+
+        }
+
+        p{
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+
+    @media (max-width: 750px) {
+
+      grid-template-areas: 'it it' 'it it';
+      .t{
+        width: 350px !important; }
+    }
+
+    @media (max-width: 500px) {
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      grid-template-areas: 'it it' 'it it';
+      .it{
+        height: 150px;
+        border: solid 4px #2c4276;
+        border-radius: 55px;  
+        padding: 10px;
+      }
+
+      .t{
+        width: 280px !important; 
+        span{
+          font-size: 24px;
+        }
+      }
+    }
 
     .banner-item{
       width: 130px;
@@ -188,6 +271,7 @@
       align-items: center;
       flex-direction: column;
       grid-gap: 10px;
+      grid-area: 'it';
 
       p{
         text-align: center;
@@ -207,7 +291,7 @@
       width: 180px;
       flex-direction: row;
       .banner-text{
-      border-left: solid white 1px;
+
       padding: 10px;
       span{
         font-weight: 700;
@@ -222,8 +306,6 @@
 }
 
 .nonBanner-wrap{
-
-  position: relative;
 
 
   .nonBanner-container {
@@ -245,10 +327,10 @@
 
 
 .faq{
-  height: 200px;
+  height: auto;
   align-items: center;
   position: relative;
-  margin: 25px 0;
+  margin:45px 0;
   grid-gap: 10px;
   
   img{
@@ -437,6 +519,11 @@
         border-radius: 70px !important;
         width: 300px !important;
       }
+
+      .location{
+        width: 280px !important;
+
+      }
     }
     @media (max-width: 315px) {
       font-size: 10px;
@@ -444,6 +531,10 @@
         border-radius: 70px !important;
         width: 250px !important;
         height: 250px !important;
+      }
+      .location{
+        width: 200px !important;
+
       }
     }
 
@@ -585,15 +676,18 @@
 
  
     .cal-bl{
-      max-width: 100%;
-      width: 450px;
-      min-width: 300px;
+      width: 100%;
       height: 120px;
       display: flex;
       justify-content: space-between;
 
       flex-direction: column;
 
+      @media (max-width: 1035px) {
+        width: 450px !important;
+
+      }
+      
 
       @media (max-width: 520px) {
         width: 350px !important;
@@ -661,7 +755,7 @@
   }
 
   .light-design{
-    top: 25px;
+    top: -55px;
   }
 }
 

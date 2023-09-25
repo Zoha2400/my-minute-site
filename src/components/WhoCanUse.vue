@@ -39,9 +39,7 @@
 
     <div class="whocanuse">
 
-        <div class="light-design">
-            <div class="lgitem"></div>
-        </div>
+
         <div class="arrow">
             
             <a href="#offers">
@@ -52,23 +50,26 @@
 
         <div class="ourOffers"  id="offers">
             <p><span>ДЛЯ КОГО ПОДХДИТ</span> НАША УСЛУГА</p>
+            <div class="light-design">
+            <div class="lgitem"></div>
+        </div>
         </div>
 
         <div class="container-wrap banner-wrap" id="#main">
-                <div class="container banner shadow-verst">
-                    <div class="banner-item">
+                <div class="container banner it-bn shadow-verst">
+                    <div class="banner-item it">
                         <Icon icon="ic:baseline-percent" width="90"/>
                         <p>Тем, кто хочет сэкономить деньги до 70%</p>
                     </div>
-                    <div class="banner-item">
+                    <div class="banner-item it">
                         <Icon icon="quill:calendar" width="90"/>
                         <p>Тем, кто не хочет терять месяц на создание нового проекта</p>
                     </div>
-                    <div class="banner-item">
+                    <div class="banner-item it">
                         <Icon icon="tabler:checkup-list" width="90"/>
                         <p>Тем, кто ищет проверенные решения</p>
                     </div>
-                    <div class="banner-item">
+                    <div class="banner-item it">
                         <Icon icon="game-icons:time-bomb" width="90"/>
                         <p>Тем, кто ценит свое время и умеет считать деньги</p>
                     </div>
@@ -80,28 +81,39 @@
         </div>
 
         <div class="container-wrap ourNums-wrapper banner-wrap">
-                <div class="container ourNums banner">
-                    <div class="banner-item">
-                        <Icon icon="streamline:money-graph-arrow-increase-ascend-growth-up-arrow-stats-graph-right-grow" width="70"/>
+                <div class="container ourNums banner bn-t2">
+                    <div class="banner-item t">
+                        <div class="ticon-wrapper">
+                          <Icon class="ticon" icon="streamline:money-graph-arrow-increase-ascend-growth-up-arrow-stats-graph-right-grow" width="70"/>
+                        </div>
                         <div class="banner-text">
-                            <span>11 лет</span>
-                            <p>на рынке</p>
+      
+                            <p><span>11 лет</span> на рынке</p>
                         </div>
                     </div>
-                    <div class="banner-item">
-                        <Icon icon="ic:twotone-architecture" width="70"/>
+                    <div class="banner-item t">
+                        <div class="ticon-wrapper">
+                            <Icon class="ticon" icon="ic:twotone-architecture" width="70"/>
+                        </div>
+
                         <div class="banner-text">
                             <p>Архитекторы с <span>19 летним</span> опытом</p>
                         </div>
                     </div>
-                    <div class="banner-item">
-                        <Icon icon="octicon:project-template-16" width="70"/>
+                    <div class="banner-item t">
+                        <div class="ticon-wrapper">
+                            <Icon class="ticon" icon="octicon:project-template-16" width="70"/>
+                        </div>
+
                         <div class="banner-text">
                             <p>Более <span>250</span> готовых проектов</p>
                         </div>
                     </div>
-                    <div class="banner-item">
-                        <Icon icon="mdi:house-outline" width="70"/>
+                    <div class="banner-item t">
+                        <div class="ticon-wrapper">
+                            <Icon class="ticon" icon="mdi:house-outline" width="70"/>
+                        </div>
+
                         <div class="banner-text">
                             <p>Более с <span>1500</span> релизованных домов</p>
                         </div>
@@ -117,30 +129,43 @@
                 
                 <div class="nonBanner-container container shadow-verst">
                 <div class="container banner nonBanner">
-                    <div class="banner-item">
-                        <Icon icon="ic:baseline-percent" width="90"/>
+                    <div class="banner-item tti">
+                        <div class="tticon">
+                             <Icon icon="ic:baseline-percent" width="90"/>
+                        </div>
                         <p>Тем, кто хочет сэкономить деньги до 70%</p>
                     </div>
-                    <div class="banner-item">
-                        <Icon icon="quill:calendar" width="90"/>
+                    <div class="banner-item tti">
+                        <div class="tticon">
+                            <Icon icon="quill:calendar" width="90"/>
+                        </div>
                         <p>Тем, кто не хочет терять месяц на создание нового проекта</p>
                     </div>
-                    <div class="banner-item">
-                        <Icon icon="tabler:checkup-list" width="90"/>
+                    <div class="banner-item tti">
+                        <div class="tticon">
+                            <Icon icon="tabler:checkup-list" width="90"/>
+                        </div>
+  
                         <p>Тем, кто ищет проверенные решения</p>
                     </div>
                 </div>
                 <div class="container banner nonBanner">
-                    <div class="banner-item">
-                        <Icon icon="ic:baseline-percent" width="90"/>
+                    <div class="banner-item tti">
+                        <div class="tticon">
+                            <Icon icon="ic:baseline-percent" width="90"/>
+                        </div>
                         <p>Тем, кто хочет сэкономить деньги до 70%</p>
                     </div>
-                    <div class="banner-item">
-                        <Icon icon="quill:calendar" width="90"/>
+                    <div class="banner-item tti">
+                        <div class="tticon">
+                            <Icon icon="quill:calendar" width="90"/>
+                        </div>
                         <p>Тем, кто не хочет терять месяц на создание нового проекта</p>
                     </div>
-                    <div class="banner-item">
-                        <Icon icon="tabler:checkup-list" width="90"/>
+                    <div class="banner-item tti">
+                        <div class="tticon">
+                            <Icon icon="tabler:checkup-list" width="90"/>
+                        </div>
                         <p>Тем, кто ищет проверенные решения</p>
                     </div>
                 </div>
