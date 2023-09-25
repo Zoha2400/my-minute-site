@@ -332,7 +332,7 @@
                 <p><span>1000ПРОЕКТОВ</span> Готовые проекты домов</p>
 
                 <a href="#main" class="toUp">
-                    <Icon icon="ph:arrow-up" width="35"/>
+                    <Icon icon="ph:arrow-up" width="30"/>
                 </a>
 
             </div>
