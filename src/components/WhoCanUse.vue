@@ -54,7 +54,7 @@
             <p><span>ДЛЯ КОГО ПОДХДИТ</span> НАША УСЛУГА</p>
         </div>
 
-        <div class="container-wrap banner-wrap">
+        <div class="container-wrap banner-wrap" id="#main">
                 <div class="container banner shadow-verst">
                     <div class="banner-item">
                         <Icon icon="ic:baseline-percent" width="90"/>
@@ -296,7 +296,48 @@
             </div>
 
         </div>
+
+        <div class="ourOffers smsOffer">
+            <p><span>Оставьте сообщение</span> мы перезвоним</p>
+        </div>
+
+        <div class="container-wrap callback-wrap">
+            <div class="container callback">
+
+                <div class="cal-bl">
+                    <input type="text" class="info cal-el" placeholder="Ваше имя">
+                    <input type="text" class="info cal-el" placeholder="Ваш телефон">
+                </div>
+                <div class="cal-bl">
+                    <textarea name="sms" placeholder="Ваше сообщение" class="sms cal-el" id="sms" cols="30" rows="10"></textarea>
+                </div>
+
+            </div>
+
+            <div class="sendMess container">
+                <button class="sendMessage">ОТПРАВИТЬ</button>
+
+            </div>
+                <div class="light-design sendLg">
+                    <div class="lgitem "></div>
+                </div>
+        </div>
 <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d189.95246291605815!2d71.7825938!3d40.3813863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bb835f7834e053%3A0xe9f8402c3e4e1953!2zOVFKTStINDQsINCk0LXRgNCz0LDQvdCw!5e0!3m2!1sru!2s!4v1695555359219!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+
+        <footer class="container-wrap">
+
+            <div class="container footer-text">
+
+                <p>c 2011 - 2023</p>
+                <p><span>1000ПРОЕКТОВ</span> Готовые проекты домов</p>
+
+                <a href="#main" class="toUp">
+                    <Icon icon="ph:arrow-up" width="35"/>
+                </a>
+
+            </div>
+
+        </footer>
 
     </div>
 
