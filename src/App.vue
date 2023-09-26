@@ -9,7 +9,9 @@ import MyContent from './components/MyContent.vue'
   <div class="all-wrapper">
 
     <NavBar/>
-    <MyContent/>
+
+    <router-view></router-view>
+    <!-- <MyContent/> -->
 
   </div>
  
