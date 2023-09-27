@@ -10,8 +10,7 @@ import MyContent from './components/MyContent.vue'
 
     <NavBar/>
 
-    <router-view></router-view>
-    <!-- <MyContent/> -->
+    <MyContent/>
 
   </div>
  

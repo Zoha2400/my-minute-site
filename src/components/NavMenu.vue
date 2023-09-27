@@ -1,20 +1,41 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const btns = ref(document.querySelectorAll('.btn'));
+// const btns = ref(document.querySelectorAll('.btn'));
 
-function colored(i: number) {
-  btns.value[i].classList.add('clickedNav');
-}
+
+// export default (await import('vue')).defineComponent({
+//   data(){
+//     return {
+//       count: 0
+//     }
+//   },
+//   methods: {
+//     minus(){
+//       this.count--
+//     },
+//     plus(){
+//       this.count++
+//     } 
+//   }
+// }
+// )
+
+let count = ref(0);
+
+const plus = () => count.value++
+const minus = () => count.value--
 
 </script>
 
 <template>
     <nav class="navbar-menu">
-        <div class="btn" @click="colored(0)">ГЛАВНЫЙ</div>
-        <div class="btn" @click="colored(1)">О НАС</div>
-        <div class="btn" @click="colored(2)">ПРОЕКТЫ</div>
-        <div class="btn" @click="colored(3)">КОНТАКТЫ</div>
+        <div class="btn" @click="plus()">ГЛАВНЫЙ</div>
+        <div class="btn" @click="plus()">О НАС</div>
+        <div class="btn" @click="minus()">ПРОЕКТЫ</div>
+        <div class="btn" @click="minus()">КОНТАКТЫ</div>
+
+        <p>{{ count }}</p>
     </nav>
 </template>
 
