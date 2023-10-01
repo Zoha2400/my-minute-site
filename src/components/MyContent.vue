@@ -11,9 +11,7 @@ import WhoCanUseVue from './WhoCanUse.vue';
 
         <div class="content">
 
-            <MyDragonation/>
-            <WhoCanUseVue/>
-           
+            <router-view></router-view>
         </div>
 
     </div>

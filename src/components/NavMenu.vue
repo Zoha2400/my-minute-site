@@ -1,41 +1,45 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-// const btns = ref(document.querySelectorAll('.btn'));
+
+// // const btns = ref(document.querySelectorAll('.btn'));
 
 
-// export default (await import('vue')).defineComponent({
-//   data(){
-//     return {
-//       count: 0
-//     }
-//   },
-//   methods: {
-//     minus(){
-//       this.count--
-//     },
-//     plus(){
-//       this.count++
-//     } 
-//   }
-// }
-// )
+// // export default (await import('vue')).defineComponent({
+// //   data(){
+// //     return {
+// //       count: 0
+// //     }
+// //   },
+// //   methods: {
+// //     minus(){
+// //       this.count--
+// //     },
+// //     plus(){
+// //       this.count++
+// //     } 
+// //   }
+// // }
+// // )
 
-let count = ref(0);
+// let count = ref(0);
 
-const plus = () => count.value++
-const minus = () => count.value--
+// const plus = () => count.value++
+// const minus = () => count.value--
 
 </script>
 
 <template>
     <nav class="navbar-menu">
-        <div class="btn" @click="plus()">ГЛАВНЫЙ</div>
-        <div class="btn" @click="plus()">О НАС</div>
-        <div class="btn" @click="minus()">ПРОЕКТЫ</div>
-        <div class="btn" @click="minus()">КОНТАКТЫ</div>
+        <div class="btn">ГЛАВНЫЙ</div>
+        <div class="btn">О НАС</div>
 
-        <p>{{ count }}</p>
+        <RouterLink class="btn" to="/projects">
+            <p>ПРОЕКТЫ</p>
+        </RouterLink>
+        <div class="btn">КОНТАКТЫ</div>
+
+        <!-- <p>{{ count }}</p> -->
     </nav>
 </template>
 

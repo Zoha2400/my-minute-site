@@ -9,6 +9,7 @@
         <div class="navbar">
             <img :src="icon">
 
+            <router-view name="navbar"></router-view>
             <NavMenu/>
             <NavLinks/>
         </div>

@@ -4,6 +4,7 @@
     import  checked  from '../img/checked.svg';
     import maps from '../img/maps.svg';
     import { ref } from 'vue';
+    import MyDragonation from './MyDragonation.vue';
 
     // export default  {
     //     data() {
@@ -36,6 +37,7 @@
 </script>
 
 <template>
+            <MyDragonation/>
 
     <div class="whocanuse">
 

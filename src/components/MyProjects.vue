@@ -2,7 +2,9 @@
 
 <template>
 
-    <div class="myProj"></div>
+    <div class="myProj">
+        Hi
+    </div>
 
 </template>
 
