@@ -1,5 +1,188 @@
-.myProj{
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+    // For Google Chrome
+    &::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+      border-radius: 5px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+      border-radius: 5px;
+    }
+  
+    &::-webkit-scrollbar-track {
+        width: 7px;
+      background: $background-color;
+      border-radius: 5px;
+    }
+  
+    // For Internet Explorer
+    & {
+      scrollbar-face-color: $foreground-color;
+      scrollbar-track-color: $background-color;
+      border-radius: 5px;
+    }
+  }
+
+
+
+.container-wrap{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  
+  .container-proj{
+    max-width: 1100px;
+    width: 1100px;
+    min-width: 280px;
+    margin: 20px;
+  }
+}
+
+.my-projects{
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    grid-template-rows: repeat(4, 380px);
+}
+
+.proj{
+    max-width: 250px;
+    width: 250px;
+    height: 400px;
+    position: relative;
+
+    .img-proj{
+        width: 250px;
+        height: 225px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 15px 15px 0 0;
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .text-proj{
+        max-width: 250px;
+        width: 250px;
+        // background-color:#324674;
+        background-color:#213563 ;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        grid-gap: 5px;
+        padding: 10px 0;
+        border-radius: 0 0 15px 15px;
+        p{
+            width: 90%;
+        }
+
+        .name{
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+        }
+        .area{
+            font-size: 15px;
+            color: rgb(179, 179, 179);
+        }
+        .cost{
+            color: white;
+            
+            span{
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+
+.info-wrap{
+    position: absolute;
+    z-index: 2;
     width: 100%;
-    height: 500px;
-    background-color: red;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.411);
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .info{
+        position: relative;
+        max-width: 1100px;
+        width: 1100px;
+        min-width: 300px;
+        height: 500px;
+        background-color: white;
+        margin-left: 25px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+
+        .textin-info{
+
+          width: 650px;
+          height: 500px;
+          background-color: white;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          flex-direction: column;
+          
+
+          .header-info{
+            padding: 20px 20px;
+
+
+            p{
+              font-size: 25px !important;
+              font-weight: 700 !important;
+              color: #213563;
+            }
+          }
+          .body-info{
+            width: 80%;
+            margin: 20px;
+            padding-bottom: 5px;
+            color: #213563;
+            border-bottom: solid 1px #dadada;
+          }
+
+          .footer-info{
+
+            padding: 10px 20px;
+            color: #213563;
+            overflow-x: auto;
+          }
+        }
+    }
+}
+
+
+.hidden{
+    display: none !important;
+}
+
+.imgages{
+  width: 450px;
+  height: 100%;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.hid{
+  overflow: hidden !important;
+  *{
+    overflow: hidden !important;
+  }
 }
