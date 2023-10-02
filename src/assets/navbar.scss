@@ -1,3 +1,32 @@
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+    // For Google Chrome
+    &::-webkit-scrollbar {
+      width:  $size;
+      height: $size;
+      border-radius: 5px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      background: $foreground-color;
+      border-radius: 5px;
+    }
+  
+    &::-webkit-scrollbar-track {
+        width: 7px;
+      background: $background-color;
+      border-radius: 5px;
+    }
+  
+    // For Internet Explorer
+    & {
+      scrollbar-face-color: $foreground-color;
+      scrollbar-track-color: $background-color;
+      border-radius: 5px;
+    }
+  }
+
+
+
 .navbar-wrap{
     width: 450px;
     height: 100%;
@@ -6,6 +35,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
+    @include scrollbars(2px, rgb(149, 149, 149), white);
+
+    
 
     @media (max-width:1320px) {
         display: none;
@@ -41,13 +74,14 @@
         width: 80%;
         color: #132244;
         font-size: 15px;
-        border-radius: 5px 0 0 5px;
+        border-radius: 10px 0 0 10px;
         padding: 10px;
     }
 }
 
 .clickedNav{
     background-color: #DB3726 !important;
+    color: white !important;
 }
 
 
@@ -77,9 +111,140 @@
 .btn{
     transition: 0.3s ease-in-out;
     cursor: pointer;
+    
 }
 
 .btn:hover{
     background-color: #DB3726;
     color: white;
+}
+
+.style-lable{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    margin: 10px 0;
+
+    p{
+        width: 80%;
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+}
+.radio-label {
+    display: block;
+    margin-bottom: 10px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    grid-gap: 5px;
+    span{
+        color: #09142d;
+        font-size: 15px;
+    }
+    input{
+    }
+}
+
+.area-items{
+    width: 80%;
+    display: flex;
+    grid-gap: 5px;
+    *{
+        color: #09142d;
+    }
+
+    input{
+        width: 50px !important;
+        padding: 3px;
+        border: solid 1px #22386d;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    button{
+        width: 40px !important;
+        padding: 3px;
+        border: solid 1px #22386d;
+        border-radius: 25px;
+
+        &:hover{
+            background-color: darken($color: #ffffff, $amount: 26);
+        }
+    }
+}
+
+
+.btn-cont{
+    margin: 15px 0 5px 0;
+    height: auto;
+    width: 80%;
+    height: 70px;
+    display: grid;
+    grid-template-columns: repeat(5, 40px);
+    grid-template-rows: repeat(2, 25px);
+    grid-gap: 10px;
+    .btn-label{
+        position: relative;
+        border: solid 1px #132244;
+        overflow: hidden;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        .radio-input {
+            display: none;
+            opacity: 0;
+            position: absolute;
+          }
+          
+        .radio-input:checked + .radio-text {
+            background-color: #132244;
+            color: #fff;
+          }
+
+          .radio-text{
+            width: 100%;
+            height: 100%;
+            // padding: 3px 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+}
+
+.inp-choos{
+    width: 80%;
+    display: flex;
+    grid-gap: 5px;
+    margin-bottom: 40px;
+    *{
+        color: #09142d;
+    }
+
+    input{
+        width: 50px !important;
+        padding: 3px;
+        border: solid 1px #22386d;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    button{
+        width: 40px !important;
+        padding: 3px;
+        border: solid 1px #22386d;
+        border-radius: 25px;
+
+        &:hover{
+            background-color: darken($color: #ffffff, $amount: 26);
+        }
+    }
 }

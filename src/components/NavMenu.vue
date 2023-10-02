@@ -27,6 +27,8 @@ import { ref } from 'vue';
 // const plus = () => count.value++
 // const minus = () => count.value--
 
+import  NavLinks from './NavLinks.vue';
+
 </script>
 
 <template>
@@ -41,6 +43,9 @@ import { ref } from 'vue';
 
         <!-- <p>{{ count }}</p> -->
     </nav>
+
+    <NavLinks/>
+    
 </template>
 
 
