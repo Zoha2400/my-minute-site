@@ -47,7 +47,8 @@ onMounted(async () => {
                 <p>Размер: {{ dataEll.size }}</p>
                 <p>Площадь: {{ dataEll.area }}</p>
                 <p>Cоток: {{ dataEll.acres }}</p>
-                <p>Стиль: {{ dataEll.style }}</p>
+                <p @click="$store.commit('increment')">Стиль: {{ dataEll.style }}</p>
+                <p>{{ $store.state.counter }}</p>
               </div>
 
               <div class="footer-info">
@@ -79,8 +80,38 @@ onMounted(async () => {
                 <span>{{ proj.cost }}</span> UZS
             </p>
         </div>
-    </div>
-
+      </div>
+      <div v-for="proj in dataAll" :key="proj.pk" class="proj" @click="showInfo(proj)">
+        <div class="img-proj">
+            <img :src="proj.main_photo" alt="">
+        </div>
+        <div class="text-proj">
+            <p class="name">
+              ПРОЕКТ № {{ proj.pk }}
+            </p>
+            <p class="area">
+                {{ proj.acres }} соток
+            </p>
+            <p class="cost">
+                <span>{{ proj.cost }}</span> UZS
+            </p>
+        </div>
+      </div>      <div v-for="proj in dataAll" :key="proj.pk" class="proj" @click="showInfo(proj)">
+        <div class="img-proj">
+            <img :src="proj.main_photo" alt="">
+        </div>
+        <div class="text-proj">
+            <p class="name">
+              ПРОЕКТ № {{ proj.pk }}
+            </p>
+            <p class="area">
+                {{ proj.acres }} соток
+            </p>
+            <p class="cost">
+                <span>{{ proj.cost }}</span> UZS
+            </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>

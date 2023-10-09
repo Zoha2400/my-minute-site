@@ -42,15 +42,18 @@
 }
 
 .my-projects{
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 300px);
-    grid-template-rows: repeat(4, 380px);
+    grid-template-columns: repeat(4, 270px);
+    grid-template-rows: repeat(4, 340px);
+    justify-content: center;
+    background-color: red;
 }
 
 .proj{
     max-width: 250px;
     width: 250px;
-    height: 400px;
+    height: 305px;
     position: relative;
 
     .img-proj{
@@ -71,6 +74,7 @@
     .text-proj{
         max-width: 250px;
         width: 250px;
+        height: 80px;
         // background-color:#324674;
         background-color:#213563 ;
         display: flex;
