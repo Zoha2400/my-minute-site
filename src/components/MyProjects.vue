@@ -10,7 +10,7 @@ import CardProjVue from './CardProj.vue';
   <div class="container-wrap my-projects-wrp">
     <div class="container-proj my-projects">
       <!-- Проверка, что dataAll.value существует, перед обращением к нему -->
-      <div v-for="proj in $store.state.data" :key="proj.pk" class="proj" @click="$store.commit('showInfo',proj)">
+      <div v-for="proj in $store.getters.filteredData" :key="proj.pk" class="proj" @click="$store.commit('showInfo',proj)">
         <div class="img-proj">
             <img :src="proj.main_photo" alt="">
         </div>

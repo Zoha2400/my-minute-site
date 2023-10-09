@@ -5,8 +5,9 @@ import { Icon } from '@iconify/vue';
 
 const selectedStyle = ref(null);
 const selectedType = ref(null);
-const selectedAreaM = ref(null);
-const selectedAreaA = ref(null);
+const selectedAreaM = ref(0);
+const selectedAreaA = ref(0);
+const selectedArces = ref(0);
 const selectedHund = ref(null);
 
 let selectedArea = "";
@@ -25,11 +26,14 @@ const styles = [
   { id: 3, name: "Модерн" },
   { id: 4, name: "Хай-тек" },
   { id: 5, name: "Райт" },
+  { id: 6, name: "" },
 ];
 
 const type = [
   { id: 1, name: "Передняя стройка" },
-  { id: 2, name: "Задняя стройка" }
+  { id: 2, name: "Задняя стройка" },
+  { id: 3, name: "" }
+
 ];
 
     const options = [
@@ -58,7 +62,7 @@ const type = [
 
     <div class="style-lable">
     <p>Стиль</p>
-    <label v-for="style in styles" :key="style.id" class="radio-label">
+    <label v-for="style in styles" :key="style.id" class="radio-label" @click="$store.commit('setStyle', style.name)">
       <input
         type="radio"
         v-model="selectedStyle"
@@ -66,13 +70,16 @@ const type = [
         class="radio-input"
         name="style"
       />
-      <span class="radio-text">{{ style.name }}</span>
-    </label>
+      <span class="radio-text" >{{ style.name }}</span>
+    </label> 
   </div>
+
+    <p v-for="el in $store.state.type">{{ el }}</p>
+
 
     <div class="style-lable">
     <p>Участок</p>
-    <label v-for="tp in type" :key="tp.id" class="radio-label">
+    <label v-for="tp in type" :key="tp.id" class="radio-label"  @click="$store.commit('setPlot', tp.name)">
       <input
         type="radio"
         v-model="selectedType"
@@ -91,7 +98,7 @@ const type = [
         <input type="number" id="mt1" placeholder="0" v-model="selectedAreaM">
         x
         <input type="number" id="mt2" placeholder="1000" v-model="selectedAreaA">
-        <button @click="sendArea">OK</button>
+        <button @click="$store.commit('setArea', selectedAreaM+' X '+selectedAreaA )">OK</button>
     </div>
     
   </div>
@@ -109,15 +116,15 @@ const type = [
                     class="radio-input"
                     name="options"
                 />
-                <span class="radio-text">{{ option.id }}</span>
+                <span class="radio-text" @click="$store.commit('setAcres', option.id )">{{ option.id }}</span>
             </label>
             
 
     </div>
 
     <div class="inp-choos">
-        <input type="number" id="mt1" placeholder="0" v-model="selectedAreaM">
-        <button>OK</button>
+        <input type="number" id="mt1" placeholder="0" v-model="selectedArces">
+        <button  @click="$store.commit('setAcres', selectedArces )">OK</button>
     </div>
 
 

@@ -7,7 +7,7 @@ import WhoCanUseVue from './WhoCanUse.vue';
 
 <template>
 
-    <div class="content-wrap">
+    <div :class="{'content-wrap': $store.state.info, 'content-wrap noScroll': !$store.state.info}">
 
         <div class="content">
 

@@ -53,6 +53,10 @@
     @include scrollbars(5px, white, #132244);
 }
 
+.noScroll{
+  overflow: hidden !important;
+}
+
 .content{
     width: 100%;
     height: auto;

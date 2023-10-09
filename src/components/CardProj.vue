@@ -32,3 +32,9 @@
     </div>
 
 </template>
+
+<style>
+
+@import url('../assets/myproj.scss');
+
+</style>
