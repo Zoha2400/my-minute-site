@@ -9,7 +9,8 @@ interface State {
         plot: string,
         area: string,
         acres: string,
-    }
+    },
+    arcesChsn: boolean
 }
 
 let data;
@@ -35,7 +36,8 @@ export default createStore({
             plot: '',
             area: '',
             acres: '',
-        }
+        },
+        arcesChsn: false
     },
     mutations: {
         showInfo(state: State, obj: Object){
@@ -49,11 +51,21 @@ export default createStore({
             state.type.plot = data;
         },
         setArea(state: State, data: string){
+          if(+data.split(' X ')[0] != 0 && +data.split(' X ')[1] != 0){
             state.type.area = data;
+          }
         },
-        setAcres(state: State, data: string){
+        setAcres(state: State, data: string, checker: boolean){
             state.type.acres = data;
+            if(checker) {state.arcesChsn = !state.arcesChsn};
         },
+        backArea(state: State){
+            state.type.area = '';
+        },
+        backArces(state: State){
+            state.type.acres = '';
+            if(state.arcesChsn) state.arcesChsn = !state.arcesChsn;
+        }
     },
     actions: {
     },

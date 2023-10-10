@@ -203,7 +203,7 @@
             position: absolute;
           }
           
-        .radio-input:checked + .radio-text {
+        .radio-input:checked + .active{
             background-color: #132244;
             color: #fff;
           }
