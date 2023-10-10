@@ -5,6 +5,7 @@
     import maps from '../img/maps.svg';
     import { ref } from 'vue';
     import MyDragonation from './MyDragonation.vue';
+    import MyFooter from './MyFooter.vue';
 
     // export default  {
     //     data() {
@@ -351,20 +352,7 @@
         </div>
 <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d189.95246291605815!2d71.7825938!3d40.3813863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bb835f7834e053%3A0xe9f8402c3e4e1953!2zOVFKTStINDQsINCk0LXRgNCz0LDQvdCw!5e0!3m2!1sru!2s!4v1695555359219!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
 
-        <footer class="container-wrap">
-
-            <div class="container footer-text">
-
-                <p>c 2011 - 2023</p>
-                <p><span>1000ПРОЕКТОВ</span> Готовые проекты домов</p>
-
-                <a href="#main" class="toUp">
-                    <Icon icon="ph:arrow-up" width="30"/>
-                </a>
-
-            </div>
-
-        </footer>
+        <MyFooter/> 
 
     </div>
 
