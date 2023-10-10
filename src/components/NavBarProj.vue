@@ -2,10 +2,10 @@
 import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
 
-import myStyles from './MyStylesProj.vue';
+import MyStyles from './MyStylesProj.vue';
+import MyType from './MyTypeProj.vue';
 
 
-const selectedType = ref(null);
 const selectedAreaM = ref(0);
 const selectedAreaA = ref(0);
 const selectedArces = ref(0);
@@ -17,17 +17,6 @@ function sendArea(){
     selectedArea = `${selectedAreaM.value} x ${selectedAreaA.value}`;
     console.log(selectedArea);
 }
-
-
-
-
-
-const type = [
-  { id: 1, name: "Передняя стройка" },
-  { id: 2, name: "Задняя стройка" },
-  { id: 3, name: "" }
-
-];
 
     const options = [
       { id: 1, name: "Вариант 1" },
@@ -53,26 +42,13 @@ const type = [
         </RouterLink>
     </nav>
 
-    <myStyles/>
+    <MyStyles/>
 
 
     <p v-for="el in $store.state.type">{{ el }}</p>
 
-
-    <div class="style-lable">
-    <p>Участок</p>
-    <label v-for="tp in type" :key="tp.id" class="radio-label"  @click="$store.commit('setPlot', tp.name)">
-      <input
-        type="radio"
-        v-model="selectedType"
-        :value="tp.id"
-        class="radio-input"
-        name="type"
-      />
-      <span class="radio-text">{{ tp.name }}</span>
-    </label>
-  </div>
-
+    <MyType/>
+   
   <div class="style-lable area">
     <p>Участок</p>
 
