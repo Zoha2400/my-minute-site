@@ -2,8 +2,9 @@
 import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
 
+import myStyles from './MyStylesProj.vue';
 
-const selectedStyle = ref(null);
+
 const selectedType = ref(null);
 const selectedAreaM = ref(0);
 const selectedAreaA = ref(0);
@@ -20,14 +21,6 @@ function sendArea(){
 
 
 
-const styles = [
-  { id: 1, name: "Классика" },
-  { id: 2, name: "Неоклассика" },
-  { id: 3, name: "Модерн" },
-  { id: 4, name: "Хай-тек" },
-  { id: 5, name: "Райт" },
-  { id: 6, name: "" },
-];
 
 const type = [
   { id: 1, name: "Передняя стройка" },
@@ -60,19 +53,8 @@ const type = [
         </RouterLink>
     </nav>
 
-    <div class="style-lable">
-    <p>Стиль</p>
-    <label v-for="style in styles" :key="style.id" class="radio-label" @click="$store.commit('setStyle', style.name)">
-      <input
-        type="radio"
-        v-model="selectedStyle"
-        :value="style.id"
-        class="radio-input"
-        name="style"
-      />
-      <span class="radio-text" >{{ style.name }}</span>
-    </label> 
-  </div>
+    <myStyles/>
+
 
     <p v-for="el in $store.state.type">{{ el }}</p>
 
