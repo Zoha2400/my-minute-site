@@ -29,12 +29,13 @@ try {
 export default createStore({
     state: {
         data: data,
+        getterData: data,
         choosen:{},
         info: true,
         type: {
             style: '',
             plot: '',
-            area: '',
+            size: '',
             acres: '',
         },
         arcesChsn: false
@@ -52,7 +53,7 @@ export default createStore({
         },
         setArea(state: State, data: string){
           if(+data.split(' X ')[0] != 0 && +data.split(' X ')[1] != 0){
-            state.type.area = data;
+            state.type.size = data;
           }
         },
         setAcres(state: State, data: string, checker: boolean){
@@ -60,7 +61,7 @@ export default createStore({
             if(checker) {state.arcesChsn = !state.arcesChsn};
         },
         backArea(state: State){
-            state.type.area = '';
+            state.type.size = '';
         },
         backArces(state: State){
             state.type.acres = '';

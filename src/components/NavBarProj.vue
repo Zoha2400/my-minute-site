@@ -39,7 +39,7 @@ const selectedHund = ref(null);
         <input type="number" id="mt1" placeholder="0" v-model="selectedAreaM">
         x
         <input type="number" id="mt2" placeholder="1000" v-model="selectedAreaA">
-        <button @click="$store.commit('setArea', selectedAreaM+' X '+selectedAreaA )">OK</button>
+        <button @click="$store.commit('setArea', selectedAreaM+'x'+selectedAreaA )">OK</button>
         <button class="back" @click="$store.commit('backArea')">Отм</button>
     </div>
     
