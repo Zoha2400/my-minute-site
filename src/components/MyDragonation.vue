@@ -1,9 +1,12 @@
 <script setup lang='ts'>
 
+import AdpNav from './AdpNav.vue';
 
 </script>
 
 <template>
+
+    <AdpNav/>
 
     <div class="draganation" >
         <img src="../img/photo.svg"/>
