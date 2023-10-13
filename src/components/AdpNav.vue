@@ -1,22 +1,29 @@
+<script setup lang="ts">
+
+import  iconMini  from '../img/iconMini.svg';
+import { Icon } from '@iconify/vue';
+
+import AdpMenu from './AdpMenu.vue';
+
+</script>
+
+
+
 <template>
 
-    <div class="adp-menu">
+    <div class="adp-menu noneAdp">
             <div class="imageAdp">
                 <img :src="iconMini"/>
             </div>
-            <div class="buttonApdMenu">
-                <Icon class="adpIcon" icon="grommet-icons:menu" color="white" width="40"/>
+            <div class="buttonApdMenu" @click="$store.commit('showAdpMenu')">
+                <Icon class="adpIcon" icon="entypo:menu" color="black" width="50"/>
             </div>
+
     </div>
+    <AdpMenu/>
+
 
 </template>
-
-<script setup lang="ts">
-
-import { iconMini } from '../img/iconMini.svg';
-import { Icon } from '@iconify/vue';
-
-</script>
 
 
 <style>

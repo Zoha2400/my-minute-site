@@ -252,19 +252,90 @@
 .adp-menu{
     width: 100%;
     height: 80px;
-    display: flex;
     background-color: white;
+    box-sizing: border-box;
+    padding: 10px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+
+    @media (max-width: 1320px) {
+            display: flex !important;
+        
+    }
+    .buttonApdMenu{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
 
     .imageAdp{
         width: auto;
-        height: 70px;
-        margin: 15px;
-        background-color: red;
-
+        height: 60px;
         img{
             height: 100%;
             width: auto;
         }
     }
+}
+
+
+.adpMenu{
+    width: 280px;
+    max-height: 100vh;
+    min-height: auto; 
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    overflow-y: auto;
+    z-index: 3;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.351);
+    right: 0;
+    transition: 0.3s ease-in-out;
+
+    @media (max-width: 450px) {
+        width: 100%;
+    }
+
+    .links{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+
+        .marked{
+            font-size: 25px;
+        }
+    }
+
+    .navbar-menu{
+        width: 100%;
+        justify-content: center;
+        grid-gap: 0;
+        margin: 0 0 10px 0;
+
+        .btn{
+            width: 100%;
+            padding: 15px;
+            border-radius: 0;
+            box-sizing: border-box;
+        }
+    }
+
+    .style-lable {
+        width: 100%;
+        display: flex !important;
+        align-items: center;
+
+
+    }
+}
+
+
+.hideAdp{
+    display: none;
 }
 
