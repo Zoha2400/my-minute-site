@@ -36,7 +36,7 @@ import  NavLinks from './NavLinks.vue';
         <div class="btn">ГЛАВНЫЙ</div>
         <div class="btn">О НАС</div>
 
-        <RouterLink class="btn" to="/projects"  @click="$store.commit('showAdpMenu')">
+        <RouterLink class="btn" to="/projects">
             <p>ПРОЕКТЫ</p>
         </RouterLink>
         <div class="btn">КОНТАКТЫ</div>

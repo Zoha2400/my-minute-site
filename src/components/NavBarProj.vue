@@ -20,7 +20,7 @@ const selectedHund = ref(null);
 <template> 
 
     <nav class="navbar-menu">
-        <RouterLink class="btn clickedNav" to="/" @click="$store.commit('showAdpMenu')">
+        <RouterLink class="btn clickedNav" to="/">
             <Icon icon="material-symbols:arrow-back" width="23"/>
         </RouterLink>
     </nav>

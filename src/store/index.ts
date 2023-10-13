@@ -77,6 +77,10 @@ export default createStore({
         },
         showAdpMenu(state: State){
           state.adpMenu = !state.adpMenu;
+          if(!state.info){
+            state.info = !state.info;
+          }
+
         }
     },
     actions: {
