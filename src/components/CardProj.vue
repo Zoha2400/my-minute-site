@@ -22,13 +22,16 @@
 
               <div class="footer-info">
                 {{ $store.state.choosen.data }}
+              
               </div>
+              
+              <div class="btn-card">
+                <button class="inpButton" @click="$store.commit('showInfo', {})">Закрыть</button>
+              </div>
+
             </div>
         </div>
 
-        <div class="inpButton">
-          
-        </div>
     </div>
 
 </template>

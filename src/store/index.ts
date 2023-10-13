@@ -50,6 +50,9 @@ export default createStore({
               state.adpMenu = !state.adpMenu;
             }
         },
+        closeInfo(state: State){
+            state.info = !state.info;
+        },
         setStyle(state: State, data: string){
             state.type.style = data;
         },
