@@ -422,7 +422,15 @@
   position: relative;
   margin:45px 0;
   grid-gap: 10px;
-  
+
+  @media (max-width: 520px) {
+    img{
+      width: 70px !important;
+    }
+    p{
+      font-size: 18px !important;
+    }
+  }
   img{
     width: 100px;
     height: auto;
@@ -447,6 +455,7 @@
 .faq-banner{
   width: 100%;
 
+
   @media (max-width: 1045px) {
 
     .line{
@@ -460,11 +469,64 @@
       height: auto !important;
     }
     .faq-side{
-      width: 350px !important;
+      width: 470px !important;
+      
+      .faq-block{
+        width: 360px !important;
+      }
+    }
+  }
+  @media (max-width: 520px) {
+
+    .faq-side{
+      width: 370px !important;
       
       .faq-block{
         width: 260px !important;
       }
+    }
+  }
+
+    @media (max-width: 410px) {
+
+    .faq-side{
+      width: 300px !important;
+      grid-gap: 40px !important;
+      
+      .faq-block{
+        width: 260px !important;
+      }
+
+      .left{
+        padding: 12px !important;
+      }
+      .right{
+        padding: 12px;
+      }
+    }
+  }
+  @media (max-width: 325px) {
+
+    .faq-side{
+      width: 280px !important;
+      grid-gap: 40px !important;
+      
+      .faq-block{
+        width: 250px !important;
+      }
+      .left{
+        position: relative !important;
+        padding: 20px !important;
+      }
+      .right{
+        position: relative !important;
+        padding: 15px !important;
+ 
+      }
+    }
+
+    .block-wrap{
+      padding: 0 !important;
     }
   }
   .faq-cont{
@@ -472,6 +534,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  
 
     .line{
       width: 2px;
@@ -480,27 +543,35 @@
     }
 
     .faq-side{
-      height: 500px;
+      height: auto;
       position: relative;
       width: 100%;
+      box-sizing: border-box;
 
       .block-wrap{
         width: 100%;
-        height: 100px;
+        height: 80px;
         position: relative;
+        box-sizing: content-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
       }
 
       .faq-block{
         color: white;
         width: 350px;
-        margin: 20px;
-        border-radius: 70px;
+        border-radius: 60px;
         position: absolute;
         display: flex;
         justify-content: flex-end;
+
+        
         align-items:  center;
         grid-gap: 5px;
         font-size: 13px;
+        margin: 15px;
 
         box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.473);
 
@@ -513,6 +584,7 @@
         .msg{
           display: flex;
           flex-direction: column;
+          
 
           p{
             width: 100%;
@@ -528,11 +600,13 @@
 
       .right{
         right: 0;
+
         background-color: #2279A3;
         padding: 15px 10px;
       }
       .left{
         left: 0;
+
         background-color: transparent;
         padding: 15px 20px;
         border: solid 2px #324674;
@@ -622,9 +696,16 @@
         width: 250px !important;
         height: 250px !important;
       }
+      .map{
+        width: 250px !important;
+        height: 250px !important ; 
+      }
+      .map-animate{
+        width: 250px !important;
+        height: 250px !important;
+      }
       .location{
         width: 200px !important;
-
       }
     }
 

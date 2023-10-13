@@ -11,16 +11,21 @@ import AdpMenu from './AdpMenu.vue';
 
 <template>
 
-    <div class="adp-menu noneAdp">
-            <div class="imageAdp">
-                <img :src="iconMini"/>
-            </div>
-            <div class="buttonApdMenu" @click="$store.commit('showAdpMenu')">
-                <Icon class="adpIcon" icon="entypo:menu" color="black" width="50"/>
-            </div>
+    <div class="adp-menu-wrap noneAdp">
 
+                <div class="adp-menu ">
+                    <div class="imageAdp">
+                    <img :src="iconMini"/>
+                </div>
+                <div class="buttonApdMenu" @click="$store.commit('showAdpMenu')">
+                    <Icon class="adpIcon" icon="entypo:menu" color="black" width="50"/>
+                </div>
     </div>
-    <AdpMenu/>
+
+            <AdpMenu/>
+    </div>
+
+
 
 
 </template>
