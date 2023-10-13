@@ -2,11 +2,14 @@
 import { Icon } from '@iconify/vue/dist/iconify.js';
 import CardProjVue from './CardProj.vue';
 import MyFooter from './MyFooter.vue';
+import AdpNav from './AdpNav.vue';
+
 
 </script>
 
 <template>
   <CardProjVue/>
+
 
   <div class="container-wrap my-projects-wrp">
     <div class="container-proj my-projects">

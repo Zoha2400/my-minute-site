@@ -10,7 +10,8 @@ interface State {
         area: string,
         acres: string,
     },
-    arcesChsn: boolean
+    arcesChsn: boolean,
+    adpMenu: boolean
 }
 
 let data;
@@ -38,12 +39,16 @@ export default createStore({
             size: '',
             acres: '',
         },
-        arcesChsn: false
+        arcesChsn: false,
+        adpMenu: true
     },
     mutations: {
         showInfo(state: State, obj: Object){
             state.info = !state.info;
             state.choosen = obj; 
+            if(!state.adpMenu){
+              state.adpMenu = !state.adpMenu;
+            }
         },
         setStyle(state: State, data: string){
             state.type.style = data;
@@ -66,6 +71,9 @@ export default createStore({
         backArces(state: State){
             state.type.acres = '';
             if(state.arcesChsn) state.arcesChsn = !state.arcesChsn;
+        },
+        showAdpMenu(state: State){
+          state.adpMenu = !state.adpMenu;
         }
     },
     actions: {
