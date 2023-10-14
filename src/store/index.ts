@@ -60,7 +60,7 @@ export default createStore({
             state.type.plot = data;
         },
         setArea(state: State, data: string){
-          if(+data.split(' X ')[0] != 0 && +data.split(' X ')[1] != 0){
+          if(+data.split('x')[0] != 0 && +data.split('x')[1] != 0){
             state.type.size = data;
           }
         },
@@ -86,20 +86,29 @@ export default createStore({
     actions: {
     },
     getters: {
-        filteredData(state: State) {
-            const { style, plot, area, acres } = state.type;
+      filteredData(state: State) {
+        const { style, plot, size, acres } = state.type;
+    
+        // Фильтруем массив data по всем четырем параметрам
+        return state.data.filter((item) => {
+          const isStyleMatch = !style || item.style === style;
+          const isPlotMatch = !plot || item.plot === plot;
+    
 
-            // Фильтруем массив data по всем четырем параметрам
-            return state.data.filter((item) => {
-              return (
-                (!style || item.style === style) &&
-                (!plot || item.plot === plot) &&
-                (!area || item.area === area) &&
-                (!acres || item.acres === acres)
-              );
-            });
-          },
+          const [xValue, yValue] = item.size.split('x').map(parseFloat);
+
+          // Парсим значение из строки area и проверяем, находятся ли xValue и yValue в заданных пределах
+          const [targetX, targetY] = size.split('x').map(parseFloat);
+          const isAreaMatch = !size || ((Math.abs(+xValue - +targetX) <= 2 ) && (Math.abs(+yValue - +targetY) <= 2 ));
+
+          // Проверяем приблизительное значение acres
+          const isAcresMatch = !acres || Math.abs(+item.acres - acres) <= 2;
+    
+          return isStyleMatch && isPlotMatch && isAreaMatch && isAcresMatch;
+        });
+      },
     },
+    
     modules: {},
 
 })

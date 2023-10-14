@@ -72,7 +72,9 @@ export default {
                 {{ $store.state.choosen.data }}
               </div>
               <div class="btn-card">
-                <p> {{ $store.state.choosen.cost }}</p>
+                <input type="text" class="rgt" placeholder="Имя"/>
+                <input type="text" class="lft" placeholder="Номер Телефона"/>
+                <p> {{ $store.state.choosen.cost }} СУМ</p>
                 <button class="inpButton">Оставить Заявку</button>
               </div>
 

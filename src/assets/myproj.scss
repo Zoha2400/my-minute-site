@@ -288,7 +288,7 @@
     min-height: 100vh;
     max-height: 100vh;
     overflow: auto !important;
-    @include scrollbars(8px, rgb(71, 71, 71), #ffffff);
+    @include scrollbars(0px, rgb(71, 71, 71), #ffffff);
     top: 0;
     background-color: rgba(0, 0, 0, 0.411);
     backdrop-filter: blur(5px);
@@ -302,7 +302,7 @@
 
     .info{
       width: 900px !important;
-      height: 400px !important;
+      height: 500px !important;
         position: relative;
         width: auto;
         height: auto;
@@ -314,41 +314,68 @@
         overflow: hidden;
 
         .inpButton{
-          padding: 7px 10px;
-          font-size: 15px;
+          font-size: 18px;
           font-weight: 600;
-          height: 40px;
-          margin: 10px;
+          height: 35px;
           border: none;
           outline: none;
-          border-radius: 9px;
+          border-radius: 40px;
           color: white;
-          background-color: rgb(137, 19, 19);
+          background-color: #DB3726;
+          grid-area: 't';
+
+        }
+
+        .body-info{
+          width: 100%;
+
         }
         
         .btn-card{
-          width: 100%;
-          height: 100px;
+          width: 90%;
+          height: 90px;
           position: static;
+          font-size: 13px !important;
           bottom: 0;
+          display: grid;
+          grid-template-areas: 't t';
+          grid-gap: 5px;
+          grid-template-rows: repeat(2, 40px);
+          align-items: flex-end;
+          margin-bottom: 5px;
+          input{
+            height: 25px;
+            border-radius: 10px;
+            font-size: 13px;
+            padding: 3px 10px;
+            outline: none;
+            background-color: rgb(211, 211, 211);
+            border: none;
+            grid-area: 't';
+          }
             p{
               padding: 10px;
-              font-size: 21px;
-              font-weight: 700;
+              height: 20px;
+              font-size: 18px;
+              font-weight: 900;
               color: #213563;
+               grid-area: 't';
             }
         }
 
         .textin-info{
 
           width: 100%;
-          max-height: 700px !important;
-          justify-content: center;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
 
           position: relative;
           
 
-          @include scrollbars(3px, rgb(71, 71, 71), #ffffff);
+          @include scrollbars(2px, rgb(71, 71, 71), #ffffff);
           
 
           .header-info{
@@ -378,6 +405,8 @@
             min-height: 100px;
             max-height: 200px;
             overflow-y: auto;
+            overflow-x: hidden;
+            word-break: break-all;
             padding: 15px;
             color: #213563;
             border-radius: 0 !important;
