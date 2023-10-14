@@ -84,7 +84,7 @@
     @media (max-width:705px) {
       grid-template-areas: 'ip ip';
       .proj{
-        width: 240px !important;
+        width: 230px !important;
         height: 290px;
 
         img{
@@ -95,9 +95,11 @@
     }
     @media (max-width:490px) {
       grid-template-areas: 'ip ip';
+    grid-template-rows: repeat(4, 280px);
+
       .proj{
         width: 210px !important;
-        height: 290px;
+        height: 270px;
       }
     }
     @media (max-width:460px) {
@@ -106,8 +108,7 @@
 
       .proj{
         width: 170px !important;
-        height: 210px !important;
-        background-color: red;
+        height: 208px !important;
         .img-proj{
           height: 125px !important;
 
@@ -188,7 +189,7 @@
       grid-template-rows: repeat(4, 205px);
 
       .proj{
-        width: 170px !important;
+        width: 150px !important;
         height: 205px !important;
         img{
           width: auto !important;
@@ -285,8 +286,9 @@
     z-index: 2;
     width: 100%;
     min-height: 100vh;
-    overflow-y: auto;
-    @include scrollbars(3px, rgb(71, 71, 71), #ffffff);
+    max-height: 100vh;
+    overflow: auto !important;
+    @include scrollbars(8px, rgb(71, 71, 71), #ffffff);
     top: 0;
     background-color: rgba(0, 0, 0, 0.411);
     backdrop-filter: blur(5px);
@@ -294,17 +296,22 @@
     display: flex;
     justify-content:  center;
     align-items: center;
+
+
     
 
     .info{
+      width: 900px !important;
+      height: 400px !important;
         position: relative;
         width: auto;
-        height: 500px;
+        height: auto;
         background-color: white;
         display: flex;
         justify-content: flex-start;
         align-items: center;
         position: relative;
+        overflow: hidden;
 
         .inpButton{
           padding: 7px 10px;
@@ -334,14 +341,13 @@
 
         .textin-info{
 
-          width: 650px;
-          height: 100% !important;
+          width: 100%;
+          max-height: 700px !important;
           justify-content: center;
 
           position: relative;
-          overflow-y: auto;
-          *{
-          }
+          
+
           @include scrollbars(3px, rgb(71, 71, 71), #ffffff);
           
 
@@ -387,7 +393,14 @@
     @media (max-width: 1370px) {
       .info{height: 400px !important;}
       .textin-info{ width: 500px !important;}
-      .imgages{width: 400px !important;}
+      .imgages{width: 400px !important;
+        img{
+          height: 100% !important; 
+          width: auto !important;
+        }
+      }
+
+
     }
     @media (max-width: 1320px) {
       .info{height: 500px !important;}
@@ -403,44 +416,23 @@
     @media (max-width: 950px) {
       .info{
         width: 90%;
+        position: relative;
         flex-direction: column;
-        height: 700px !important;
+        height: auto !important;
       }
       .imgages{
         width: 100%!important;
-        height: 500px !important;
+        height: 400px !important;
 
         img{
           width: 100%;
           height: auto;
         }
       }
-      .textin-info{ width: 400px !important; height: 400px !important;}
+      .textin-info{ width: 100%!important; height: 300px !important; overflow-y: auto !important; padding-bottom: 60px !important;}
     }
 
 
-    // @media (max-width: 430px) {
-    //   .info{
-    //     flex-direction: column;
-    //     height: 500px !important;
-    //   }
-    //   .imgages{
-    //     width: 250px !important;
-    //     height: 250px !important;
-    //   }
-    //   .textin-info{ width: 300px !important; height: 300px !important;}
-    // }
-    //     @media (max-width: 320px) {
-    //   .info{
-    //     flex-direction: column;
-    //     height: 450px !important;
-    //   }
-    //   .imgages{
-    //     width: 250px !important;
-    //     height: 180px !important;
-    //   }
-    //   .textin-info{ width: 250px !important; height: 250px !important;}
-    // }
     @media (max-width: 550px) {
         position: fixed !important;
         min-height: 0;
@@ -455,9 +447,12 @@
       }
       .textin-info{ 
         width: 100% !important;
+        height: auto!important;
+        overflow-y: hidden;
         display: flex;
         flex-direction: column;
         justify-content: flex-start !important;
+        padding-bottom: 0 !important;
       }
       .body-info{ width: 100% !important;
         font-size: 12px !important;
@@ -496,7 +491,7 @@
 }
 
 .imgages{
-  width: 450px;
+  width: 550px !important;
   height: 100%;
   overflow: hidden;
   z-index: 3;
@@ -504,6 +499,11 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+
+  img{
+    height: 100% !important;
+    width: auto !important;
+  }
 }
 
 .hid{
