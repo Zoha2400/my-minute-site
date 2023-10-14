@@ -321,7 +321,8 @@
           .footer-info{
             box-sizing: border-box; 
             width: 100%;
-            height: 200px;
+            min-height: 100px;
+            max-height: 200px;
             overflow-y: auto;
             padding: 15px;
             color: #213563;
@@ -445,6 +446,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .hid{
@@ -454,3 +456,12 @@
   }
 }
 
+.swiper{
+  height: 100%;
+  
+
+  img{
+    width: 100%;
+    height: auto;
+  }
+}
