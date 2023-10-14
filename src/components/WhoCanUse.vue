@@ -40,7 +40,7 @@
 <template>
     <MyDragonation/>
 
-    <div class="whocanuse">
+    <div class="whocanuse" id="main">
 
 
         <div class="arrow">
@@ -58,7 +58,7 @@
         </div>
         </div>
 
-        <div class="container-wrap banner-wrap" id="#main">
+             <div class="container-wrap banner-wrap">
                 <div class="container banner it-bn shadow-verst">
                     <div class="banner-item it">
                         <Icon icon="ic:baseline-percent" width="90"/>
@@ -79,7 +79,7 @@
                 </div>
         </div>
 
-        <div class="ourOffers">
+        <div class="ourOffers" id="aboutUs">
             <p><span>НАША КОМПАНИЯ</span> В ЦИФРАХ</p>
         </div>
 
@@ -274,7 +274,7 @@
         </div>
 
 
-        <div class="ourOffers dataContact">
+        <div class="ourOffers dataContact" id="contacts">
             <h1>КОНТАКТНЫЕ ДАННЫЕ</h1>
         </div>
 

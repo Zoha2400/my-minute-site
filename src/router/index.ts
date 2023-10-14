@@ -15,7 +15,7 @@ const router = createRouter({
       default: MyProjectsVue,
       navbar: NavBarProj,
     }}
-  ]
-})
+  ],
+  })
 
 export default router

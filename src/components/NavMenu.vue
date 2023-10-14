@@ -33,13 +33,26 @@ import  NavLinks from './NavLinks.vue';
 
 <template>
     <nav class="navbar-menu">
-        <div class="btn">ГЛАВНЫЙ</div>
-        <div class="btn">О НАС</div>
+
+            <a href="#main" class="btn">
+                <div>
+                    ГЛАВНЫЙ 
+                </div>
+            </a>
+            <a href="#aboutUs" class="btn">
+                <div>
+                    О НАС
+                </div>
+            </a>
 
         <RouterLink class="btn" to="/projects">
             <p>ПРОЕКТЫ</p>
         </RouterLink>
-        <div class="btn">КОНТАКТЫ</div>
+            <a href="#contacts" class="btn">
+                <div >
+                    КОНТАКТЫ
+                </div>
+            </a>
 
         <!-- <p>{{ count }}</p> -->
     </nav>
