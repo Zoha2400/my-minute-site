@@ -256,27 +256,28 @@
     position: sticky;
     top: 0;
     z-index: 3;
+    display: none;
+
 
     background-color: red;
+    @media (max-width: 1320px) {
+            display: block !important;
+        
+    }
 }
 
 .adp-menu{
     width: 100%;
     height: 80px;
-
+    display: flex;
     
     background-color: white;
     box-sizing: border-box;
     padding: 10px;
-    display: none;
     justify-content: space-between;
     align-items: center;
 
 
-    @media (max-width: 1320px) {
-            display: flex !important;
-        
-    }
     .buttonApdMenu{
         width: 50px;
         height: 50px;
