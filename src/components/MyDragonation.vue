@@ -5,7 +5,7 @@
 
 <template>
 
-    <div class="draganation" >
+    <div class="draganation" id="up" >
         <img src="../img/photo.svg"/>
         <div class="draganation-absolute">
             <p>ВЫБРАВ ГОТОВЫЙ ПРОЕКТ ДЛЯ ДОМА</p>
