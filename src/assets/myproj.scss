@@ -61,28 +61,61 @@
 
     @media (max-width:1140px) {
       grid-template-areas: 'ip ip ip';
+      .proj{
+        width: 280px !important;
+        
+        img{
+          width: 100% !important;
+          height: auto !important;
+        }
+      }
     }
 
     @media (max-width:865px) {
       .proj{
-        width: 200px !important;
+        width: 220px !important;
+        
+        img{
+          width: auto!important;
+          height: 100% !important;
+        }
       }
     }
     @media (max-width:705px) {
       grid-template-areas: 'ip ip';
+      .proj{
+        width: 240px !important;
+        height: 290px;
+
+        img{
+          width: 100% !important;
+          height: auto !important;
+        }
+      }
     }
     @media (max-width:490px) {
       grid-template-areas: 'ip ip';
       .proj{
-        width: 190px !important;
+        width: 210px !important;
         height: 290px;
       }
     }
     @media (max-width:460px) {
       grid-template-areas: 'ip ip';
+    grid-template-rows: repeat(4, 210px);
+
       .proj{
         width: 170px !important;
+        height: 210px !important;
+        background-color: red;
+        .img-proj{
+          height: 125px !important;
 
+          img{
+            width: 100% !important;
+            height: auto !important;
+          }
+        }
         .name{
           font-size: 18px !important;
         }
@@ -90,14 +123,14 @@
     }
     @media (max-width:430px) {
       grid-template-areas: 'ip ip';
-    grid-template-rows: repeat(4, 250px);
+    grid-template-rows: repeat(4, 210px);
     grid-gap: 10px;
 
       .proj{
         width: 160px !important;
-        height: 250px !important;
+        height: 200px !important;
         .img-proj{
-          height: 245px !important;
+          height: 125px !important;
         }
         .text-proj{
           height: 60px;
@@ -109,14 +142,14 @@
     }
     @media (max-width:390px) {
       grid-template-areas: 'ip ip';
-      grid-template-rows: repeat(4, 220px);
+      grid-template-rows: repeat(4, 120px);
       grid-gap: 10px;
 
       .proj{
         width: 150px !important;
-        height: 220px !important;
+        height: 120px !important;
         .img-proj{
-          height: 245px !important;
+          height: 95px !important;
         }
         .text-proj{
           height: 60px;
@@ -140,8 +173,14 @@
     }
 
     @media (max-width:390px) {
+      grid-template-rows: repeat(4, 200px);
+
       .proj{
         width: 160px !important;
+        height: 200px !important;
+        .img-proj{
+          height: 115px !important;
+        }
       }
     }
 
@@ -149,16 +188,25 @@
       grid-template-rows: repeat(4, 205px);
 
       .proj{
-        width: 130px !important;
+        width: 170px !important;
         height: 205px !important;
+        img{
+          width: auto !important;
+          height: 100% !important;
+        }
       }
     }
     @media (max-width:325px) {
       grid-template-rows: repeat(4, 195px);
 
       .proj{
-        width: 125px !important;
+        width: 137px !important;
         height: 195px !important;
+
+        img{
+          width: auto !important;
+          height:  100%  !important;
+        }
       }
     }
 }
@@ -190,8 +238,8 @@
         border-radius: 15px 15px 0 0;
 
         img{
-            width: 100%;
-            height: auto;
+            width: auto;
+            height: 100%;
         }
     }
 
@@ -360,7 +408,7 @@
       }
       .imgages{
         width: 100%!important;
-        height: 300px !important;
+        height: 500px !important;
 
         img{
           width: 100%;
@@ -433,6 +481,15 @@
     
 }
 
+@media (max-width: 420px) {
+  .imgages{
+
+    img{
+      width: auto !important; 
+      height: 100% !important;
+    }
+  }
+}
 
 .hidden{
     display: none !important;
@@ -456,9 +513,16 @@
   }
 }
 
+
 .swiper{
   height: 100%;
+
   
+  .swpObj{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
 
   img{
     width: 100%;

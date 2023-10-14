@@ -51,7 +51,7 @@ export default {
               @swiper="onSwiper"
               @slideChange="onSlideChange"
               >
-              <swiper-slide v-for="i in $store.state.choosen.images" :key="i.id">
+              <swiper-slide class="swpObj" v-for="i in $store.state.choosen.images" :key="i.id">
               <img :src="i.photo_path" alt="" class="main">
               </swiper-slide>
               </swiper>
