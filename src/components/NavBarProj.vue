@@ -28,7 +28,6 @@ const selectedHund = ref(null);
     <MyStyles/>
 
 
-    <p v-for="el in $store.state.type">{{ el }}</p>
 
     <MyType/>
    
