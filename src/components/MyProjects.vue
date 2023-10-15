@@ -30,6 +30,70 @@ import AdpNav from './AdpNav.vue';
             </p>
         </div>
       </div>
+      <div v-for="proj in $store.getters.filteredData" :key="proj.pk" class="proj" @click="$store.commit('showInfo',proj)">
+        <div class="img-proj">
+            <img :src="proj.main_photo" alt="">
+        </div>
+        <div class="text-proj">
+            <p class="name">
+              ПРОЕКТ № {{ proj.pk }}
+            </p>
+            <p class="area">
+                {{ proj.acres }} соток
+            </p>
+            <p class="cost">
+                <span>{{ proj.cost }}</span> UZS
+            </p>
+        </div>
+      </div>
+      <div v-for="proj in $store.getters.filteredData" :key="proj.pk" class="proj" @click="$store.commit('showInfo',proj)">
+        <div class="img-proj">
+            <img :src="proj.main_photo" alt="">
+        </div>
+        <div class="text-proj">
+            <p class="name">
+              ПРОЕКТ № {{ proj.pk }}
+            </p>
+            <p class="area">
+                {{ proj.acres }} соток
+            </p>
+            <p class="cost">
+                <span>{{ proj.cost }}</span> UZS
+            </p>
+        </div>
+      </div>
+      <div v-for="proj in $store.getters.filteredData" :key="proj.pk" class="proj" @click="$store.commit('showInfo',proj)">
+        <div class="img-proj">
+            <img :src="proj.main_photo" alt="">
+        </div>
+        <div class="text-proj">
+            <p class="name">
+              ПРОЕКТ № {{ proj.pk }}
+            </p>
+            <p class="area">
+                {{ proj.acres }} соток
+            </p>
+            <p class="cost">
+                <span>{{ proj.cost }}</span> UZS
+            </p>
+        </div>
+      </div>
+      <div v-for="proj in $store.getters.filteredData" :key="proj.pk" class="proj" @click="$store.commit('showInfo',proj)">
+        <div class="img-proj">
+            <img :src="proj.main_photo" alt="">
+        </div>
+        <div class="text-proj">
+            <p class="name">
+              ПРОЕКТ № {{ proj.pk }}
+            </p>
+            <p class="area">
+                {{ proj.acres }} соток
+            </p>
+            <p class="cost">
+                <span>{{ proj.cost }}</span> UZS
+            </p>
+        </div>
+      </div>
     </div>
   </div>
 
