@@ -309,10 +309,17 @@
     background-color: rgb(255, 255, 255);
     overflow-y: auto;
     position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
     z-index: 3;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.351);
     right: 0;
     transition: 0.3s ease-in-out;
+    overflow-y: auto;
+    @include scrollbars(2px, rgb(149, 149, 149), white);
+    
+
 
     @media (max-width: 450px) {
         width: 100%;
@@ -330,7 +337,6 @@
 
     .navbar-menu{
         width: 100%;
-        justify-content: center;
         grid-gap: 0;
         margin: 0 0 10px 0;
 
@@ -346,8 +352,12 @@
         width: 100%;
         display: flex !important;
         align-items: center;
+        justify-content: flex-start; 
+        padding: 5px;
 
-
+    }
+    .optTbl{
+        margin-bottom: 70px;
     }
 }
 

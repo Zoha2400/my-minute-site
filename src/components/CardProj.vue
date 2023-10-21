@@ -36,9 +36,14 @@ export default {
 <template>
 
     <div :class="{'info-wrap hidden': $store.state.info, 'info-wrap': !$store.state.info}" @click.self="$store.commit('showInfo', {})">
-        <div class="info">
 
-            <div class="imgages">
+      <div class="inf-scr">
+         <div class="info">
+
+
+
+            <div class="textin-info">
+              <div class="imgages">
               <!-- <img :src="$store.state.choosen.main_photo" alt="" class="main"> -->
               <swiper
               class="swiper"
@@ -48,6 +53,7 @@ export default {
               navigation
               :pagination="{ clickable: true }"
               :scrollbar="{ draggable: true }"
+              :color="white"
               @swiper="onSwiper"
               @slideChange="onSlideChange"
               >
@@ -56,8 +62,6 @@ export default {
               </swiper-slide>
               </swiper>
             </div>
-
-            <div class="textin-info">
               <div class="header-info">
                 <p>ПРОЕКТ № {{ $store.state.choosen.pk }}</p>
               </div>
@@ -81,6 +85,8 @@ export default {
 
             </div>
         </div>
+
+      </div>
 
     </div>
 

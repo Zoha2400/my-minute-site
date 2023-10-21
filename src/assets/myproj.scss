@@ -287,31 +287,40 @@
     width: 100%;
     min-height: 100vh;
     max-height: 100vh;
-    overflow: auto !important;
-    @include scrollbars(0px, rgb(71, 71, 71), #ffffff);
+
     top: 0;
     background-color: rgba(0, 0, 0, 0.411);
     backdrop-filter: blur(5px);
-
     display: flex;
-    justify-content:  center;
+    justify-content: center!important;
     align-items: center;
 
+    overflow: hidden !important;
 
+    
+  .inf-scr{
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+
+    display: flex;
+    justify-content: flex-start!important;
+    align-items: center !important;      
+    @include scrollbars(2px, black, white);
+    overflow-y: scroll !important;
+  }
     
 
     .info{
-      width: 900px !important;
-      height: 500px !important;
-        position: relative;
+    
         width: auto;
-        height: auto;
+        height: auto !important;
         background-color: white;
         display: flex;
-        justify-content: flex-start;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
         align-items: center;
         position: relative;
-        overflow: hidden;
 
         .inpButton{
           font-size: 18px;
@@ -323,26 +332,23 @@
           color: white;
           background-color: #DB3726;
           grid-area: 't';
-
+        
         }
 
         .body-info{
           width: 100%;
-
+          height: auto !important;
         }
         
         .btn-card{
           width: 90%;
-          height: 90px;
-          position: static;
+          height: 180px;
           font-size: 13px !important;
-          bottom: 0;
+
           display: grid;
-          grid-template-areas: 't t';
           grid-gap: 5px;
           grid-template-rows: repeat(2, 40px);
-          align-items: flex-end;
-          margin-bottom: 5px;
+          margin-bottom: 15px;
           input{
             height: 25px;
             border-radius: 10px;
@@ -366,13 +372,13 @@
         .textin-info{
 
           width: 100%;
-          height: 100%;
+          height: auto!important;
           display: flex;
           flex-direction: column;
           justify-content: space-around;
           align-items: center;
-
           position: relative;
+          overflow: hidden !important;
           
 
           @include scrollbars(2px, rgb(71, 71, 71), #ffffff);
@@ -402,11 +408,9 @@
           .footer-info{
             box-sizing: border-box; 
             width: 100%;
-            min-height: 100px;
-            max-height: 200px;
-            overflow-y: auto;
-            overflow-x: hidden;
+            height: auto !important;
             word-break: break-all;
+
             padding: 15px;
             color: #213563;
             border-radius: 0 !important;
@@ -420,7 +424,6 @@
       .textin-info{ width: 550px !important;}
     }
     @media (max-width: 1370px) {
-      .info{height: 400px !important;}
       .textin-info{ width: 500px !important;}
       .imgages{width: 400px !important;
         img{
@@ -432,12 +435,10 @@
 
     }
     @media (max-width: 1320px) {
-      .info{height: 500px !important;}
       .textin-info{ width: 600px !important;}
       .imgages{width: 500px !important;}
     }
     @media (max-width: 1170px) {
-      .info{height: 400px !important;}
       .textin-info{ width: 500px !important;}
       .imgages{width: 400px !important;}
     }
@@ -464,20 +465,17 @@
 
     @media (max-width: 550px) {
         position: fixed !important;
-        min-height: 0;
+        min-height: 100vh;
         max-height: 100vh;
 
       .info{
         width: 100%;
-        height: 100vh !important;
-        overflow-y: auto;
+
         flex-direction: column !important;
         margin-top: 80px;
       }
       .textin-info{ 
         width: 100% !important;
-        height: auto!important;
-        overflow-y: hidden;
         display: flex;
         flex-direction: column;
         justify-content: flex-start !important;
@@ -521,13 +519,14 @@
 
 .imgages{
   width: 550px !important;
-  height: 100%;
+  height: 450px !important;
   overflow: hidden;
   z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  margin-top: 400px;
 
   img{
     height: 100% !important;

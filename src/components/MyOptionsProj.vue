@@ -1,6 +1,6 @@
 <template>
 
-<div class="style-lable area">
+<div class="style-lable area optTbl">
     <p>Соток</p>
 
     <div class="btn-cont">
@@ -26,7 +26,7 @@
     </div>
 
 
-  </div>
+</div>
     
 </template>
     
