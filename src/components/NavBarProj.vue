@@ -31,7 +31,6 @@ const selectedHund = ref(null);
 
     <MyStyles/>
 
-    {{  $store.state.type.num   }}
 
     <MyType/>
     
