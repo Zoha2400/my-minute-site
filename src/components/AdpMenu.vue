@@ -11,7 +11,7 @@
 import NavMenu from './NavMenu.vue'
 
 </script>
-
+    
 <style>
 
 @import url('../assets/navbar.scss');

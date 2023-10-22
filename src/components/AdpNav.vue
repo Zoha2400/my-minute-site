@@ -8,11 +8,8 @@ import AdpMenu from './AdpMenu.vue';
 </script>
 
 
-
 <template>
-
     <div class="adp-menu-wrap noneAdp">
-
                 <div class="adp-menu ">
                     <div class="imageAdp">
                     <img :src="iconMini"/>
