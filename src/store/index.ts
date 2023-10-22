@@ -9,6 +9,7 @@ interface State {
         plot: string,
         area: string,
         acres: string,
+        num: number
     },
     arcesChsn: boolean,
     adpMenu: boolean
@@ -38,6 +39,7 @@ export default createStore({
             plot: '',
             size: '',
             acres: '',
+            num: null,
         },
         arcesChsn: false,
         adpMenu: true
@@ -87,12 +89,13 @@ export default createStore({
     },
     getters: {
       filteredData(state: State) {
-        const { style, plot, size, acres } = state.type;
+        const { style, plot, size, acres, num } = state.type;
     
         // Фильтруем массив data по всем четырем параметрам
         return state.data.filter((item) => {
           const isStyleMatch = !style || item.style === style;
           const isPlotMatch = !plot || item.plot === plot;
+          const isNumber = !num || +item.pk === +num;
     
 
           const [xValue, yValue] = item.size.split('x').map(parseFloat);
@@ -104,7 +107,7 @@ export default createStore({
           // Проверяем приблизительное значение acres
           const isAcresMatch = !acres || Math.abs(+item.acres - acres) <= 2;
     
-          return isStyleMatch && isPlotMatch && isAreaMatch && isAcresMatch;
+          return isStyleMatch && isPlotMatch && isAreaMatch && isAcresMatch && isNumber;
         });
       },
     },

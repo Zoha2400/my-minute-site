@@ -31,9 +31,21 @@ const selectedHund = ref(null);
 
     <MyStyles/>
 
-
+    {{  $store.state.type.num   }}
 
     <MyType/>
+    
+    <div class="style-lable area">
+        <p>Номер проекта</p>
+
+        <div class="area-items">
+            <input type="number" id="mt2" placeholder="1000" v-model="$store.state.type.num">
+            <button @click="$store.commit('setArea', selectedAreaM+'x'+selectedAreaA )">OK</button>
+            <button class="back" @click="$store.commit('backArea')">Отм</button>
+        </div>
+
+      </div>
+
    
   <div class="style-lable area">
     <p>Участок</p>
