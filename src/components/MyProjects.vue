@@ -95,6 +95,12 @@ import AdpNav from './AdpNav.vue';
         </div>
       </div>
     </div>
+    
+    <div class="choosen-attr">
+        <p class="p-attr" v-for="chsn in $store.state.type">
+            {{chsn}}
+        </p>
+    </div>
   </div>
 
   <MyFooter/>
@@ -103,6 +109,7 @@ import AdpNav from './AdpNav.vue';
 
 <style>
 
+@import url('../assets/choosen.scss');
 @import url('../assets/myproj.scss');
 
 </style>

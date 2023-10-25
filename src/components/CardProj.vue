@@ -75,40 +75,7 @@ export default {
                   </div>
 
                   <div class="footer-info">
-<!--                     {{ $store.state.choosen.data }} -->
-                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
-                        cccccccccccccccccccccccccccccc                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-                        cccccccccccccccccccccccccccccc
-v
+                     {{ $store.state.choosen.data }} 
                   </div>
                   <div class="btn-card">
                     <input type="text" class="rgt" placeholder="Имя"/>

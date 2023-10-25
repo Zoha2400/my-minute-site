@@ -39,7 +39,7 @@ export default createStore({
             plot: '',
             size: '',
             acres: '',
-            num: null,
+            num: '',
         },
         arcesChsn: false,
         adpMenu: true
@@ -102,10 +102,10 @@ export default createStore({
 
           // Парсим значение из строки area и проверяем, находятся ли xValue и yValue в заданных пределах
           const [targetX, targetY] = size.split('x').map(parseFloat);
-          const isAreaMatch = !size || ((Math.abs(+xValue - +targetX) <= 2 ) && (Math.abs(+yValue - +targetY) <= 2 ));
+          const isAreaMatch = !size || ((Math.abs(+xValue - +targetX) <= 1 ) && (Math.abs(+yValue - +targetY) <= 1 ));
 
           // Проверяем приблизительное значение acres
-          const isAcresMatch = !acres || Math.abs(+item.acres - acres) <= 2;
+          const isAcresMatch = !acres || Math.abs(+item.acres - acres) <= 1;
     
           return isStyleMatch && isPlotMatch && isAreaMatch && isAcresMatch && isNumber;
         });

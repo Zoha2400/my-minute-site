@@ -1,0 +1,25 @@
+.choosen-attr{
+    width: 150px;
+    height: auto;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    transition: 0.3s;
+    margin: 5px 15px;
+    grid-gap: 2px;
+//    right: -130px;
+    
+    .p-attr{
+        transition: 2s;
+        padding: 2px;
+        background-color: grey;
+        box-sizing: border-box;
+    }
+}
+
