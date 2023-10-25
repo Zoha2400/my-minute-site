@@ -62,26 +62,61 @@ export default {
               </swiper-slide>
               </swiper>
             </div>
-              <div class="header-info">
-                <p>ПРОЕКТ № {{ $store.state.choosen.pk }}</p>
-              </div>
-              <div class="body-info">
-                <p>Размер: {{ $store.state.choosen.size }}</p>
-                <p>Площадь: {{ $store.state.choosen.area }}</p>
-                <p>Cоток: {{ $store.state.choosen.acres }}</p>
-                <p>Стиль: {{ $store.state.choosen.style }}</p>
-              </div>
 
-              <div class="footer-info">
-                 {{ $store.state.choosen.data }} 
-                
-              </div>
-              <div class="btn-card">
-                <input type="text" class="rgt" placeholder="Имя"/>
-                <input type="text" class="lft" placeholder="Номер Телефона"/>
-                <p> {{ $store.state.choosen.cost }} СУМ</p>
-                <button class="inpButton">Оставить Заявку</button>
-              </div>
+            <div class="cont-info">
+                 <div class="header-info">
+                    <p>ПРОЕКТ № {{ $store.state.choosen.pk }}</p>
+                  </div>
+                  <div class="body-info">
+                    <p>Размер: {{ $store.state.choosen.size }}</p>
+                    <p>Площадь: {{ $store.state.choosen.area }}</p>
+                    <p>Cоток: {{ $store.state.choosen.acres }}</p>
+                    <p>Стиль: {{ $store.state.choosen.style }}</p>
+                  </div>
+
+                  <div class="footer-info">
+<!--                     {{ $store.state.choosen.data }} -->
+                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+                        qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+                        cccccccccccccccccccccccccccccc                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+                        cccccccccccccccccccccccccccccc
+v
+                  </div>
+                  <div class="btn-card">
+                    <input type="text" class="rgt" placeholder="Имя"/>
+                    <input type="text" class="lft" placeholder="Номер Телефона"/>
+                    <p> {{ $store.state.choosen.cost }} СУМ</p>
+                    <button class="inpButton">Оставить Заявку</button>
+                  </div>
+            </div>
 
             </div>
         </div>
