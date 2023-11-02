@@ -13,13 +13,23 @@
     transition: 0.3s;
     margin: 5px 15px;
     grid-gap: 2px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px #141414;
+
 //    right: -130px;
     
     .p-attr{
         transition: 2s;
-        padding: 2px;
-        background-color: grey;
+        padding: 4px;
+        background-color: #ffffff;
         box-sizing: border-box;
+        position: relative;
+    }
+    .noneattr{
+        display: none !important;
+        position: absolute;
+        right: 150px !important;
     }
 }
 

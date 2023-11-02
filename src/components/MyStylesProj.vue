@@ -7,7 +7,7 @@
         type="radio"
         v-model="selectedStyle"
         :value="style.id"
-        class="radio-input"
+       class="radio-input"
         name="style"
       />
       <span class="radio-text" >{{ style.name }}</span>

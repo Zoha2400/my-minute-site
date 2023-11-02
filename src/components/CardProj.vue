@@ -62,6 +62,7 @@ export default {
               </swiper-slide>
               </swiper>
             </div>
+            
 
             <div class="cont-info">
                  <div class="header-info">

@@ -9,19 +9,10 @@ import MyOptions from './MyOptionsProj.vue';
 
 const selectedAreaM = ref(0);
 const selectedAreaA = ref(0);
-const selectedArces = ref(0);
-const selectedHund = ref(null);
-
-
-
 </script>
 
 
 <template> 
-
-
-
-
     <nav class="navbar-menu">
         <RouterLink class="btn clickedNav" to="/">
             <Icon icon="material-symbols:arrow-back" width="23"/>
@@ -30,7 +21,6 @@ const selectedHund = ref(null);
 
 
     <MyStyles/>
-
 
     <MyType/>
     

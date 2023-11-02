@@ -4,12 +4,10 @@ import CardProjVue from './CardProj.vue';
 import MyFooter from './MyFooter.vue';
 import AdpNav from './AdpNav.vue';
 
-
 </script>
 
 <template>
   <CardProjVue/>
-
 
   <div class="container-wrap my-projects-wrp" id="up">
     <div class="container-proj my-projects">
@@ -97,7 +95,7 @@ import AdpNav from './AdpNav.vue';
     </div>
     
     <div class="choosen-attr">
-        <p class="p-attr" v-for="chsn in $store.state.type">
+        <p :class="{'p-attr noneattr': !chsn, 'p-attr': chsn}" v-for="chsn in $store.state.type" :key="chsn">
             {{chsn}}
         </p>
     </div>

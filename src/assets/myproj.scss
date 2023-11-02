@@ -540,11 +540,7 @@
       }
       .imgages{
         width: 100% !important;
-        min-height: 300px !important;
-        img{
-          width: 100%;
-          height: auto;
-        }
+        max-height: 500px !important;
       }
     }
     
@@ -572,11 +568,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+      overflow: hidden;
 
   img{
-    height: 100% !important;
-    width: auto !important;
+    height: 100%;
+    width: auto;
   }
 }
 
@@ -590,17 +586,21 @@
 
 .swiper{
     width: 500px;
-  height: 100%;
+    height: 100%;
 
   
   .swpObj{
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
+    overflow: hidden;
   }
 
   img{
     width: 100%;
     height: auto;
+        display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
 }

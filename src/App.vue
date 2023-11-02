@@ -7,10 +7,9 @@ import MyContent from './components/MyContent.vue'
 <template>
   <div class="all-wrapper">
     <NavBar />
-    <MyContent />
+    <MyContent /> 
   </div>
-</template>
-
+</template>    
 <style lang="scss">
 @import url('./assets/style.scss');
-</style>
+</style>  
