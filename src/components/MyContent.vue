@@ -2,6 +2,7 @@
 import MyDragonation from './MyDragonation.vue'
 import WhoCanUseVue from './WhoCanUse.vue'
 import AdpNav from './AdpNav.vue'
+import RegPageVue from './RegPage.vue';
 </script>
 
 <template>
@@ -10,6 +11,8 @@ import AdpNav from './AdpNav.vue'
       <AdpNav />
 
       <router-view></router-view>
+
+
     </div>
   </div>
 </template>

@@ -272,6 +272,9 @@
         }
         .cost{
             color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             
             span{
                 font-weight: 700;
@@ -470,41 +473,41 @@
     @media (max-width: 1480px) {
     }
     @media (max-width: 1370px) {
-      .textin-info{ width: 500px !important;}
-      .imgages{width: 400px !important;
-        img{
-          height: 100% !important; 
-          width: auto !important;
-        }
-      }
+      // .textin-info{ width: 500px !important;}
+      // .imgages{width: 400px !important;
+      //   img{
+      //     height: 100% !important; 
+      //     width: auto !important;
+      //   }
+      // }
 
 
     }
-    @media (max-width: 1320px) {
-      .imgages{width: 500px !important;}
-    }
-    @media (max-width: 1170px) {
-      .imgages{width: 400px !important;}
-    }
+    // @media (max-width: 1320px) {
+    //   .imgages{width: 500px !important;}
+    // }
+    // @media (max-width: 1170px) {
+    //   .imgages{width: 400px !important;}
+    // }
 
-    @media (max-width: 950px) {
-      .info{
-        width: 750px !important;
-        position: relative;
-        height: auto !important;
+    // @media (max-width: 950px) {
+    //   .info{
+    //     width: 800px !important;
+    //     position: relative;
+    //     height: auto !important;
         
-      }
-      .imgages{
-        width: 300px!important;
-        height: auto!important;
+    //   }
+    //   .imgages{
+    //     width: 500px!important;
+    //     height: auto!important;
 
-        img{
-          width: 100%;
-          height: auto;
-        }
-      }
-      .textin-info{ width: 450px!important; height: 300px !important; overflow-y: auto !important; padding-bottom: 60px !important;}
-    }
+    //     img{
+    //       width: 100%;
+    //       height: auto;
+    //     }
+    //   }
+    //   .textin-info{ width: 300px!important; height: 300px !important; overflow-y: auto !important; padding-bottom: 60px !important;}
+    // }
 
 
     @media (max-width: 740px) {
