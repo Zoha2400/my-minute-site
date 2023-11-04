@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
 
+
 </script>
 
 
@@ -13,10 +14,10 @@ import { Icon } from '@iconify/vue';
     </nav>
 
     <RouterLink class="btn-in" to="/reg">
-        <p>Регистрация</p>
+        <p :class="{'picked': $route.path == '/reg', '': $route.path != '/reg'}">Регистрация</p>
     </RouterLink>
     <RouterLink class="btn-in" to="/login">
-        <p>Вход</p>
+        <p :class="{'picked': $route.path == '/login', '': $route.path != '/login'}">Вход</p>
     </RouterLink>
 
 

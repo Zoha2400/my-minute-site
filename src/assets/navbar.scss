@@ -318,6 +318,9 @@
     transition: 0.3s ease-in-out;
     overflow-y: auto;
     @include scrollbars(2px, rgb(149, 149, 149), white);
+    overflow-x: hidden;
+    padding-bottom: 5px;
+    border-radius: 0 !important;
     
 
 
@@ -359,6 +362,14 @@
     .optTbl{
         margin-bottom: 70px;
     }
+
+    .btn-in{
+        justify-content: center;
+        margin: 3px;
+        p{
+            border-radius: 10px;
+        }
+    }
 }
 
 
@@ -372,7 +383,7 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
-    margin: 5px;
+    margin: 5px 0;
 
     p{
         width: 85%;
@@ -393,4 +404,9 @@
             color: white;
         }
     }
+}
+
+.picked{
+    background-color: #DB3726 !important;
+    color: white !important;
 }

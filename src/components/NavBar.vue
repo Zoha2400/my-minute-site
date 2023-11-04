@@ -1,6 +1,5 @@
 <script setup lang="ts">
     import icon from '../img/icon.svg';
-    import  NavLinks from './NavLinks.vue';
 </script>
 
 <template>
