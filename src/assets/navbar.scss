@@ -366,3 +366,31 @@
     display: none;
 }
 
+
+
+.btn-in{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+
+    p{
+        width: 85%;
+        color: #132244;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 5px 0 0 5px;
+
+        transition: 0.5s ease-in-out;
+        font-size: 15px;
+        font-weight: 700;
+        background-color: rgb(216, 216, 216);
+
+
+
+        &:hover{
+            background-color: #DB3726;
+            color: white;
+        }
+    }
+}
