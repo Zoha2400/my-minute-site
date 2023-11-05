@@ -7,22 +7,24 @@ import RegPageVue from '@/components/RegPage.vue';
 import LogPageVue from '@/components/LogPage.vue';
 import RegLogBarVue from '@/components/RegLogBar.vue';
 
+
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    {path: '/', components: {
+    {path: '/', name: 'home',components: {
       default: WhoCanUseVue,
       navbar: NavManu,
     }},
-    {path: '/projects', components: {
+    {path: '/projects', name: 'projects', components: {
       default: MyProjectsVue,
       navbar: NavBarProj,
     }},
-    {path: '/reg', components: {
+    {path: '/reg',name: 'registration', components: {
       default: RegPageVue,
       navbar: RegLogBarVue,
     }},
-    {path: '/login', components: {
+    {path: '/login', name: 'login', components: {
       default: LogPageVue,
       navbar: RegLogBarVue,
     }}
