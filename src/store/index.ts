@@ -14,6 +14,10 @@ interface State {
     arcesChsn: boolean,
     adpMenu: boolean,
     choosenDisplay: string[],
+    posts: {
+        reg: string,
+        log: string,
+    }
 }
 
 let data;
@@ -44,7 +48,11 @@ export default createStore({
         },
         arcesChsn: false,
         adpMenu: true,
-        choosenDisplay: []
+        choosenDisplay: [],
+        posts: {
+            reg: 'https://1111-188-113-196-253.ngrok-free.app/api/registration/',
+            log: 'https://1111-188-113-196-253.ngrok-free.app/api/login/',
+        }
     },
     mutations: {
         showInfo(state: State, obj: Object) {
