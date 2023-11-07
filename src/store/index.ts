@@ -13,6 +13,7 @@ interface State {
         acres: string,
         num: number
     },
+    isEmptyType: boolean,
     arcesChsn: boolean,
     adpMenu: boolean,
     choosenDisplay: string[],
@@ -49,6 +50,7 @@ export default createStore({
             acres: '',
             num: '',
         },
+        isEmptyType: false,
         arcesChsn: false,
         adpMenu: true,
         choosenDisplay: [],
@@ -113,7 +115,9 @@ export default createStore({
             state.type.size = '';
             state.type.num = 0;
             state.type.plot = '';
-        }
+        },
+
+
 
     },
     actions: {
