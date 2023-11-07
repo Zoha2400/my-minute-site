@@ -614,21 +614,3 @@
 
 
 
-
-.buttonBack{
-  width: 100%;
-  padding: 2px;
-  border: none;
-  outline: none;
-  background-color: white;
-  color: #213563;
-  border-radius: 3px;
-  font-size: 13px;
-  font-weight: 300;
-  transition: 0.3s ease-in-out;
-
-  &:hover{
-    background-color: #DB3726;
-    color: white;
-  }
-}
