@@ -33,7 +33,7 @@ const selectedAreaA = ref(0);
             <button class="back" @click="$store.commit('backArea')">Отм</button>
         </div>
 
-      </div>
+    </div>
 
    
   <div class="style-lable area">

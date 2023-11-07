@@ -3,3 +3,34 @@
     height: 40px;
     background-color: red;
 }
+
+.cart-account{
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    margin: 15px;
+    color: white;
+}
+
+.account-viev{
+    display: flex;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.avatar{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(209, 209, 209);
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    position: relative;
+}
+
+.icon-avatar{
+    position: absolute;
+    bottom: -10px;
+}
