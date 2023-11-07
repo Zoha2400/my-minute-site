@@ -6,7 +6,8 @@ import NavManu from '@/components/NavMenu.vue';
 import RegPageVue from '@/components/RegPage.vue';
 import LogPageVue from '@/components/LogPage.vue';
 import RegLogBarVue from '@/components/RegLogBar.vue';
-
+import MyAccountVue from '@/components/MyAccount.vue';
+import MyAccountNavVue from '@/components/MyAccountNav.vue';
 
 
 const router = createRouter({
@@ -27,7 +28,12 @@ const router = createRouter({
     {path: '/login', name: 'login', components: {
       default: LogPageVue,
       navbar: RegLogBarVue,
-    }}
+    }},
+    {path: '/account', name: 'account', components: {
+      default: MyAccountVue,
+      navbar: MyAccountNavVue,
+    }},
+    
   ],
   })
 

@@ -17,7 +17,8 @@ interface State {
     posts: {
         reg: string,
         log: string,
-    }
+    },
+    logged: boolean,
 }
 
 let data;
@@ -52,7 +53,8 @@ export default createStore({
         posts: {
             reg: 'https://1111-188-113-196-253.ngrok-free.app/api/registration/',
             log: 'https://1111-188-113-196-253.ngrok-free.app/api/login/',
-        }
+        },
+        logged: false,
     },
     mutations: {
         showInfo(state: State, obj: Object) {
@@ -101,7 +103,16 @@ export default createStore({
                 }
             })
             state.choosenDisplay.push(element);
+        },
+
+        clearAll(state: State) {
+            state.type.style = '';
+            state.type.acres = '';
+            state.type.size = '';
+            state.type.num = 0;
+            state.type.plot = '';
         }
+
     },
     actions: {
     },
@@ -128,6 +139,12 @@ export default createStore({
                 return isStyleMatch && isPlotMatch && isAreaMatch && isAcresMatch && isNumber;
             });
         },
+
+        getIsLogged(state: State) {
+            state.logged = !state.logged;
+
+            return state.logged;
+        }
     },
 
     modules: {},

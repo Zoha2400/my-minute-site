@@ -36,6 +36,7 @@ import AdpNav from './AdpNav.vue';
         <p :class="{'p-attr noneattr': !chsn, 'p-attr': chsn}" v-for="chsn in $store.state.type" :key="chsn">
             {{chsn}}
         </p>
+        <button class="buttonBack" @click="$store.commit('clearAll')">Отмена</button>
     </div>
   </div>
 
