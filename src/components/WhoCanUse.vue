@@ -6,19 +6,8 @@
     import { ref } from 'vue';
     import MyDragonation from './MyDragonation.vue';
     import MyFooter from './MyFooter.vue';
+    import MyProjects from './MyProjects.vue';
 
-    // export default  {
-    //     data() {
-    //         return {
-    //             iframeSrc: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2998.416743648826!2d69.2149025!3d41.2780337!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b863b3aaa6d%3A0xda62a6ffa353cae7!2sART%20DECO%20DESIGN!5e0!3m2!1sru!2s!4v1695546202261!5m2!1sru!2s"
-    //         };
-    //     },
-    //     methods: {
-    //         changeSrc() {
-    //             this.iframeSrc = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d189.95246291605815!2d71.7825938!3d40.3813863!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bb835f7834e053%3A0xe9f8402c3e4e1953!2zOVFKTStINDQsINCk0LXRgNCz0LDQvdCw!5e0!3m2!1sru!2s!4v1695555359219!5m2!1sru!2s";
-    //         }
-    //     }
-    // };
 
     let datal = ref("https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2998.416743648826!2d69.2149025!3d41.2780337!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b863b3aaa6d%3A0xda62a6ffa353cae7!2sART%20DECO%20DESIGN!5e0!3m2!1sru!2s!4v1695546202261!5m2!1sru!2s"); 
     let dataChekcer1 = ref(true);
