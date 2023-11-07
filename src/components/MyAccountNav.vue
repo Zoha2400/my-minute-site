@@ -13,7 +13,11 @@
                 <p>admin@gmail.com</p>
             </div>
         </div>
+        <RouterLink class="btn quit" to="/">
+            <p>ВЫЙТИ</p>
+        </RouterLink>
     </nav>
+
 </template>
 
 <script setup lang="ts">

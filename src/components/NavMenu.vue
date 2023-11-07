@@ -29,9 +29,6 @@ import  NavLinks from './NavLinks.vue';
             <RouterLink class="btn" to="/account">
                 <p>АККАУНТ</p>
             </RouterLink>
-            <RouterLink class="btn" to="/cart">
-                <p>КОРЗИНА</p>
-            </RouterLink>
 
         <!-- <p>{{ count }}</p> -->
     </nav>

@@ -34,3 +34,12 @@
     position: absolute;
     bottom: -10px;
 }
+
+.quit{
+    font-size: 12px !important;  
+
+    &:hover{
+        background-color: rgb(62, 62, 62);
+        color: color;
+    }
+}
