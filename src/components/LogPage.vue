@@ -14,12 +14,15 @@
   
 <script setup lang="ts">
   import { ref } from 'vue';
+  import { useRouter } from 'vue-router'
 
   
   const formData = ref({
     username: '',
     password: ''
   });
+
+  const router = useRouter();
   
   const register = () => {
     const requestOptions = {
