@@ -22,7 +22,6 @@
     <div class="inp-choos">
         <input type="number" id="mt1" placeholder="0" v-model="selectedArces">
         <button  @click="$store.commit('setAcres', selectedArces)">OK</button>
-        <button class="back" @click="$store.commit('backArces')">Отм</button>
     </div>
 
 

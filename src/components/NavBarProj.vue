@@ -30,7 +30,6 @@ const selectedAreaA = ref(0);
         <div class="area-items">
             <input type="number" id="mt2" placeholder="1000" v-model="$store.state.type.num">
             <button @click="$store.commit('setArea', selectedAreaM+'x'+selectedAreaA )">OK</button>
-            <button class="back" @click="$store.commit('backArea')">Отм</button>
         </div>
 
     </div>
@@ -44,7 +43,6 @@ const selectedAreaA = ref(0);
         x
         <input type="number" id="mt2" placeholder="1000" v-model="selectedAreaA">
         <button @click="$store.commit('setArea', selectedAreaM+'x'+selectedAreaA )">OK</button>
-        <button class="back" @click="$store.commit('backArea')">Отм</button>
     </div>
     
   </div>

@@ -1,6 +1,8 @@
 import { createStore } from "vuex";
 
 interface State {
+    data: Object,
+    getterData: Object,
     counter: number,
     choosen: Object,
     info: boolean,
@@ -119,7 +121,6 @@ export default createStore({
     getters: {
         filteredData(state: State) {
             const { style, plot, size, acres, num } = state.type;
-
             // Фильтруем массив data по всем четырем параметрам
             return state.data.filter((item) => {
                 const isStyleMatch = !style || item.style === style;

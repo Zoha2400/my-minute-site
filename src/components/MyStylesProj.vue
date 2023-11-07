@@ -29,7 +29,6 @@ const styles = [
   { id: 3, name: "Модерн", data: "Модерн" },
   { id: 4, name: "Хай-тек", data: "Хай-тек" },
   { id: 5, name: "Райт", data: "Райт" },
-  { id: 6, name: "Отмена", data: "" },
 ];
 
 </script>
