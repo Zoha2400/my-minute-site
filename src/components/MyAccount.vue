@@ -1,5 +1,5 @@
 <template>
-    <div :class="{'account' : $state.getters.getIsLogged, 'account hidden' : !$state.getters.getIsLogged}">
+    <div :class="{'account' : $store.getters.getIsLogged, 'account hdn' : !$store.getters.getIsLogged}">
 
         Curva
         
@@ -11,5 +11,7 @@
 </script>
 
 <style>
+
+@import url('../assets/account.scss');
 
 </style>
