@@ -7,7 +7,7 @@ import store from '@/store'
 
 const router = useRouter()
 
-if (!store.state.logged) {
+if (store.state.logged) {
   router.push('/reg')
 }
 </script>
