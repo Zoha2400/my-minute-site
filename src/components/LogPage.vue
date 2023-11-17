@@ -35,12 +35,14 @@ const isFormValid = () => {
   }
 }
 
+let tp: string = 'data'
+
 const loginTest = () => {
   // eslint-disable-next-line no-constant-condition
   if (true) {
     router.push('/')
     console.log('ok')
-    store.commit('setLogged', { value: formData.value.username, days: 30 })
+    store.commit('setLogged', tp)
     return 'ok'
   }
   console.log('not ok')

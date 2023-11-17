@@ -119,11 +119,11 @@ export default createStore({
       state.type.plot = ''
     },
 
-    setLogged(state: State, value: string, days: number) {
+    setLogged(value: string) {
       const expires = new Date()
-      expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000)
-      document.cookie = `account=${value};expires=${expires.toUTCString()};path=/`
-      state.logged = true
+      const encodedValue = encodeURIComponent(value)
+      expires.setTime(expires.getTime() + 60 * 24 * 60 * 60 * 1000)
+      document.cookie = `account=${encodedValue};expires=${expires.toUTCString()};path=/`
     },
     setUnLogged(state: State) {
       state.logged = false
