@@ -1,5 +1,4 @@
 import { createStore } from 'vuex'
-import Cookies from 'js-cookie'
 
 interface State {
   data: Object
@@ -59,8 +58,8 @@ export default createStore({
       reg: 'https://1111-188-113-196-253.ngrok-free.app/api/registration/',
       log: 'https://1111-188-113-196-253.ngrok-free.app/api/login/'
     },
-    logged: false,
-    cookies: Cookies.get('account') || null
+    logged: false
+    // cookies: Cookies.get('account') || null
   },
   mutations: {
     showInfo(state: State, obj: Object) {
@@ -120,8 +119,11 @@ export default createStore({
       state.type.plot = ''
     },
 
-    setLogged(value: string, days: number) {
-      Cookies.set('account', value, { expires: days })
+    setLogged(state: State, value: string, days: number) {
+      const expires = new Date()
+      expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000)
+      document.cookie = `account=${value};expires=${expires.toUTCString()};path=/`
+      state.logged = true
     },
     setUnLogged(state: State) {
       state.logged = false

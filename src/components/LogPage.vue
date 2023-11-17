@@ -2,7 +2,7 @@
   <div class="reg-wrap">
     <div class="reg">
       <h2>Войти</h2>
-      <form @submit.prevent="register">
+      <form @submit.prevent="loginTest">
         <input type="email" v-model="formData.username" placeholder="admin@gmail.com" />
         <input type="password" v-model="formData.password" placeholder="12345678" />
         <button type="submit">Войти</button>
@@ -15,13 +15,39 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import store from '@/store'
+
+const router = useRouter()
 
 const formData = ref({
   username: '',
   password: ''
 })
 
-const register = () => {
+let isValid: boolean
+const isFormValid = () => {
+  if (formData.value.username.includes('@') && formData.value.password.length >= 8) {
+    isValid = true
+    console.log(isValid)
+  } else {
+    isValid = false
+    console.log(isValid)
+  }
+}
+
+const loginTest = () => {
+  // eslint-disable-next-line no-constant-condition
+  if (true) {
+    router.push('/')
+    console.log('ok')
+    store.commit('setLogged', { value: formData.value.username, days: 30 })
+    return 'ok'
+  }
+  console.log('not ok')
+  return 'no'
+}
+
+const login = () => {
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
