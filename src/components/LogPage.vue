@@ -4,7 +4,7 @@
       <h2>Войти</h2>
       <form @submit.prevent="loginTest">
         <input type="email" v-model="formData.username" placeholder="admin@gmail.com" />
-        <input type="password" v-model="formData.password" placeholder="12345678" />
+        <input type="password" v-model="formData.password" placeholder="password" />
         <button type="submit">Войти</button>
       </form>
       <p>Еще нет аккаунта? <RouterLink to="/reg">Создайте его!</RouterLink></p>
@@ -39,7 +39,7 @@ const isFormValid = () => {
 const loginTest = () => {
   // eslint-disable-next-line no-constant-condition
   if (true) {
-    router.replace('/')
+    window.location.href = '/';
     console.log('ok')
 
     const expires = new Date()

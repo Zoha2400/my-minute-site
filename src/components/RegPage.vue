@@ -13,11 +13,11 @@
           type="password"
           @change="isFormValid"
           v-model="formData.password"
-          placeholder="12345678"
+          placeholder="password"
         />
         <button type="submit">Зарегистрироваться</button>
       </form>
-      <p>Уже есть аккаунт? <RouterLink to="/login">Зайти!</RouterLink></p>
+      <p>Уже есть аккаунт? <RouterLink to="/login">Войти!</RouterLink></p>
     </div>
   </div>
 </template>
