@@ -1,5 +1,24 @@
 import { createStore } from 'vuex'
 
+
+function getCookie() {
+    const name = "account=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const cookieArray = decodedCookie.split(';');
+
+    for(let i = 0; i < cookieArray.length; i++) {
+        const cookie = cookieArray[i].trim();
+        if (cookie.indexOf(name) == 0) {
+            return cookie.substring(name.length, cookie.length);
+        }
+    }
+
+    return '';
+}
+
+
+
+
 interface State {
   data: Object
   getterData: Object
@@ -21,7 +40,8 @@ interface State {
     reg: string
     log: string
   }
-  logged: boolean
+  logged: boolean,
+  cookie: string
 }
 
 let data
@@ -58,7 +78,8 @@ export default createStore({
       reg: 'https://1111-188-113-196-253.ngrok-free.app/api/registration/',
       log: 'https://1111-188-113-196-253.ngrok-free.app/api/login/'
     },
-    logged: false
+    logged: false,
+    cookie: getCookie(),
     // cookies: Cookies.get('account') || null
   },
   mutations: {
