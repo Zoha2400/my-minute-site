@@ -13,15 +13,19 @@
                 <p>admin@gmail.com</p>
             </div>
         </div>
-        <RouterLink class="btn quit" to="/">
+        <a class="btn quit" href="/" @click="deleteCookie">
             <p>ВЫЙТИ</p>
-        </RouterLink>
+        </a>
     </nav>
 
 </template>
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue';
+
+function deleteCookie() {
+    document.cookie = "account=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;"
+}
 </script>
 
 <style>

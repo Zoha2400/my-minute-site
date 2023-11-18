@@ -45,7 +45,7 @@ const loginTest = () => {
 
     const expires = new Date()
     const encodedValue = encodeURIComponent(formData.value.username)
-    expires.setTime(expires.getTime() + 60 * 24 * 60 * 60 * 1000)
+    expires.setTime(expires.getTime() + 150 * 24 * 60 * 60 * 1000)
     document.cookie = `account=${encodedValue};expires=${expires.toUTCString()};path=/`
     return 'ok'
   }
