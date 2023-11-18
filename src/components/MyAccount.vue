@@ -11,7 +11,7 @@ if (store.state.logged) {
   router.push('/reg')
 }
 
-console.log(store.state.cookie)
+// console.log(store.state.cookie)
 </script>
 
 <template>
