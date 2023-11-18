@@ -17,8 +17,6 @@ function getCookie() {
 }
 
 
-
-
 interface State {
   data: Object
   getterData: Object

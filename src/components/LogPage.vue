@@ -35,12 +35,11 @@ const isFormValid = () => {
   }
 }
 
-let tp: string = 'data'
 
 const loginTest = () => {
   // eslint-disable-next-line no-constant-condition
   if (true) {
-    router.push('/')
+    router.replace('/')
     console.log('ok')
 
     const expires = new Date()
