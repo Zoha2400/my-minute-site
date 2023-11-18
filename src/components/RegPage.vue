@@ -29,7 +29,7 @@
       body: JSON.stringify(formData.value)
     };
   
-    fetch('https://1111-188-113-196-253.ngrok-free.app/api/register/', requestOptions)
+    fetch('https://99d6-188-113-210-13.ngrok-free.app/api/register/', requestOptions)
       .then(response => response.json())
       .then(data => {
         router.push('/login');
