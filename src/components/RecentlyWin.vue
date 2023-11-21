@@ -1,4 +1,13 @@
 <template>
+
+    <div class="buttons-recenltly container-wrap">
+        <div class="btns-res-wrap container-proj">
+            <div class="btn-rec">Новые</div>
+            <div class="btn-rec rec-choosen">ПОПУЛЯРНЫE</div>
+            <div class="btn-rec">Избранные</div>
+        </div>
+    </div>
+
   <div class="container-wrap my-projects-wrp" id="up">
     <div class="container-proj my-projects recently-app">
       <!-- Проверка, что dataAll.value существует, перед обращением к нему -->

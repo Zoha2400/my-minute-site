@@ -49,5 +49,40 @@
     max-height: auto !important;
     min-height: auto !important;
     grid-template-rows: repeat(2, 305px);
-
 }
+
+.buttons-recenltly{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+.btns-res-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+
+    *{
+        cursor: pointer;
+    }
+}
+
+.rec-choosen{
+    padding: 5px;
+    background-color: rgb(7, 7, 38);
+    border-radius: 5px;
+}
+
+.btn-rec{
+    padding: 5px;
+    border-radius: 5px;
+
+    &:hover{
+        background-color: rgb(72, 72, 72) !important;
+    }
+}
+
