@@ -43,3 +43,11 @@
         color: color;
     }
 }
+
+.recently-app{
+    height: auto !important;
+    max-height: auto !important;
+    min-height: auto !important;
+    grid-template-rows: repeat(2, 305px);
+
+}

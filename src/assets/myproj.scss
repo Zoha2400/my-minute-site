@@ -104,7 +104,7 @@
     }
     @media (max-width:460px) {
       grid-template-areas: 'ip ip';
-    grid-template-rows: repeat(4, 210px);
+      grid-template-rows: repeat(4, 210px);
 
       .proj{
         width: 170px !important;
