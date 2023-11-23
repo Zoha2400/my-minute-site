@@ -346,6 +346,11 @@
 
 .nonBanner-wrap{
 
+  img{
+    width: 70px;
+    height: 70px;
+  }
+
 
   .nonBanner-container {
     display: flex;
@@ -364,14 +369,34 @@
         flex-direction: row !important;
       }
     }
-    @media (max-width:540px) {
-      flex-direction: row !important;
-      
+    @media (max-width:640px) {
+      flex-direction: column !important;
+      background-color: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      align-items: center !important;
+      justify-content: center !important;
       .nonBanner{
         width: auto !important;
         display: flex !important;
         flex-direction: column !important;
+        height: auto !important;
+        margin: 4px !important;
+        padding: 0 !important;
       }
+
+      
+      .tti{
+        width: 400px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-start;
+        padding: 2px;
+        p{
+          text-align: start;
+        }
+      }
+
     }
     @media (max-width:520px) {
       flex-direction: column !important;
