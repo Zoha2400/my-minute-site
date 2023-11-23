@@ -8,6 +8,12 @@
     import MyFooter from './MyFooter.vue';
     import MyProjects from './MyProjects.vue';
     import RecentlyWin from './RecentlyWin.vue';
+    import myBook from '../img/book.svg'
+    import faqPers from '../img/faqPers.svg'
+    import car from '../img/car.svg'
+    import albom from '../img/albom.svg'
+    import compass from '../img/compas.svg'
+    import prj from '../img/prj.svg'
 
 
     let datal = ref("https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2998.416743648826!2d69.2149025!3d41.2780337!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b863b3aaa6d%3A0xda62a6ffa353cae7!2sART%20DECO%20DESIGN!5e0!3m2!1sru!2s!4v1695546202261!5m2!1sru!2s"); 
@@ -126,42 +132,42 @@
                 <div class="container banner nonBanner">
                     <div class="banner-item tti">
                         <div class="tticon">
-                             <Icon icon="ic:baseline-percent" width="90"/>
+                            <img :src="myBook">
                         </div>
-                        <p>Тем, кто хочет сэкономить деньги до 70%</p>
+                        <p>Книгу “Cоветы по строительству”</p>
                     </div>
                     <div class="banner-item tti">
                         <div class="tticon">
-                            <Icon icon="quill:calendar" width="90"/>
+                            <img :src="faqPers">
                         </div>
-                        <p>Тем, кто не хочет терять месяц на создание нового проекта</p>
+                        <p>Онлайн сопровождение Вашего строительства</p>
                     </div>
                     <div class="banner-item tti">
                         <div class="tticon">
-                            <Icon icon="tabler:checkup-list" width="90"/>
+                            <img :src="car">
                         </div>
-  
-                        <p>Тем, кто ищет проверенные решения</p>
+                        
+                        <p>Индивидуальное расположение ворот</p>
                     </div>
                 </div>
                 <div class="container banner nonBanner">
                     <div class="banner-item tti">
                         <div class="tticon">
-                            <Icon icon="ic:baseline-percent" width="90"/>
+                            <img :src="albom">
                         </div>
-                        <p>Тем, кто хочет сэкономить деньги до 70%</p>
+                        <p>Альбом чертежей для строительства от 40 до 60 листов</p>
                     </div>
                     <div class="banner-item tti">
                         <div class="tticon">
-                            <Icon icon="quill:calendar" width="90"/>
+                            <img :src="prj">
                         </div>
-                        <p>Тем, кто не хочет терять месяц на создание нового проекта</p>
+                        <p>Фирменные подарки от компании</p>
                     </div>
                     <div class="banner-item tti">
                         <div class="tticon">
-                            <Icon icon="tabler:checkup-list" width="90"/>
+                            <img :src="compass">
                         </div>
-                        <p>Тем, кто ищет проверенные решения</p>
+                        <p>Корректировка проекта под Каабы и направления солнечнего света</p>
                     </div>
                 </div>
                </div>
