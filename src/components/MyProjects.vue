@@ -2,7 +2,15 @@
 import { Icon } from '@iconify/vue/dist/iconify.js'
 import CardProjVue from './CardProj.vue'
 import MyFooter from './MyFooter.vue'
-import AdpNav from './AdpNav.vue'
+import { ref } from 'vue'
+
+let iconatr = ref(false)
+let icon = ref('mdi:heart-outline')
+
+const change = () => {
+  iconatr.value = !iconatr.value
+  iconatr.value ? (icon.value = 'mdi:heart') : (icon.value = 'mdi:heart-outline')
+}
 </script>
 
 <template>
@@ -25,15 +33,14 @@ import AdpNav from './AdpNav.vue'
           <p class="area">{{ proj.acres }} соток</p>
           <p class="cost">
             <span>{{ proj.cost }} UZS</span>
-            <Icon icon="mdi:heart-outline" width="25" color="#F9B60A" />
-            <Icon icon="mdi:heart" width="25" classname="Heart" color="#F9B60A" />
+            <Icon :icon="icon" width="25" color="#F9B60A" @click.stop="change" />
           </p>
         </div>
       </div>
     </div>
 
     <div class="choosen-attr" @click="$store.commit('clearAll')">
-      <div class="closeAttr">Закрыть</div>
+      <div class="closeAttr">Сброс фильтра</div>
 
       <p
         :class="{ 'p-attr noneattr': !chsn, 'p-attr': chsn }"
