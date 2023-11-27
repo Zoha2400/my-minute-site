@@ -1,56 +1,54 @@
 <script setup lang="ts">
-import { Icon } from '@iconify/vue/dist/iconify.js';
-import CardProjVue from './CardProj.vue';
-import MyFooter from './MyFooter.vue';
-import AdpNav from './AdpNav.vue';
-
+import { Icon } from '@iconify/vue/dist/iconify.js'
+import CardProjVue from './CardProj.vue'
+import MyFooter from './MyFooter.vue'
+import AdpNav from './AdpNav.vue'
 </script>
 
 <template>
-  <CardProjVue/>
+  <CardProjVue />
 
   <div class="container-wrap my-projects-wrp" id="up">
     <div class="container-proj my-projects">
       <!-- Проверка, что dataAll.value существует, перед обращением к нему -->
-      <div v-for="proj in $store.getters.filteredData" :key="proj.pk" class="proj" @click="$store.commit('showInfo',proj)">
+      <div
+        v-for="proj in $store.getters.filteredData"
+        :key="proj.pk"
+        class="proj"
+        @click="$store.commit('showInfo', proj)"
+      >
         <div class="img-proj">
-            <img :src="proj.main_photo" alt="">
+          <img :src="proj.main_photo" alt="" />
         </div>
         <div class="text-proj">
-            <p class="name">
-              ПРОЕКТ № {{ proj.pk }}
-            </p>
-            <p class="area">
-                {{ proj.acres }} соток
-            </p>
-            <p class="cost">
-                <span>{{ proj.cost }} UZS</span> 
-                <Icon icon="mdi:heart-outline" width="25" color="#F9B60A"/>
-                <Icon  icon="mdi:heart" width="25" classname="Heart" color="#F9B60A"/>
-            </p>
+          <p class="name">ПРОЕКТ № {{ proj.pk }}</p>
+          <p class="area">{{ proj.acres }} соток</p>
+          <p class="cost">
+            <span>{{ proj.cost }} UZS</span>
+            <Icon icon="mdi:heart-outline" width="25" color="#F9B60A" />
+            <Icon icon="mdi:heart" width="25" classname="Heart" color="#F9B60A" />
+          </p>
         </div>
       </div>
     </div>
 
     <div class="choosen-attr" @click="$store.commit('clearAll')">
-      
-        <div class="closeAttr">
-          Закрыть
-        </div>
+      <div class="closeAttr">Закрыть</div>
 
-        <p :class="{'p-attr noneattr': !chsn, 'p-attr': chsn}" v-for="chsn in $store.state.type" :key="chsn">
-            {{chsn}}
-        </p>
+      <p
+        :class="{ 'p-attr noneattr': !chsn, 'p-attr': chsn }"
+        v-for="chsn in $store.state.type"
+        :key="chsn"
+      >
+        {{ chsn }}
+      </p>
     </div>
   </div>
 
-  <MyFooter/>
-  
+  <MyFooter />
 </template>
 
 <style>
-
 @import url('../assets/choosen.scss');
 @import url('../assets/myproj.scss');
-
 </style>
