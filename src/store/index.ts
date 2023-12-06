@@ -32,6 +32,7 @@ function getCookie() {
 
 interface State {
   data: Object
+  cartData: Object
   getterData: Object
   counter: number
   choosen: Object
@@ -57,6 +58,7 @@ interface State {
 }
 
 let data
+let cartData
 
 try {
   const response = await fetch('http://localhost:3000/api/products', {
@@ -80,9 +82,32 @@ try {
   console.error('Произошла ошибка:', error)
 }
 
+try {
+  const response = await fetch('http://localhost:3000/api/cart', {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      token: getCookieToken()
+    })
+  })
+
+  if (response.ok) {
+    const responseData = await response.json()
+    cartData = responseData
+  } else {
+    console.error('Ошибка при загрузке данных')
+  }
+} catch (error) {
+  console.error('Произошла ошибка:', error)
+}
+
 export default createStore({
   state: {
     data: data,
+    cartData: cartData,
     getterData: data,
     choosen: {},
     info: true,

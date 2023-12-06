@@ -12,27 +12,29 @@ if (store.state.logged) {
   router.push('/reg')
 }
 
-// console.log(store.state.cookie)
+const change = async (id: number, state: boolean) => {
+  const token = await store.state.token // Если token - Promise
 
-// const data = ref([])
+  const response = await fetch('http://localhost:3000/api/likes', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      id: id,
+      state: !state,
+      token: token
+    })
+  })
 
-// const requestOptions = {
-//   method: 'POST',
-//   headers: {
-//     'Content-Type': 'application/json'
-//   },
-//   body: JSON.stringify({
-//     token: store.state.token // используйте await, если store.state.cookie возвращает Promise
-//   })
-// }
+  if (response.ok) {
+    const responseData = await response.json()
 
-// try {
-//   const response = await fetch('http://localhost:3000/api/likes', requestOptions)
-//   data.value = await response.json()
-//   console.log('Успешно отправлено:', data.value)
-// } catch (error) {
-//   console.error('Ошибка при отправке:', error)
-// }
+    console.log('Успешно отправлено:', responseData)
+  } else {
+    console.error('Ошибка при загрузке данных')
+  }
+}
 </script>
 
 <template>
@@ -44,7 +46,7 @@ if (store.state.logged) {
     <div class="container-proj my-projects">
       <!-- Проверка, что dataAll.value существует, перед обращением к нему -->
       <div
-        v-for="proj in data"
+        v-for="proj in $store.state.cartData"
         :key="proj.pk"
         class="proj"
         @click="$store.commit('showInfo', proj)"
@@ -55,10 +57,23 @@ if (store.state.logged) {
         <div class="text-proj">
           <p class="name">ПРОЕКТ № {{ proj.pk }}</p>
           <p class="area">{{ proj.acres }} соток</p>
-          <p class="cost">
+          <p class="cost" v-if="proj.like_state">
             <span>{{ proj.cost }} UZS</span>
-            <Icon icon="mdi:heart-outline" width="25" color="#F9B60A" />
-            <Icon icon="mdi:heart" width="25" classname="Heart" color="#F9B60A" />
+            <Icon
+              icon="mdi:heart"
+              width="25"
+              color="#F9B60A"
+              @click.stop="change(proj.pk, proj.like_state)"
+            />
+          </p>
+          <p class="cost" v-else>
+            <span>{{ proj.cost }} UZS</span>
+            <Icon
+              icon="mdi:heart-outline"
+              width="25"
+              color="#F9B60A"
+              @click.stop="change(proj.pk, proj.like_state)"
+            />
           </p>
         </div>
       </div>
