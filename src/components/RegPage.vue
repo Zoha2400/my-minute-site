@@ -2,11 +2,11 @@
   <div class="reg-wrap">
     <div class="reg">
       <h2>Регистрация</h2>
-      <form @submit.prevent="registerTest">
+      <form @submit.prevent="register">
         <input
           type="email"
           @change="isFormValid"
-          v-model="formData.username"
+          v-model="formData.email"
           placeholder="admin@gmail.com"
         />
         <input
@@ -27,13 +27,13 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const formData = ref({
-  username: '',
+  email: '',
   password: ''
 })
 
 let isValid: boolean
 const isFormValid = () => {
-  if (formData.value.username.includes('@') && formData.value.password.length >= 8) {
+  if (formData.value.email.includes('@') && formData.value.password.length >= 8) {
     isValid = true
     console.log(isValid)
   } else {
@@ -62,7 +62,7 @@ const register = () => {
     body: JSON.stringify(formData.value)
   }
 
-  fetch('https://99d6-188-113-210-13.ngrok-free.app/api/register/', requestOptions)
+  fetch('http://localhost:3000/api/registrate', requestOptions)
     .then((response) => response.json())
     .then((data) => {
       router.push('/login')

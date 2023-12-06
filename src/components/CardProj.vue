@@ -62,7 +62,7 @@ export default {
             </div>
 
             <div class="footer-info">
-              {{ $store.state.choosen.data }}
+              {{ $store.state.choosen.like_state }}
             </div>
             <div class="btn-card">
               <input type="text" class="rgt" placeholder="Имя" />

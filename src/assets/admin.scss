@@ -186,3 +186,34 @@
     }
   }
 }
+
+.wind {
+  width: 100%;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  .imgages {
+    width: 500px;
+    height: 500px !important;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  .cont-info {
+    display: flex;
+    height: 500px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+}

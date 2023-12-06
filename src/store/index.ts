@@ -1,5 +1,20 @@
 import { createStore } from 'vuex'
 
+function getCookieToken() {
+  const name = 'token='
+  const decodedCookie = decodeURIComponent(document.cookie)
+  const cookieArray = decodedCookie.split(';')
+
+  for (let i = 0; i < cookieArray.length; i++) {
+    const cookie = cookieArray[i].trim()
+    if (cookie.indexOf(name) == 0) {
+      return cookie.substring(name.length, cookie.length)
+    }
+  }
+
+  return ''
+}
+
 function getCookie() {
   const name = 'account='
   const decodedCookie = decodeURIComponent(document.cookie)
@@ -38,12 +53,23 @@ interface State {
   }
   logged: boolean
   cookie: string
+  token: string
 }
 
 let data
 
 try {
-  const response = await fetch('http://45.153.186.140:3009/api/projects/')
+  const response = await fetch('http://localhost:3000/api/products', {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      token: getCookieToken()
+    })
+  })
+
   if (response.ok) {
     const responseData = await response.json()
     data = responseData
@@ -53,6 +79,7 @@ try {
 } catch (error) {
   console.error('Произошла ошибка:', error)
 }
+
 export default createStore({
   state: {
     data: data,
@@ -75,7 +102,8 @@ export default createStore({
       log: 'https://1111-188-113-196-253.ngrok-free.app/api/login/'
     },
     logged: false,
-    cookie: getCookie()
+    cookie: getCookie(),
+    token: getCookieToken()
     // cookies: Cookies.get('account') || null
   },
   mutations: {

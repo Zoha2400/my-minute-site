@@ -1,18 +1,3 @@
-<script setup lang="ts">
-import { Icon } from '@iconify/vue/dist/iconify.js'
-import CardProjVue from './CardProj.vue'
-import MyFooter from './MyFooter.vue'
-import { ref } from 'vue'
-
-let iconatr = ref(false)
-let icon = ref('mdi:heart-outline')
-
-const change = () => {
-  iconatr.value = !iconatr.value
-  iconatr.value ? (icon.value = 'mdi:heart') : (icon.value = 'mdi:heart-outline')
-}
-</script>
-
 <template>
   <CardProjVue />
 
@@ -31,9 +16,23 @@ const change = () => {
         <div class="text-proj">
           <p class="name">ПРОЕКТ № {{ proj.pk }}</p>
           <p class="area">{{ proj.acres }} соток</p>
-          <p class="cost">
+          <p class="cost" v-if="proj.like_state">
             <span>{{ proj.cost }} UZS</span>
-            <Icon :icon="icon" width="25" color="#F9B60A" @click.stop="change" />
+            <Icon
+              icon="mdi:heart"
+              width="25"
+              color="#F9B60A"
+              @click.stop="change(proj.pk, proj.like_state)"
+            />
+          </p>
+          <p class="cost" v-else>
+            <span>{{ proj.cost }} UZS</span>
+            <Icon
+              icon="mdi:heart-outline"
+              width="25"
+              color="#F9B60A"
+              @click.stop="change(proj.pk, proj.like_state)"
+            />
           </p>
         </div>
       </div>
@@ -55,6 +54,38 @@ const change = () => {
   <MyFooter />
 </template>
 
+<script setup lang="ts">
+import { Icon } from '@iconify/vue/dist/iconify.js'
+import CardProjVue from './CardProj.vue'
+import MyFooter from './MyFooter.vue'
+import store from '@/store'
+
+const change = async (id: number, state: boolean) => {
+  const token = await store.state.token // Если token - Promise
+
+  const response = await fetch('http://localhost:3000/api/likes', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      id: id,
+      state: !state,
+      token: token
+    })
+  })
+
+  if (response.ok) {
+    const responseData = await response.json()
+
+    console.log('Успешно отправлено:', responseData)
+  } else {
+    console.error('Ошибка при загрузке данных')
+  }
+}
+
+console.log(store.state.token)
+</script>
 <style>
 @import url('../assets/choosen.scss');
 @import url('../assets/myproj.scss');
