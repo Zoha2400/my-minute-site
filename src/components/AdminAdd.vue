@@ -7,7 +7,7 @@
       </div>
     </div>
 
-    <div class="wind">
+    <div class="wind nonvisible">
       <div class="imgages">
         <img :src="example" alt="" class="main" />
       </div>
@@ -24,7 +24,6 @@
         </div>
 
         <div class="footer-info">
-          // eslint-disable-next-line vue/no-textarea-mustache
           <textarea name="info" id="" cols="30" rows="10" placeholder="Информация">{{
             text
           }}</textarea>
