@@ -43,9 +43,44 @@ export default {
               navigation
               :pagination="{ clickable: true }"
               :scrollbar="{ draggable: true }"
+              v-if="!Array.isArray($store.state.choosen.images?.photos)"
             >
-              <swiper-slide class="swpObj" v-for="i in $store.state.choosen.images" :key="i.id">
-                <img :src="i.photo_path" alt="" class="main" />
+              <swiper-slide class="swpObj">
+                <img src="#" alt="" class="main" />
+              </swiper-slide>
+            </swiper>
+
+            <swiper
+              class="swiper"
+              :modules="modules"
+              :slides-per-view="1"
+              :space-between="50"
+              navigation
+              :pagination="{ clickable: true }"
+              :scrollbar="{ draggable: true }"
+              v-else-if="$store.state.choosen.images?.photos.length === 1"
+            >
+              <swiper-slide class="swpObj" v-for="i in $store.state.choosen.images" :key="i">
+                <img :src="i" alt="" class="main" />
+              </swiper-slide>
+            </swiper>
+
+            <swiper
+              class="swiper"
+              :modules="modules"
+              :slides-per-view="1"
+              :space-between="50"
+              navigation
+              :pagination="{ clickable: true }"
+              :scrollbar="{ draggable: true }"
+              v-else
+            >
+              <swiper-slide
+                class="swpObj"
+                v-for="i in $store.state.choosen.images?.photos"
+                :key="i"
+              >
+                <img :src="i" alt="" class="main" />
               </swiper-slide>
             </swiper>
           </div>
@@ -62,7 +97,7 @@ export default {
             </div>
 
             <div class="footer-info">
-              {{ $store.state.choosen.like_state }}
+              {{ $store.state.choosen.data }}
             </div>
             <div class="btn-card">
               <input type="text" class="rgt" placeholder="Имя" />

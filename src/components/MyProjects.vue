@@ -82,6 +82,11 @@ const change = async (id: number, state: boolean) => {
   } else {
     console.error('Ошибка при загрузке данных')
   }
+  try {
+    await store.dispatch('fetchData')
+  } catch (error) {
+    console.error('Error fetching data:', error)
+  }
 }
 
 console.log(store.state.token)

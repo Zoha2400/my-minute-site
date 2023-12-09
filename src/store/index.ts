@@ -57,58 +57,11 @@ interface State {
   token: string
 }
 
-let data
-let cartData
-
-try {
-  const response = await fetch('http://localhost:3000/api/products', {
-    method: 'POST',
-    mode: 'cors',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      token: getCookieToken()
-    })
-  })
-
-  if (response.ok) {
-    const responseData = await response.json()
-    data = responseData
-  } else {
-    console.error('Ошибка при загрузке данных')
-  }
-} catch (error) {
-  console.error('Произошла ошибка:', error)
-}
-
-try {
-  const response = await fetch('http://localhost:3000/api/cart', {
-    method: 'POST',
-    mode: 'cors',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      token: getCookieToken()
-    })
-  })
-
-  if (response.ok) {
-    const responseData = await response.json()
-    cartData = responseData
-  } else {
-    console.error('Ошибка при загрузке данных')
-  }
-} catch (error) {
-  console.error('Произошла ошибка:', error)
-}
-
 export default createStore({
   state: {
-    data: data,
-    cartData: cartData,
-    getterData: data,
+    data: {},
+    cartData: {},
+    getterData: {},
     choosen: {},
     info: true,
     type: {
@@ -193,9 +146,61 @@ export default createStore({
     },
     setUnLogged(state: State) {
       state.logged = false
+    },
+    setData(state: State, data: Object) {
+      state.data = data
+    },
+    setCart(state: State, data: Object) {
+      state.cartData = data
     }
   },
-  actions: {},
+  actions: {
+    async fetchData({ commit }) {
+      try {
+        const response = await fetch('http://localhost:3000/api/products', {
+          method: 'POST',
+          mode: 'cors',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            token: getCookieToken()
+          })
+        })
+
+        if (response.ok) {
+          const responseData = await response.json()
+          commit('setData', responseData)
+        } else {
+          console.error('Ошибка при загрузке данных')
+        }
+      } catch (error) {
+        console.error('Произошла ошибка:', error)
+      }
+
+      try {
+        const response = await fetch('http://localhost:3000/api/cart', {
+          method: 'POST',
+          mode: 'cors',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            token: getCookieToken()
+          })
+        })
+
+        if (response.ok) {
+          const responseData = await response.json()
+          commit('setCart', responseData)
+        } else {
+          console.error('Ошибка при загрузке данных')
+        }
+      } catch (error) {
+        console.error('Произошла ошибка:', error)
+      }
+    }
+  },
   getters: {
     filteredData(state: State) {
       const { style, plot, size, acres, num } = state.type

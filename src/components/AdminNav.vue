@@ -1,9 +1,9 @@
 <template>
   <div class="addinp">
     <form class="adpinp-form" @submit.prevent="add">
-      <input v-model="data.area" type="text" placeholder="Площадь" />
+      <input v-model="data.area" type="number" placeholder="Площадь" />
       <input v-model="data.size" type="text" placeholder="Размер" />
-      <input v-model="data.acres" type="text" placeholder="Соток" />
+      <input v-model="data.acres" type="number" placeholder="Соток" />
       <input v-model="data.style" type="text" placeholder="Стиль" />
       <input v-model="data.cost" type="number" placeholder="Цена" />
       <textarea
@@ -87,7 +87,6 @@ function add() {
   formData.append('style', data.value.style)
   formData.append('cost', data.value.cost)
   formData.append('data', data.value.data)
-  formData.append('area', data.value.area)
 
   const requestOptions = {
     method: 'POST',
@@ -98,7 +97,17 @@ function add() {
     .then((response) => response.json())
     .then((responseData) => {
       console.log('Успешно отправлено:', responseData)
-      return responseData
+
+      data.value = {
+        area: '',
+        size: '',
+        acres: '',
+        style: '',
+        cost: '',
+        data: '',
+        main_photo: null,
+        photos: []
+      }
     })
     .catch((error) => {
       console.error('Ошибка при отправке:', error)
