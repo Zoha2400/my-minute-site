@@ -1,5 +1,10 @@
 <template>
-  <div class="table-column" v-for="proj in $store.state.data" :key="proj.pk">
+  <div
+    class="table-column"
+    v-for="proj in $store.state.data"
+    :key="proj.pk"
+    @click="$store.commit('showInfoAdmin', proj)"
+  >
     <img class="main_photo" :src="proj.main_photo" />
     <div class="part">
       <span>id</span>
@@ -25,7 +30,7 @@
       <span>Цена</span>
       <p class="cost">{{ proj.cost }}</p>
     </div>
-    <div class="part">
+    <div class="part dt">
       <span>Информация</span>
       <p class="data">
         {{ proj.data }}

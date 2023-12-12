@@ -23,7 +23,7 @@
 }
 
 .table-disc {
-  width: 800px;
+  width: 1000px;
 
   .names {
     color: white;
@@ -31,7 +31,7 @@
 }
 
 .table-column {
-  width: 800px;
+  width: 1000px;
   height: 50px;
   background-color: white;
   box-shadow: 0 2px 2px rgb(23, 23, 23);
@@ -54,7 +54,7 @@
   }
 
   .data {
-    width: 180px;
+    width: 180px !important;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -66,7 +66,18 @@
   }
 }
 
+.dt {
+  width: 180px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
 .part {
+  width: 90px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,12 +200,11 @@
 
 .wind {
   width: 100%;
-  background-color: red;
-  display: flex;
+  height: auto;
   justify-content: center;
   align-items: center;
   gap: 15px;
-  display: none;
+  display: flex;
 
   .imgages {
     width: 500px;
@@ -203,10 +213,11 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
+    overflow: hidden !important;
 
     img {
-      height: auto;
-      width: 100%;
+      height: 100%;
+      width: auto;
     }
   }
 
@@ -217,4 +228,8 @@
     justify-content: flex-start;
     flex-direction: column;
   }
+}
+
+.windSeen {
+  display: none !important;
 }

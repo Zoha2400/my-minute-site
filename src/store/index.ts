@@ -48,13 +48,11 @@ interface State {
   arcesChsn: boolean
   adpMenu: boolean
   choosenDisplay: string[]
-  posts: {
-    reg: string
-    log: string
-  }
   logged: boolean
   cookie: string
   token: string
+  choosenAdmin: Object
+  infoAdmin: boolean
 }
 
 export default createStore({
@@ -75,16 +73,23 @@ export default createStore({
     arcesChsn: false,
     adpMenu: true,
     choosenDisplay: [],
-    posts: {
-      reg: 'https://1111-188-113-196-253.ngrok-free.app/api/registration/',
-      log: 'https://1111-188-113-196-253.ngrok-free.app/api/login/'
-    },
     logged: false,
     cookie: getCookie(),
-    token: getCookieToken()
+    token: getCookieToken(),
+    choosenAdmin: {},
+    infoAdmin: false
+
     // cookies: Cookies.get('account') || null
   },
   mutations: {
+    showInfoAdmin(state: State, obj: Object) {
+      state.infoAdmin = !state.infoAdmin
+      state.choosenAdmin = obj
+      console.log(state.choosenAdmin)
+    },
+    closeInfoAdmin(state: State) {
+      state.infoAdmin = false
+    },
     showInfo(state: State, obj: Object) {
       state.info = !state.info
       state.choosen = obj
