@@ -233,3 +233,23 @@
 .windSeen {
   display: none !important;
 }
+
+.imges {
+  display: flex;
+  flex-direction: column;
+  .photossss {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: red;
+  }
+}
+
+.dd {
+  width: 120px;
+  background-color: blue;
+}
+
+.imagePhotos {
+  width: 100px;
+  height: auto;
+}

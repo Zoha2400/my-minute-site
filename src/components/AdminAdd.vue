@@ -8,8 +8,14 @@
     </div>
 
     <div v-if="$store.state.infoAdmin" class="wind">
-      <div class="imgages">
-        <img :src="example" alt="" class="main" />
+      <div class="imges">
+        <div class="imgages">
+          <img :src="data.main_photo" alt="" class="main" />
+        </div>
+        <!-- <div class="photossss" v-for="photo in data.photos.photos" :key="photo">
+          <div class="dd" :key="photo"></div>
+          <img :src="photo" alt="" class="imagePhotos" />
+        </div> -->
       </div>
 
       <div class="cont-info">
@@ -51,7 +57,7 @@
           accept="image/*"
         />
 
-        <button class="inpButton">Обновить</button>
+        <button class="inpButton" @click="add">Обновить</button>
         <button @click="$store.commit('closeInfoAdmin')">Закрыть</button>
       </div>
     </div>
@@ -129,32 +135,17 @@ function add() {
   }
 
   formData.append('area', data.value.area)
-  formData.append('size', data.value.size)
-  formData.append('acres', data.value.acres)
-  formData.append('style', data.value.style)
-  formData.append('cost', data.value.cost)
-  formData.append('data', data.value.data)
+  formData.append('pk', store.state.choosenAdmin.pk)
 
   const requestOptions = {
     method: 'POST',
     body: formData
   }
 
-  fetch('http://localhost:3000/api/change', requestOptions)
+  fetch('http://localhost:3000/api/change/area', requestOptions)
     .then((response) => response.json())
     .then((responseData) => {
       console.log('Успешно отправлено:', responseData)
-
-      data.value = {
-        area: '',
-        size: '',
-        acres: '',
-        style: '',
-        cost: '',
-        data: '',
-        main_photo: null,
-        photos: []
-      }
     })
     .catch((error) => {
       console.error('Ошибка при отправке:', error)
