@@ -56,7 +56,7 @@
           name="mainphoto"
           id="mainphoto"
         />
-        <button class="inpButton" @click="changeArea">Обновить</button>
+        <button class="inpButton" @click="changeMainPhoto">Обновить</button>
 
         <input
           type="file"
@@ -67,7 +67,7 @@
           multiple
           accept="image/*"
         />
-        <button class="inpButton" @click="changeArea">Обновить</button>
+        <button class="inpButton" @click="changePhotos">Обновить</button>
 
         <button @click="$store.commit('closeInfoAdmin')">Закрыть</button>
       </div>
@@ -248,6 +248,57 @@ function changeData() {
   }
 
   fetch('http://localhost:3000/api/change/data', requestOptions)
+    .then((response) => response.json())
+    .then((responseData) => {
+      console.log('Успешно отправлено:', responseData)
+    })
+    .catch((error) => {
+      console.error('Ошибка при отправке:', error)
+    })
+}
+
+function changeMainPhoto() {
+  const formData = new FormData()
+
+  // Добавляем файлы
+  if (data.value.main_photo) {
+    formData.append('main_photo', data.value.main_photo)
+  }
+  formData.append('pk', store.state.choosenAdmin.pk)
+
+  const requestOptions = {
+    method: 'POST',
+    body: formData
+  }
+
+  fetch('http://localhost:3000/api/change/main_photo', requestOptions)
+    .then((response) => response.json())
+    .then((responseData) => {
+      console.log('Успешно отправлено:', responseData)
+    })
+    .catch((error) => {
+      console.error('Ошибка при отправке:', error)
+    })
+}
+
+function changePhotos() {
+  const formData = new FormData()
+
+  // Добавляем файлы
+  if (data.value.photos.length > 0) {
+    data.value.photos.forEach((el) => {
+      formData.append('photos', el)
+    })
+  }
+
+  formData.append('pk', store.state.choosenAdmin.pk)
+
+  const requestOptions = {
+    method: 'POST',
+    body: formData
+  }
+
+  fetch('http://localhost:3000/api/change/photos', requestOptions)
     .then((response) => response.json())
     .then((responseData) => {
       console.log('Успешно отправлено:', responseData)
