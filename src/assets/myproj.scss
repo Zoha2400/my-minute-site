@@ -86,8 +86,8 @@
       height: 290px;
 
       img {
-        width: 100% !important;
-        height: auto !important;
+        width: auto !important;
+        height: 100% !important;
       }
     }
   }
@@ -177,18 +177,19 @@
     .proj {
       width: 160px !important;
       height: 200px !important;
-      .img-proj {
-        height: 115px !important;
+      img {
+        width: auto !important;
+        height: 100% !important;
       }
     }
   }
 
   @media (max-width: 345px) {
-    grid-template-rows: repeat(4, 205px);
+    grid-template-rows: repeat(4, 195px);
 
     .proj {
       width: 150px !important;
-      height: 205px !important;
+      height: 180px !important;
       img {
         width: auto !important;
         height: 100% !important;

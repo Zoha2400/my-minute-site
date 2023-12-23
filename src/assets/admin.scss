@@ -14,6 +14,15 @@
   }
 }
 
+li {
+  list-style: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: gray !important;
+  }
+}
+
 .tables {
   display: flex;
   justify-content: flex-start;
@@ -252,4 +261,8 @@
 .imagePhotos {
   width: 100px;
   height: auto;
+}
+
+.inpButton {
+  margin: 3px;
 }

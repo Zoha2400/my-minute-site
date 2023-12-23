@@ -5,6 +5,8 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules'
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue'
 
+import BtnCardTelegram from './BtnCardTelegram.vue'
+
 // Import Swiper styles
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -15,7 +17,8 @@ import 'swiper/css/scrollbar'
 export default {
   components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    BtnCardTelegram
   },
   setup() {
     return {
@@ -99,12 +102,8 @@ export default {
             <div class="footer-info">
               {{ $store.state.choosen.data }}
             </div>
-            <div class="btn-card">
-              <input type="text" class="rgt" placeholder="Имя" />
-              <input type="text" class="lft" placeholder="Номер Телефона" />
-              <p>{{ $store.state.choosen.cost }} СУМ</p>
-              <button class="inpButton">Оставить Заявку</button>
-            </div>
+
+            <BtnCardTelegram />
           </div>
         </div>
       </div>

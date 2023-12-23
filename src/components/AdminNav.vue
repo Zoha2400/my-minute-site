@@ -4,7 +4,16 @@
       <input v-model="data.area" type="number" placeholder="Площадь" />
       <input v-model="data.size" type="text" placeholder="Размер" />
       <input v-model="data.acres" type="number" placeholder="Соток" />
-      <input v-model="data.style" type="text" placeholder="Стиль" />
+      <input v-model="data.style" @focus="showSuggestionsHandler" type="text" placeholder="Стиль" />
+      <ul v-if="showSuggestions">
+        <li
+          v-for="suggestion in suggestions"
+          :key="suggestion"
+          @click="selectSuggestionHandler(suggestion)"
+        >
+          {{ suggestion }}
+        </li>
+      </ul>
       <input v-model="data.cost" type="number" placeholder="Цена" />
       <textarea
         v-model="data.data"
@@ -32,6 +41,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import store from '@/store'
+import { useRouter } from 'vue-router'
 
 const data = ref({
   area: '',
@@ -65,6 +76,18 @@ function handleFileChangeOther(event: { target: any }) {
 
 function chekcer() {
   console.log(data.value.data)
+}
+
+const suggestions = ['Классика', 'Неоклассика', 'Модерн', 'Хай-тек', 'Райт']
+const showSuggestions = ref(false)
+
+const showSuggestionsHandler = () => {
+  showSuggestions.value = true
+}
+
+const selectSuggestionHandler = (suggestion) => {
+  data.value.style = suggestion
+  showSuggestions.value = false
 }
 
 function add() {
@@ -112,6 +135,12 @@ function add() {
     .catch((error) => {
       console.error('Ошибка при отправке:', error)
     })
+}
+
+const router = useRouter()
+
+if (store.state.token !== 'a004fc46-6236-4cea-9394-16f03037a7be') {
+  router.push('/')
 }
 </script>
 

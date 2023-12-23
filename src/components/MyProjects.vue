@@ -88,8 +88,6 @@ const change = async (id: number, state: boolean) => {
     console.error('Error fetching data:', error)
   }
 }
-
-console.log(store.state.token)
 </script>
 <style>
 @import url('../assets/choosen.scss');

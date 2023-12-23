@@ -31,7 +31,16 @@
           <p>Cоток: <input type="text" v-model="data.acres" /></p>
           <button class="inpButton" @click="changeAcres">Обновить</button>
 
-          <p>Стиль: <input type="text" v-model="data.style" /></p>
+          <p>Стиль: <input type="text" @focus="showSuggestionsHandler" v-model="data.style" /></p>
+          <ul v-if="showSuggestions">
+            <li
+              v-for="suggestion in suggestions"
+              :key="suggestion"
+              @click="selectSuggestionHandler(suggestion)"
+            >
+              {{ suggestion }}
+            </li>
+          </ul>
           <button class="inpButton" @click="changeStyle">Обновить</button>
 
           <p>Цена: <input type="text" v-model="data.cost" /></p>
@@ -112,6 +121,18 @@ watch(
 )
 console.log(data.value)
 
+const suggestions = ['Классика', 'Неоклассика', 'Модерн', 'Хай-тек', 'Райт']
+const showSuggestions = ref(false)
+
+const showSuggestionsHandler = () => {
+  showSuggestions.value = true
+}
+
+const selectSuggestionHandler = (suggestion) => {
+  data.value.style = suggestion
+  showSuggestions.value = false
+}
+
 function handleFileChange(event: { target: any }) {
   const fileInp = event.target
   if (fileInp.files.length > 0) {
@@ -130,7 +151,6 @@ function handleFileChangeOther(event: { target: any }) {
     })
   }
 }
-
 function changeArea() {
   const formData = new FormData()
 
@@ -145,6 +165,7 @@ function changeArea() {
   fetch('http://localhost:3000/api/change/area', requestOptions)
     .then((response) => response.json())
     .then((responseData) => {
+      store.dispatch('fetchData')
       console.log('Успешно отправлено:', responseData)
     })
     .catch((error) => {
@@ -166,6 +187,8 @@ function changeSize() {
   fetch('http://localhost:3000/api/change/size', requestOptions)
     .then((response) => response.json())
     .then((responseData) => {
+      store.dispatch('fetchData')
+
       console.log('Успешно отправлено:', responseData)
     })
     .catch((error) => {
@@ -187,6 +210,8 @@ function changeAcres() {
   fetch('http://localhost:3000/api/change/acres', requestOptions)
     .then((response) => response.json())
     .then((responseData) => {
+      store.dispatch('fetchData')
+
       console.log('Успешно отправлено:', responseData)
     })
     .catch((error) => {
@@ -208,6 +233,8 @@ function changeStyle() {
   fetch('http://localhost:3000/api/change/style', requestOptions)
     .then((response) => response.json())
     .then((responseData) => {
+      store.dispatch('fetchData')
+
       console.log('Успешно отправлено:', responseData)
     })
     .catch((error) => {
@@ -229,6 +256,8 @@ function changeCost() {
   fetch('http://localhost:3000/api/change/cost', requestOptions)
     .then((response) => response.json())
     .then((responseData) => {
+      store.dispatch('fetchData')
+
       console.log('Успешно отправлено:', responseData)
     })
     .catch((error) => {
@@ -250,6 +279,8 @@ function changeData() {
   fetch('http://localhost:3000/api/change/data', requestOptions)
     .then((response) => response.json())
     .then((responseData) => {
+      store.dispatch('fetchData')
+
       console.log('Успешно отправлено:', responseData)
     })
     .catch((error) => {
@@ -274,6 +305,8 @@ function changeMainPhoto() {
   fetch('http://localhost:3000/api/change/main_photo', requestOptions)
     .then((response) => response.json())
     .then((responseData) => {
+      store.dispatch('fetchData')
+
       console.log('Успешно отправлено:', responseData)
     })
     .catch((error) => {
@@ -301,6 +334,8 @@ function changePhotos() {
   fetch('http://localhost:3000/api/change/photos', requestOptions)
     .then((response) => response.json())
     .then((responseData) => {
+      store.dispatch('fetchData')
+
       console.log('Успешно отправлено:', responseData)
     })
     .catch((error) => {
