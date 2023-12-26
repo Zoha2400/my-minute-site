@@ -236,7 +236,7 @@ export default createStore({
       return state.logged
     },
     getTopEight(state: State) {
-      return (state.topEight = state.data.slice(0, 8))
+      return state.data.sort((a, b) => b.likes - a.likes).slice(0, 8)
     }
   },
 
