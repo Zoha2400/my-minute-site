@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar-menu">
-    <RouterLink class="btn clickedNav" to="/">
+    <RouterLink class="btn clickedNav" to="/" @click="$store.commit('closeInfoBack')">
       <Icon icon="material-symbols:arrow-back" width="23" />
     </RouterLink>
 
