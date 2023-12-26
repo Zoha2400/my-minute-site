@@ -17,23 +17,26 @@
 import { ref } from 'vue'
 import store from '@/store/index'
 
+const props = defineProps({
+  pk: String
+})
+
 const messageForm = ref({
   name: '',
-  number: '',
-  projectCode: store.state.choosen.pk
+  number: ''
 })
 
 async function sendTelegram() {
+  const projectCode: string = store.state.choosen.pk
   const formData = new FormData()
 
   formData.append('name', messageForm.value.name)
   formData.append('number', messageForm.value.number)
-  formData.append('pk', messageForm.value.projectCode)
+  formData.append('pk', projectCode)
 
   messageForm.value = {
     name: '',
-    number: '',
-    projectCode: store.state.choosen.pk
+    number: ''
   }
 
   const requestOptions = {

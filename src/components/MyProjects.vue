@@ -2,6 +2,12 @@
   <CardProjVue />
 
   <div class="container-wrap my-projects-wrp" id="up">
+    <div class="buttons-recenltly container-wrap">
+      <div class="btns-res-wrap container-proj">
+        <div class="btn-rec rec-choosen" @click="() => redirect('/projects')">ПРОЕКТЫ</div>
+        <div class="btn-rec" @click="() => redirect('/account')">Избранные</div>
+      </div>
+    </div>
     <div class="container-proj my-projects">
       <!-- Проверка, что dataAll.value существует, перед обращением к нему -->
       <div
@@ -59,6 +65,13 @@ import { Icon } from '@iconify/vue/dist/iconify.js'
 import CardProjVue from './CardProj.vue'
 import MyFooter from './MyFooter.vue'
 import store from '@/store'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+function redirect(attr: string) {
+  router.push(attr)
+}
 
 const change = async (id: number, state: boolean) => {
   const token = await store.state.token // Если token - Promise
