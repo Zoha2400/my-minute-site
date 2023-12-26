@@ -53,6 +53,7 @@ interface State {
   token: string
   choosenAdmin: Object
   infoAdmin: boolean
+  topEight: Object[]
 }
 
 export default createStore({
@@ -77,8 +78,8 @@ export default createStore({
     cookie: getCookie(),
     token: getCookieToken(),
     choosenAdmin: {},
-    infoAdmin: false
-
+    infoAdmin: false,
+    topEight: []
     // cookies: Cookies.get('account') || null
   },
   mutations: {
@@ -233,6 +234,9 @@ export default createStore({
       state.logged = !state.logged
 
       return state.logged
+    },
+    getTopEight(state: State) {
+      return (state.topEight = state.data.slice(0, 8))
     }
   },
 

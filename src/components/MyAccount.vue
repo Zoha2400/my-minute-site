@@ -12,6 +12,10 @@ if (store.state.logged) {
   router.push('/reg')
 }
 
+function redirect(attr: string) {
+  router.push(attr)
+}
+
 const change = async (id: number, state: boolean) => {
   const token = await store.state.token // Если token - Promise
 
@@ -44,11 +48,16 @@ const change = async (id: number, state: boolean) => {
 </script>
 
 <template>
-  <h1 class="cart-account">Корзина</h1>
-
   <CardProjVue />
 
   <div class="container-wrap my-projects-wrp" id="up">
+    <div class="buttons-recenltly container-wrap">
+      <div class="btns-res-wrap container-proj">
+        <div class="btn-rec" @click="() => redirect('/')">Главная</div>
+        <div class="btn-rec rec-choosen" @click="() => redirect('/account')">ИЗБРАННЫЕ</div>
+        <div class="btn-rec" @click="() => redirect('/projects')">Проекты</div>
+      </div>
+    </div>
     <div class="container-proj my-projects">
       <!-- Проверка, что dataAll.value существует, перед обращением к нему -->
       <div
