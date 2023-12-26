@@ -4,6 +4,7 @@
   <div class="container-wrap my-projects-wrp" id="up">
     <div class="buttons-recenltly container-wrap">
       <div class="btns-res-wrap container-proj">
+        <div class="btn-rec" @click="() => redirect('/account')">Главная</div>
         <div class="btn-rec rec-choosen" @click="() => redirect('/projects')">ПРОЕКТЫ</div>
         <div class="btn-rec" @click="() => redirect('/account')">Избранные</div>
       </div>

@@ -227,6 +227,10 @@
   &:hover {
     .text-proj {
       background-color: #324674;
+      box-shadow: 0 5px 15px rgb(23, 23, 23);
+    }
+    img {
+      height: 110% !important;
     }
   }
 
@@ -242,6 +246,7 @@
     img {
       width: auto;
       height: 100%;
+      transition: 0.2s ease-in-out;
     }
   }
 
