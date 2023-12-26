@@ -65,4 +65,22 @@ const router = createRouter({
   ]
 })
 
+router.beforeEach((to, from, next) => {
+  console.log('beforeEach called')
+
+  // Получаем элемент по идентификатору
+  const scrollContElement = document.getElementById('scrollCont')
+
+  // Проверяем, существует ли элемент
+  if (scrollContElement) {
+    // Устанавливаем скролл внутри элемента
+    scrollContElement.scrollTop = 0
+  } else {
+    // Если элемент не найден, устанавливаем скролл на уровне документа
+    document.documentElement.scrollTop = 0
+  }
+
+  next()
+})
+
 export default router

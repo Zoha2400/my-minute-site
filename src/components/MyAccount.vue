@@ -50,7 +50,7 @@ const change = async (id: number, state: boolean) => {
 <template>
   <CardProjVue />
 
-  <div class="container-wrap my-projects-wrp" id="up">
+  <div class="container-wrap my-projects-wrp cont-top-smth" id="up">
     <div class="buttons-recenltly container-wrap">
       <div class="btns-res-wrap container-proj">
         <div class="btn-rec" @click="() => redirect('/')">Главная</div>

@@ -6,7 +6,10 @@ import RegPageVue from './RegPage.vue'
 </script>
 
 <template>
-  <div :class="{ 'content-wrap': $store.state.info, 'content-wrap noScroll': !$store.state.info }">
+  <div
+    :class="{ 'content-wrap': $store.state.info, 'content-wrap noScroll': !$store.state.info }"
+    id="scrollCont"
+  >
     <div class="content">
       <AdpNav />
 

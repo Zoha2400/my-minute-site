@@ -1,5 +1,5 @@
 <template>
-  <div class="buttons-recenltly container-wrap">
+  <div class="buttons-recenltly container-wrap cont-top-smth">
     <div class="btns-res-wrap container-proj">
       <div class="btn-rec" @click="() => redirect('/projects')">Новые</div>
       <div class="btn-rec rec-choosen" @click="() => redirect('/projects')">ПОПУЛЯРНЫE</div>
@@ -14,7 +14,7 @@
         v-for="proj in $store.getters.getTopEight"
         :key="proj.pk"
         class="proj"
-        @click="$store.commit('showInfo', proj)"
+        @click="cardRedicert(proj)"
       >
         <div class="img-proj">
           <img :src="proj.main_photo" alt="" />
@@ -55,6 +55,11 @@ const router = useRouter()
 
 function redirect(attr: string) {
   router.push(attr)
+}
+
+function cardRedicert(proj: Object) {
+  router.push('/projects')
+  store.commit('showInfo', proj)
 }
 
 const change = async (id: number, state: boolean) => {
