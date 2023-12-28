@@ -23,7 +23,7 @@ const router = createRouter({
       }
     },
     {
-      path: '/projects',
+      path: '/projects/:id',
       name: 'projects',
       components: {
         default: MyProjectsVue,

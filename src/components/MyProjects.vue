@@ -12,7 +12,7 @@
     <div class="container-proj my-projects">
       <!-- Проверка, что dataAll.value существует, перед обращением к нему -->
       <div
-        v-for="proj in $store.getters.filteredData"
+        v-for="proj in localData"
         :key="proj.pk"
         class="proj"
         @click="$store.commit('showInfo', proj)"
@@ -45,6 +45,17 @@
       </div>
     </div>
 
+    <div class="pagination">
+      <div class="bef">b</div>
+      <RouterLink
+        v-for="index in Math.ceil(data.length / 8)"
+        :to="'/projects/' + index"
+        :key="index"
+        >{{ index }}</RouterLink
+      >
+      <div class="af">a</div>
+    </div>
+
     <div class="choosen-attr" @click="$store.commit('clearAll')">
       <div class="closeAttr">Сброс фильтра</div>
 
@@ -65,11 +76,100 @@
 import { Icon } from '@iconify/vue/dist/iconify.js'
 import CardProjVue from './CardProj.vue'
 import MyFooter from './MyFooter.vue'
-import store from '@/store'
+import store from '@/store/index'
 import { useRouter } from 'vue-router'
+import { ref, watch } from 'vue'
 
 const router = useRouter()
 
+// if(router.currentRoute)
+
+if (router.currentRoute.value.path == '/projects/') {
+  router.push('/projects/1')
+}
+
+const id = ref(null)
+
+const data = ref(store.state.data)
+
+const localData = ref([])
+
+const loadData = () => {
+  id.value = router.currentRoute.value.params.id
+  if (
+    !isNaN(+id.value) &&
+    data.value.length < 8 * +id.value &&
+    data.value.length > 8 * (+id.value - 1)
+  ) {
+    localData.value = data.value.slice((+id.value - 1) * 8, data.value.length)
+    store.commit('addPagination', localData.value)
+  } else if (
+    !isNaN(+id.value) &&
+    data.value.length >= 8 * +id.value &&
+    data.value.length > 8 * (+id.value - 1)
+  ) {
+    localData.value = data.value.slice((+id.value - 1) * 8, 8 * +id.value)
+    store.commit('addPagination', localData.value)
+  }
+  // Ваша логика загрузки данных
+}
+
+loadData()
+
+watch(
+  () => store.state.data,
+  () => {
+    data.value = store.state.data
+    if (
+      store.state.type.style !== '' ||
+      store.state.type.plot !== '' ||
+      store.state.type.size !== '' ||
+      store.state.type.acres !== '' ||
+      store.state.type.num !== ''
+    ) {
+      localData.value = store.getters.filteredData
+    } else {
+      loadData()
+    }
+  }
+)
+
+watch(
+  () => store.state.type.style,
+  () => {
+    if (
+      store.state.type.style !== '' ||
+      store.state.type.plot !== '' ||
+      store.state.type.size !== '' ||
+      store.state.type.acres !== '' ||
+      store.state.type.num !== ''
+    ) {
+      localData.value = store.getters.filteredData
+    }
+  },
+  { deep: true }
+)
+
+watch(
+  () => store.state.choosenState,
+  () => {
+    loadData()
+  }
+)
+
+watch(
+  () => router.currentRoute.value.params.id,
+  (newPage, oldPage) => {
+    // Вызываем метод для загрузки данных
+    loadData()
+  }
+)
+
+// Метод для загрузки данных
+
+// } else if (!isNaN(+id) && data.length - 8 < +id * 8) {
+//   router.resolve(`/projects/${Math.floor(data.length / 8)}`)
+// }
 function redirect(attr: string) {
   router.push(attr)
 }

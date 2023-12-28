@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import { Icon } from '@iconify/vue'
-import store from '@/store'
+import store from '@/store/index'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()

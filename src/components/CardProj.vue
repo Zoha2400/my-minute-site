@@ -34,6 +34,7 @@ export default {
     @click.self="$store.commit('showInfo', {})"
   >
     <div class="inf-scr">
+      <div class="closebtn" @click="$store.commit('closeInfo')">X</div>
       <div class="info">
         <div class="textin-info">
           <div class="imgages">

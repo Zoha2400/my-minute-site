@@ -88,7 +88,7 @@
 import TablePartVue from './TablePart.vue'
 import example from '../img/photo.svg'
 import { ref, watch } from 'vue'
-import store from '@/store'
+import store from '@/store/index'
 
 const data = ref({
   pk: null,

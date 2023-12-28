@@ -41,7 +41,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import store from '@/store'
+import store from '@/store/index'
 import { useRouter } from 'vue-router'
 
 const data = ref({

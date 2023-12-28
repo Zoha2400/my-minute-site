@@ -42,18 +42,20 @@ interface State {
     plot: string
     size: string
     acres: string
-    num: number
+    num: string
   }
   isEmptyType: boolean
   arcesChsn: boolean
   adpMenu: boolean
   choosenDisplay: string[]
+  choosenState: boolean
   logged: boolean
   cookie: string
   token: string
   choosenAdmin: Object
   infoAdmin: boolean
   topEight: Object[]
+  paginationProj: Object[]
 }
 
 export default createStore({
@@ -74,12 +76,14 @@ export default createStore({
     arcesChsn: false,
     adpMenu: true,
     choosenDisplay: [],
+    choosenState: false,
     logged: false,
     cookie: getCookie(),
     token: getCookieToken(),
     choosenAdmin: {},
     infoAdmin: false,
-    topEight: []
+    topEight: [],
+    paginationProj: []
     // cookies: Cookies.get('account') || null
   },
   mutations: {
@@ -147,8 +151,9 @@ export default createStore({
       state.type.style = ''
       state.type.acres = ''
       state.type.size = ''
-      state.type.num = 0
+      state.type.num = ''
       state.type.plot = ''
+      state.choosenState = !state.choosenState
     },
     setUnLogged(state: State) {
       state.logged = false
@@ -158,6 +163,9 @@ export default createStore({
     },
     setCart(state: State, data: Object) {
       state.cartData = data
+    },
+    addPagination(state: State, projects: Object[]) {
+      state.paginationProj = projects
     }
   },
   actions: {
