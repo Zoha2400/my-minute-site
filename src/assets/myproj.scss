@@ -3,25 +3,25 @@
   &::-webkit-scrollbar {
     width: $size;
     height: $size;
-    border-radius: 5px;
+    border-radius: 15px;
   }
 
   &::-webkit-scrollbar-thumb {
     background: $foreground-color;
-    border-radius: 5px;
+    border-radius: 15px;
   }
 
   &::-webkit-scrollbar-track {
     width: 7px;
     background: $background-color;
-    border-radius: 5px;
+    border-radius: 15px;
   }
 
   // For Internet Explorer
   & {
     scrollbar-face-color: $foreground-color;
     scrollbar-track-color: $background-color;
-    border-radius: 5px;
+    border-radius: 10px 0 0 10px;
   }
 }
 
@@ -510,6 +510,7 @@
     .imgages {
       width: 100% !important;
       max-height: 500px !important;
+      margin-top: 100px !important;
     }
   }
 }
@@ -553,6 +554,7 @@
 .swiper {
   width: 500px;
   height: 100%;
+  border-radius: 15px;
 
   .swpObj {
     display: flex !important;

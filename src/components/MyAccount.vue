@@ -19,30 +19,34 @@ function redirect(attr: string) {
 const change = async (id: number, state: boolean) => {
   const token = await store.state.token // Если token - Promise
 
-  const response = await fetch('http://localhost:3000/api/likes', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      id: id,
-      state: !state,
-      token: token
+  if (token != '') {
+    const response = await fetch('http://localhost:3000/api/likes', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        id: id,
+        state: !state,
+        token: token
+      })
     })
-  })
 
-  if (response.ok) {
-    const responseData = await response.json()
+    if (response.ok) {
+      const responseData = await response.json()
 
-    console.log('Успешно отправлено:', responseData)
+      console.log('Успешно отправлено:', responseData)
+    } else {
+      console.error('Ошибка при загрузке данных')
+    }
+
+    try {
+      await store.dispatch('fetchData')
+    } catch (error) {
+      console.error('Error fetching data:', error)
+    }
   } else {
-    console.error('Ошибка при загрузке данных')
-  }
-
-  try {
-    await store.dispatch('fetchData')
-  } catch (error) {
-    console.error('Error fetching data:', error)
+    router.push('/register')
   }
 }
 </script>

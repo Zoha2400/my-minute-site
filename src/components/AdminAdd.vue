@@ -20,7 +20,7 @@
 
       <div class="cont-info">
         <div class="header-info">
-          <p>ПРОЕКТ № {{ $store.state.choosenAdmin.pk }}</p>
+          <p>ПРОЕКТ № {{ data.pk }}</p>
         </div>
         <div class="body-info">
           <p>Размер: <input type="text" v-model="data.size" /></p>
@@ -91,6 +91,7 @@ import { ref, watch } from 'vue'
 import store from '@/store'
 
 const data = ref({
+  pk: null,
   area: '',
   size: '',
   acres: '',
@@ -107,6 +108,7 @@ watch(
   (newValue) => {
     if (newValue) {
       data.value = {
+        pk: store.state.choosenAdmin.pk,
         area: store.state.choosenAdmin.area,
         size: store.state.choosenAdmin.size,
         acres: store.state.choosenAdmin.acres,
@@ -292,26 +294,27 @@ function changeMainPhoto() {
   const formData = new FormData()
 
   // Добавляем файлы
-  if (data.value.main_photo) {
+  if (typeof data.value.main_photo != 'string') {
     formData.append('main_photo', data.value.main_photo)
+    formData.append('pk', store.state.choosenAdmin.pk)
+    const requestOptions = {
+      method: 'POST',
+      body: formData
+    }
+
+    fetch('http://localhost:3000/api/change/main_photo', requestOptions)
+      .then((response) => response.json())
+      .then((responseData) => {
+        store.dispatch('fetchData')
+
+        console.log('Успешно отправлено:', responseData)
+      })
+      .catch((error) => {
+        console.error('Ошибка при отправке:', error)
+      })
+  } else {
+    console.log('Выберите фото!')
   }
-  formData.append('pk', store.state.choosenAdmin.pk)
-
-  const requestOptions = {
-    method: 'POST',
-    body: formData
-  }
-
-  fetch('http://localhost:3000/api/change/main_photo', requestOptions)
-    .then((response) => response.json())
-    .then((responseData) => {
-      store.dispatch('fetchData')
-
-      console.log('Успешно отправлено:', responseData)
-    })
-    .catch((error) => {
-      console.error('Ошибка при отправке:', error)
-    })
 }
 
 function changePhotos() {
@@ -319,28 +322,30 @@ function changePhotos() {
 
   // Добавляем файлы
   if (data.value.photos.length > 0) {
-    data.value.photos.forEach((el) => {
-      formData.append('photos', el)
-    })
+    if (typeof data.value.photos[0] != 'string') {
+      data.value.photos.forEach((el) => {
+        formData.append('photos', el)
+      })
+
+      formData.append('pk', store.state.choosenAdmin.pk)
+
+      const requestOptions = {
+        method: 'POST',
+        body: formData
+      }
+
+      fetch('http://localhost:3000/api/change/photos', requestOptions)
+        .then((response) => response.json())
+        .then((responseData) => {
+          store.dispatch('fetchData')
+
+          console.log('Успешно отправлено:', responseData)
+        })
+        .catch((error) => {
+          console.error('Ошибка при отправке:', error)
+        })
+    }
   }
-
-  formData.append('pk', store.state.choosenAdmin.pk)
-
-  const requestOptions = {
-    method: 'POST',
-    body: formData
-  }
-
-  fetch('http://localhost:3000/api/change/photos', requestOptions)
-    .then((response) => response.json())
-    .then((responseData) => {
-      store.dispatch('fetchData')
-
-      console.log('Успешно отправлено:', responseData)
-    })
-    .catch((error) => {
-      console.error('Ошибка при отправке:', error)
-    })
 }
 </script>
 

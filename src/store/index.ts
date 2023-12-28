@@ -84,7 +84,7 @@ export default createStore({
   },
   mutations: {
     showInfoAdmin(state: State, obj: Object) {
-      state.infoAdmin = !state.infoAdmin
+      state.infoAdmin = true
       state.choosenAdmin = obj
       console.log(state.choosenAdmin)
     },
