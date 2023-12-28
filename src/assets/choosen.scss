@@ -53,3 +53,45 @@
     right: 150px !important;
   }
 }
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+
+  .pag-btn {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.264);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+
+  .pagbs {
+    background-color: #f83d28;
+    color: white !important;
+
+    &:hover {
+      background-color: #ab2516;
+    }
+  }
+
+  .active-pag {
+    background-color: white !important;
+    color: black !important;
+  }
+}
+
+.nonePagination {
+  display: none !important;
+}

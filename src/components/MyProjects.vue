@@ -45,15 +45,16 @@
       </div>
     </div>
 
-    <div class="pagination">
-      <div class="bef">b</div>
+    <div :class="{ pagination: paginationState, 'pagination nonePagination': !paginationState }">
+      <div class="bef pagbs pag-btn">{{ '<' }}</div>
       <RouterLink
         v-for="index in Math.ceil(data.length / 8)"
         :to="'/projects/' + index"
         :key="index"
+        :class="{ 'pag-btn active-pag': id == index, 'pag-btn': id != index }"
         >{{ index }}</RouterLink
       >
-      <div class="af">a</div>
+      <div class="af pagbs pag-btn">{{ '>' }}</div>
     </div>
 
     <div class="choosen-attr" @click="$store.commit('clearAll')">
@@ -91,11 +92,13 @@ if (router.currentRoute.value.path == '/projects/') {
 const id = ref(null)
 
 const data = ref(store.state.data)
-
+const paginationState = ref(false)
 const localData = ref([])
 
 const loadData = () => {
   id.value = router.currentRoute.value.params.id
+  paginationState.value = true
+
   if (
     !isNaN(+id.value) &&
     data.value.length < 8 * +id.value &&
@@ -110,7 +113,10 @@ const loadData = () => {
   ) {
     localData.value = data.value.slice((+id.value - 1) * 8, 8 * +id.value)
     store.commit('addPagination', localData.value)
+  } else if (data.value.length < 8) {
+    paginationState.value = false
   }
+
   // Ваша логика загрузки данных
 }
 
@@ -128,6 +134,7 @@ watch(
       store.state.type.num !== ''
     ) {
       localData.value = store.getters.filteredData
+      paginationState.value = false
     } else {
       loadData()
     }

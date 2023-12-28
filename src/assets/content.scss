@@ -54,7 +54,10 @@
 
 .content {
   width: 100%;
-  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
 
   .draganation {
