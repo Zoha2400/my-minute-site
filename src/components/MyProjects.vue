@@ -46,15 +46,15 @@
     </div>
 
     <div :class="{ pagination: paginationState, 'pagination nonePagination': !paginationState }">
-      <div class="bef pagbs pag-btn">{{ '<' }}</div>
+      <button class="bef pagbs pag-btn" @click="prebef">{{ '<' }}</button>
       <RouterLink
-        v-for="index in Math.ceil(data.length / 8)"
+        v-for="index in Math.ceil(data.length / 24)"
         :to="'/projects/' + index"
         :key="index"
         :class="{ 'pag-btn active-pag': id == index, 'pag-btn': id != index }"
         >{{ index }}</RouterLink
       >
-      <div class="af pagbs pag-btn">{{ '>' }}</div>
+      <button class="af pagbs pag-btn" @click="aftbef">{{ '>' }}</button>
     </div>
 
     <div class="choosen-attr" @click="$store.commit('clearAll')">
@@ -89,11 +89,25 @@ if (router.currentRoute.value.path == '/projects/') {
   router.push('/projects/1')
 }
 
+const numPage = 24
+
 const id = ref(null)
 
 const data = ref(store.state.data)
 const paginationState = ref(false)
 const localData = ref([])
+
+function prebef() {
+  if (+id.value > 1) {
+    router.push(`/projects/${+id.value - 1}`)
+  }
+}
+
+function aftbef() {
+  if (+id.value < Math.ceil(data.value.length / numPage)) {
+    router.push(`/projects/${+id.value + 1}`)
+  }
+}
 
 const loadData = () => {
   id.value = router.currentRoute.value.params.id
@@ -101,19 +115,19 @@ const loadData = () => {
 
   if (
     !isNaN(+id.value) &&
-    data.value.length < 8 * +id.value &&
-    data.value.length > 8 * (+id.value - 1)
+    data.value.length < numPage * +id.value &&
+    data.value.length > numPage * (+id.value - 1)
   ) {
-    localData.value = data.value.slice((+id.value - 1) * 8, data.value.length)
+    localData.value = data.value.slice((+id.value - 1) * numPage, data.value.length)
     store.commit('addPagination', localData.value)
   } else if (
     !isNaN(+id.value) &&
-    data.value.length >= 8 * +id.value &&
-    data.value.length > 8 * (+id.value - 1)
+    data.value.length >= numPage * +id.value &&
+    data.value.length > numPage * (+id.value - 1)
   ) {
-    localData.value = data.value.slice((+id.value - 1) * 8, 8 * +id.value)
+    localData.value = data.value.slice((+id.value - 1) * numPage, 8 * +id.value)
     store.commit('addPagination', localData.value)
-  } else if (data.value.length < 8) {
+  } else if (data.value.length < numPage) {
     paginationState.value = false
   }
 
