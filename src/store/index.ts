@@ -1,5 +1,7 @@
 import { createStore } from 'vuex'
 
+const ph = 'https://7aaf-84-54-122-30.ngrok-free.app'
+
 function getCookieToken() {
   const name = 'token='
   const decodedCookie = decodeURIComponent(document.cookie)
@@ -56,6 +58,7 @@ interface State {
   infoAdmin: boolean
   topEight: Object[]
   paginationProj: Object[]
+  path: string
 }
 
 export default createStore({
@@ -83,7 +86,8 @@ export default createStore({
     choosenAdmin: {},
     infoAdmin: false,
     topEight: [],
-    paginationProj: []
+    paginationProj: [],
+    path: ph
     // cookies: Cookies.get('account') || null
   },
   mutations: {
@@ -171,7 +175,7 @@ export default createStore({
   actions: {
     async fetchData({ commit }) {
       try {
-        const response = await fetch('http://localhost:3000/api/products', {
+        const response = await fetch(`${ph}/api/products`, {
           method: 'POST',
           mode: 'cors',
           headers: {
@@ -193,7 +197,7 @@ export default createStore({
       }
 
       try {
-        const response = await fetch('http://localhost:3000/api/cart', {
+        const response = await fetch(`${ph}/api/cart`, {
           method: 'POST',
           mode: 'cors',
           headers: {

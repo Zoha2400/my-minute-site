@@ -164,7 +164,7 @@ function changeArea() {
     body: formData
   }
 
-  fetch('http://localhost:3000/api/change/area', requestOptions)
+  fetch(`${store.state.path}/api/change/area`, requestOptions)
     .then((response) => response.json())
     .then((responseData) => {
       store.dispatch('fetchData')
@@ -186,7 +186,7 @@ function changeSize() {
     body: formData
   }
 
-  fetch('http://localhost:3000/api/change/size', requestOptions)
+  fetch(`${store.state.path}/api/change/size`, requestOptions)
     .then((response) => response.json())
     .then((responseData) => {
       store.dispatch('fetchData')
@@ -209,7 +209,7 @@ function changeAcres() {
     body: formData
   }
 
-  fetch('http://localhost:3000/api/change/acres', requestOptions)
+  fetch(`${store.state.path}/change/acres`, requestOptions)
     .then((response) => response.json())
     .then((responseData) => {
       store.dispatch('fetchData')
@@ -232,7 +232,7 @@ function changeStyle() {
     body: formData
   }
 
-  fetch('http://localhost:3000/api/change/style', requestOptions)
+  fetch(`${store.state.path}/api/change/style`, requestOptions)
     .then((response) => response.json())
     .then((responseData) => {
       store.dispatch('fetchData')
@@ -255,7 +255,7 @@ function changeCost() {
     body: formData
   }
 
-  fetch('http://localhost:3000/api/change/cost', requestOptions)
+  fetch(`${store.state.path}/api/change/cost`, requestOptions)
     .then((response) => response.json())
     .then((responseData) => {
       store.dispatch('fetchData')
@@ -278,7 +278,7 @@ function changeData() {
     body: formData
   }
 
-  fetch('http://localhost:3000/api/change/data', requestOptions)
+  fetch(`${store.state.path}/api/change/data`, requestOptions)
     .then((response) => response.json())
     .then((responseData) => {
       store.dispatch('fetchData')
@@ -302,7 +302,7 @@ function changeMainPhoto() {
       body: formData
     }
 
-    fetch('http://localhost:3000/api/change/main_photo', requestOptions)
+    fetch(`${store.state.path}/api/change/main_photo`, requestOptions)
       .then((response) => response.json())
       .then((responseData) => {
         store.dispatch('fetchData')
@@ -334,7 +334,7 @@ function changePhotos() {
         body: formData
       }
 
-      fetch('http://localhost:3000/api/change/photos', requestOptions)
+      fetch(`${store.state.path}/api/change/photos`, requestOptions)
         .then((response) => response.json())
         .then((responseData) => {
           store.dispatch('fetchData')

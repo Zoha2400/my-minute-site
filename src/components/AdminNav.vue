@@ -116,7 +116,7 @@ function add() {
     body: formData
   }
 
-  fetch('http://localhost:3000/api/add', requestOptions)
+  fetch(`${store.state.path}/api/add`, requestOptions)
     .then((response) => response.json())
     .then((responseData) => {
       console.log('Успешно отправлено:', responseData)

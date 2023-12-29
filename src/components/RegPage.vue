@@ -25,6 +25,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import store from '@/store/index'
 
 const formData = ref({
   email: '',
@@ -62,7 +63,7 @@ const register = () => {
     body: JSON.stringify(formData.value)
   }
 
-  fetch('http://localhost:3000/api/registrate', requestOptions)
+  fetch(`${store.state.path}/api/registrate`, requestOptions)
     .then((response) => response.json())
     .then((data) => {
       router.push('/login')

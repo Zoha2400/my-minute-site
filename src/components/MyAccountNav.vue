@@ -16,6 +16,13 @@
     <a class="btn quit" href="/" @click="deleteCookie">
       <p>ВЫЙТИ</p>
     </a>
+
+    <RouterLink
+      class="btn admpanel"
+      v-if="$store.state.token == 'a004fc46-6236-4cea-9394-16f03037a7be'"
+      to="/api/admin"
+      >Админ Панель</RouterLink
+    >
   </nav>
 </template>
 
@@ -23,6 +30,8 @@
 import { Icon } from '@iconify/vue'
 import store from '@/store/index'
 import { useRouter } from 'vue-router'
+
+store.state.token !== 'a004fc46-6236-4cea-9394-16f03037a7be'
 
 const router = useRouter()
 

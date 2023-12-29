@@ -15,6 +15,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import store from '@/store/index'
 
 const formData = ref({
   email: '',
@@ -55,7 +56,7 @@ const login = () => {
     body: JSON.stringify(formData.value)
   }
 
-  fetch('http://localhost:3000/api/login', requestOptions)
+  fetch(`${store.state.path}/api/login`, requestOptions)
     .then((response) => response.json())
     .then((data) => {
       console.log('Успешно отправлено:', data)

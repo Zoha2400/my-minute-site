@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    <div :class="{ pagination: paginationState, 'pagination nonePagination': !paginationState }">
+    <div :class="{ 'pagination ': paginationState, 'pagination nonePagination': !paginationState }">
       <button class="bef pagbs pag-btn" @click="prebef">{{ '<' }}</button>
       <RouterLink
         v-for="index in Math.ceil(data.length / 24)"
@@ -199,7 +199,7 @@ const change = async (id: number, state: boolean) => {
   const token = await store.state.token // Если token - Promise
 
   if (token != '') {
-    const response = await fetch('http://localhost:3000/api/likes', {
+    const response = await fetch(`${store.state.path}/api/likes`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -44,7 +44,7 @@ async function sendTelegram() {
     body: formData
   }
 
-  await fetch('http://localhost:3000/api/telegram/offer', requestOptions)
+  await fetch(`${store.state.path}/api/telegram/offer`, requestOptions)
     .then((res) => res.json())
     .then((resData) => {
       console.log('Успешно отправлено', resData)
