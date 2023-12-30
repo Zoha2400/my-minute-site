@@ -17,7 +17,8 @@
         @click="cardRedicert(proj)"
       >
         <div class="img-proj">
-          <img :src="proj.main_photo" alt="" />
+          <!-- <img :src="proj.main_photo" alt="" /> -->
+          <img :src="photo" />
         </div>
         <div class="text-proj">
           <p class="name">ПРОЕКТ № {{ proj.pk }}</p>
@@ -50,6 +51,7 @@
 import { Icon } from '@iconify/vue/dist/iconify.js'
 import store from '@/store/index'
 import { useRouter } from 'vue-router'
+import photo from '../img/photo.svg'
 
 const router = useRouter()
 

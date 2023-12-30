@@ -5,6 +5,7 @@ import MyFooter from './MyFooter.vue'
 import { useRouter } from 'vue-router'
 import store from '@/store'
 import { ref } from 'vue'
+import photo from '../img/photo.svg'
 
 const router = useRouter()
 
@@ -71,7 +72,8 @@ const change = async (id: number, state: boolean) => {
         @click="$store.commit('showInfo', proj)"
       >
         <div class="img-proj">
-          <img :src="proj.main_photo" alt="" />
+          <!-- <img :src="proj.main_photo" alt="" /> -->
+          <img :src="photo" alt="" />
         </div>
         <div class="text-proj">
           <p class="name">ПРОЕКТ № {{ proj.pk }}</p>
