@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 
-const ph = 'https://7aaf-84-54-122-30.ngrok-free.app'
+const ph = 'https://b8a2-84-54-122-30.ngrok-free.app'
 
 function getCookieToken() {
   const name = 'token='
@@ -179,7 +179,8 @@ export default createStore({
           method: 'POST',
           mode: 'cors',
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'ngrok-skip-browser-warning': '69420'
           },
           body: JSON.stringify({
             token: getCookieToken()
