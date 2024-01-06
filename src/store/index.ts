@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 
-const ph = 'https://b8a2-84-54-122-30.ngrok-free.app'
+const ph = 'http://localhost:3000'
 
 function getCookieToken() {
   const name = 'token='

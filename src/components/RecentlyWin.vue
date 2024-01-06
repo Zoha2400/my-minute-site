@@ -17,8 +17,7 @@
         @click="cardRedicert(proj)"
       >
         <div class="img-proj">
-          <!-- <img :src="proj.main_photo" alt="" /> -->
-          <img :src="photo" />
+          <img :src="proj.main_photo" alt="" />
         </div>
         <div class="text-proj">
           <p class="name">ПРОЕКТ № {{ proj.pk }}</p>

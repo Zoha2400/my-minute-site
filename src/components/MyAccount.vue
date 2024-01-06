@@ -72,8 +72,7 @@ const change = async (id: number, state: boolean) => {
         @click="$store.commit('showInfo', proj)"
       >
         <div class="img-proj">
-          <!-- <img :src="proj.main_photo" alt="" /> -->
-          <img :src="photo" alt="" />
+          <img :src="proj.main_photo" alt="" />
         </div>
         <div class="text-proj">
           <p class="name">ПРОЕКТ № {{ proj.pk }}</p>
