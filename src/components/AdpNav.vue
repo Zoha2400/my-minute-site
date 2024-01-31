@@ -9,7 +9,9 @@ import AdpMenu from './AdpMenu.vue'
   <div class="adp-menu-wrap noneAdp">
     <div class="adp-menu">
       <div class="imageAdp">
-        <img :src="iconMini" />
+        <RouterLink to="/">
+          <img :src="iconMini" />
+        </RouterLink>
       </div>
       <div class="buttonApdMenu" @click="$store.commit('showAdpMenu')">
         <Icon class="adpIcon" icon="entypo:menu" color="black" width="50" />

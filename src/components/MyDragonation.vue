@@ -8,7 +8,7 @@
       <p class="marked">УЖЕ СЕГОДНЯ</p>
       <p>ВЫ СЭКОНОМИТЕ 30 ДНЕЙ</p>
 
-      <RouterLink class="projDrag" to="/projects">
+      <RouterLink class="projDrag" to="/projects/1">
         <p>ПРОЕКТЫ</p>
       </RouterLink>
     </div>

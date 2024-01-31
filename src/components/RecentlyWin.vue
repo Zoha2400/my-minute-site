@@ -1,7 +1,7 @@
 <template>
   <div class="buttons-recenltly container-wrap cont-top-smth">
     <div class="btns-res-wrap container-proj">
-      <div class="btn-rec" @click="() => redirect('/projects')">Новые</div>
+      <div class="btn-rec" @click="() => redirect('/projects/1')">Новые</div>
       <div class="btn-rec rec-choosen" @click="() => redirect('/projects/1')">ПОПУЛЯРНЫE</div>
       <div class="btn-rec" @click="() => redirect('/account')">Избранные</div>
     </div>
