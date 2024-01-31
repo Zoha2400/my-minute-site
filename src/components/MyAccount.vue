@@ -60,7 +60,7 @@ const change = async (id: number, state: boolean) => {
       <div class="btns-res-wrap container-proj">
         <div class="btn-rec" @click="() => redirect('/')">Главная</div>
         <div class="btn-rec rec-choosen" @click="() => redirect('/account')">ИЗБРАННЫЕ</div>
-        <div class="btn-rec" @click="() => redirect('/projects')">Проекты</div>
+        <div class="btn-rec" @click="() => redirect('/projects/1')">Проекты</div>
       </div>
     </div>
     <div class="container-proj my-projects">

@@ -5,7 +5,7 @@
     <div class="buttons-recenltly container-wrap">
       <div class="btns-res-wrap container-proj">
         <div class="btn-rec" @click="() => redirect('/')">Главная</div>
-        <div class="btn-rec rec-choosen" @click="() => redirect('/projects')">ПРОЕКТЫ</div>
+        <div class="btn-rec rec-choosen" @click="() => redirect('/projects/1')">ПРОЕКТЫ</div>
         <div class="btn-rec" @click="() => redirect('/account')">Избранные</div>
       </div>
     </div>

@@ -15,6 +15,8 @@ import albom from '../img/albom.svg'
 import compass from '../img/compas.svg'
 import prj from '../img/prj.svg'
 
+import store from '@/store/index'
+
 let datal = ref(
   'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2998.416743648826!2d69.2149025!3d41.2780337!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b863b3aaa6d%3A0xda62a6ffa353cae7!2sART%20DECO%20DESIGN!5e0!3m2!1sru!2s!4v1695546202261!5m2!1sru!2s'
 )
@@ -56,7 +58,7 @@ async function sendMessage() {
     body: formData
   }
 
-  await fetch('http://localhost:3000/api/telegram', requestOptions)
+  await fetch(`${store.state.path}/api/telegram`, requestOptions)
     .then((res) => res.json())
     .then((resData) => {
       console.log('Успешно отправлено', resData)
