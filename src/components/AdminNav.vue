@@ -139,7 +139,7 @@ function add() {
 
 const router = useRouter()
 
-if (store.state.token !== 'a004fc46-6236-4cea-9394-16f03037a7be') {
+if (store.state.token !== '3ce45802-6e74-47ee-b59b-3ce3dd032837') {
   router.push('/')
 }
 </script>
