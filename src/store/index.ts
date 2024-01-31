@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 
-const ph = 'http://localhost:3000'
+const ph = 'http://89.111.153.226:3000'
 
 function getCookieToken() {
   const name = 'token='
