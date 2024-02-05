@@ -1,5 +1,6 @@
 <template>
   <form class="btn-card" @submit.prevent="sendTelegram">
+    <p>Оставить Заявку</p>
     <input type="text" required v-model="messageForm.name" class="rgt" placeholder="Имя" />
     <input
       type="text"
@@ -9,7 +10,7 @@
       placeholder="Номер Телефона"
     />
     <p>{{ $store.state.choosen.cost }} СУМ</p>
-    <button class="inpButton">Оставить Заявку</button>
+    <button class="inpButton">Отправить</button>
   </form>
 </template>
 
