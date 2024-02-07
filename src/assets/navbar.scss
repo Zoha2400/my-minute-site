@@ -45,11 +45,12 @@ a {
     height: 95%;
 
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    flex-direction: column;
     img {
       width: 200px;
+      margin-right: 50px;
       height: auto;
     }
   }
@@ -81,6 +82,14 @@ a {
 .clickedNav {
   background-color: #db3726 !important;
   color: white !important;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  grid-gap: 7px;
+}
+
+.clickedNav:hover {
+  grid-gap: 2px;
 }
 
 .clickedNavV {

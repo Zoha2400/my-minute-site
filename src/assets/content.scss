@@ -295,7 +295,7 @@
     }
 
     .banner-item {
-      width: 130px;
+      width: 140px;
       color: white;
       display: flex;
       justify-content: center;
@@ -305,8 +305,9 @@
       grid-area: 'it';
 
       p {
+        width: 140px;
         text-align: center;
-        font-size: 13px;
+        font-size: 16px;
         font-weight: 300;
       }
     }
@@ -328,6 +329,7 @@
         }
       }
       p {
+        font-size: 19px;
         text-align: start;
       }
     }

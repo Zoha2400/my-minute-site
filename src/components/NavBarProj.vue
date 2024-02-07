@@ -13,13 +13,24 @@ const selectedAreaA = ref(0)
 <template>
   <nav class="navbar-menu">
     <RouterLink class="btn clickedNav" to="/" @click="$store.commit('closeInfoBack')">
-      <Icon icon="material-symbols:arrow-back" width="23" />
+      <Icon icon="material-symbols:arrow-back" width="23" /> НАЗАД
     </RouterLink>
   </nav>
+  <!-- 
+  <div class="choosen-attr style-lable area" @click="$store.commit('clearAll')">
+    <div class="closeAttr">Сброс фильтра</div>
+    <p
+      :class="{ 'p-attr noneattr': !chsn, 'p-attr': chsn }"
+      v-for="chsn in $store.state.type"
+      :key="chsn"
+    >
+      {{ chsn }}
+    </p>
+  </div> -->
 
   <MyStyles />
 
-  <MyType />
+  <!-- <MyType /> -->
 
   <div class="style-lable area">
     <p>Номер проекта</p>
@@ -45,5 +56,6 @@ const selectedAreaA = ref(0)
 </template>
 
 <style>
+@import url('../assets/choosen.scss');
 @import url('../assets/navbar.scss');
 </style>

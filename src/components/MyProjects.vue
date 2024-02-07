@@ -203,11 +203,6 @@ watch(
 //   router.resolve(`/projects/${Math.floor(data.length / 8)}`)
 // }
 
-if (store.state.project_state === 1) {
-  localData.value = localData.value.reverse()
-} else {
-  localData.value = localData.value
-}
 function redirect(attr: string, index: number) {
   store.commit('setProjState', index)
   router.push(attr)

@@ -1,6 +1,9 @@
 <template>
   <div class="buttons-recenltly container-wrap cont-top-smth">
     <div class="btns-res-wrap container-proj">
+      <div class="light-design">
+        <div class="lgitem"></div>
+      </div>
       <div class="btn-rec" @click="() => redirect('/projects/1', 1)">Новые</div>
       <div class="btn-rec rec-choosen" @click="() => redirect('/projects/1', 0)">ПОПУЛЯРНЫE</div>
       <div class="btn-rec" @click="() => redirect('/account', 0)">Избранные</div>
@@ -42,6 +45,11 @@
           </p>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="buttons-recenltly container-wrap cont-top-smth nonmarg">
+    <div class="btns-res-wrap container-proj">
+      <div class="btn-rec rec-choosen" @click="() => redirect('/projects/1', 0)">ВСЕ ПРОЕКТЫ</div>
     </div>
   </div>
 </template>
