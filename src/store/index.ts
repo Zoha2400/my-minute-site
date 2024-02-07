@@ -59,6 +59,7 @@ interface State {
   topEight: Object[]
   paginationProj: Object[]
   path: string
+  project_state: number
 }
 
 export default createStore({
@@ -87,7 +88,8 @@ export default createStore({
     infoAdmin: false,
     topEight: [],
     paginationProj: [],
-    path: ph
+    path: ph,
+    project_state: 0
     // cookies: Cookies.get('account') || null
   },
   mutations: {
@@ -170,17 +172,20 @@ export default createStore({
     },
     addPagination(state: State, projects: Object[]) {
       state.paginationProj = projects
+    },
+    setProjState(state: State, index: number) {
+      state.project_state = index
+      console.log(state.project_state)
     }
   },
   actions: {
-    async fetchData({ commit }) {
+    async fetchData({ commit }, index: number) {
       try {
         const response = await fetch(`${ph}/api/products`, {
           method: 'POST',
           mode: 'cors',
           headers: {
-            'Content-Type': 'application/json',
-            'ngrok-skip-browser-warning': '69420'
+            'Content-Type': 'application/json'
           },
           body: JSON.stringify({
             token: getCookieToken()
@@ -188,8 +193,14 @@ export default createStore({
         })
 
         if (response.ok) {
-          const responseData = await response.json()
-          commit('setData', responseData)
+          if (index === 1) {
+            let responseData = await response.json()
+            responseData = responseData.reverse()
+            commit('setData', responseData)
+          } else {
+            const responseData = await response.json()
+            commit('setData', responseData)
+          }
         } else {
           console.error('Ошибка при загрузке данных')
         }

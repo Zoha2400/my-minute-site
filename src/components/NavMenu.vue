@@ -11,7 +11,7 @@ import NavLinks from './NavLinks.vue'
       <div>О НАС</div>
     </a>
 
-    <RouterLink class="btn" to="/projects/1">
+    <RouterLink class="btn" @click="$store.commit('setProjState', 0)" to="/projects/1">
       <p>ПРОЕКТЫ</p>
     </RouterLink>
     <a href="#contacts" class="btn">

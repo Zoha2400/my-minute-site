@@ -1,9 +1,9 @@
 <template>
   <div class="buttons-recenltly container-wrap cont-top-smth">
     <div class="btns-res-wrap container-proj">
-      <div class="btn-rec" @click="() => redirect('/projects/1')">Новые</div>
-      <div class="btn-rec rec-choosen" @click="() => redirect('/projects/1')">ПОПУЛЯРНЫE</div>
-      <div class="btn-rec" @click="() => redirect('/account')">Избранные</div>
+      <div class="btn-rec" @click="() => redirect('/projects/1', 1)">Новые</div>
+      <div class="btn-rec rec-choosen" @click="() => redirect('/projects/1', 0)">ПОПУЛЯРНЫE</div>
+      <div class="btn-rec" @click="() => redirect('/account', 0)">Избранные</div>
     </div>
   </div>
 
@@ -54,7 +54,8 @@ import photo from '../img/photo.svg'
 
 const router = useRouter()
 
-function redirect(attr: string) {
+function redirect(attr: string, index: number) {
+  store.commit('setProjState', index)
   router.push(attr)
 }
 

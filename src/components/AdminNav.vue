@@ -1,10 +1,16 @@
 <template>
   <div class="addinp">
     <form class="adpinp-form" @submit.prevent="add">
-      <input v-model="data.area" type="number" placeholder="Площадь" />
-      <input v-model="data.size" type="text" placeholder="Размер" />
-      <input v-model="data.acres" type="number" placeholder="Соток" />
-      <input v-model="data.style" @focus="showSuggestionsHandler" type="text" placeholder="Стиль" />
+      <input v-model="data.area" type="number" placeholder="Площадь" required />
+      <input v-model="data.size" type="text" placeholder="Размер" required />
+      <input v-model="data.acres" type="number" placeholder="Соток" required />
+      <input
+        v-model="data.style"
+        @focus="showSuggestionsHandler"
+        type="text"
+        placeholder="Стиль"
+        required
+      />
       <ul v-if="showSuggestions">
         <li
           v-for="suggestion in suggestions"
@@ -14,7 +20,7 @@
           {{ suggestion }}
         </li>
       </ul>
-      <input v-model="data.cost" type="number" placeholder="Цена" />
+      <input v-model="data.cost" type="number" placeholder="Цена" required />
       <textarea
         v-model="data.data"
         name="info"
@@ -23,8 +29,16 @@
         rows="10"
         placeholder="Информация"
         @change="chekcer"
+        required
       ></textarea>
-      <input type="file" @change="handleFileChange" class="file" name="mainphoto" id="mainphoto" />
+      <input
+        type="file"
+        @change="handleFileChange"
+        class="file"
+        name="mainphoto"
+        id="mainphoto"
+        required
+      />
       <input
         type="file"
         @change="handleFileChangeOther"
@@ -33,6 +47,7 @@
         id="photos"
         multiple
         accept="image/*"
+        required
       />
       <button type="submit">Добавить</button>
     </form>
@@ -139,7 +154,7 @@ function add() {
 
 const router = useRouter()
 
-if (store.state.token !== '3ce45802-6e74-47ee-b59b-3ce3dd032837') {
+if (store.state.token !== 'a004fc46-6236-4cea-9394-16f03037a7be') {
   router.push('/')
 }
 </script>

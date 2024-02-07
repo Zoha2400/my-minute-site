@@ -4,9 +4,18 @@
   <div class="container-wrap my-projects-wrp cont-top-smth" id="up">
     <div class="buttons-recenltly container-wrap">
       <div class="btns-res-wrap container-proj">
-        <div class="btn-rec" @click="() => redirect('/')">Главная</div>
-        <div class="btn-rec rec-choosen" @click="() => redirect('/projects/1')">ПРОЕКТЫ</div>
-        <div class="btn-rec" @click="() => redirect('/account')">Избранные</div>
+        <div class="btn-rec" @click="() => redirect('/', 0)">Главная</div>
+        <!-- <div class="btn-rec rec-choosen" @click="() => redirect('/projects/1', 0)">ПРОЕКТЫ</div> -->
+        <div class="btn-rec rec-choosen" @click="redirect('/projects/1', 0)">
+          {{
+            $store.state.project_state === 0
+              ? 'ПРОЕКТЫ'
+              : $store.state.project_state === 1
+              ? 'НОВЫЕ'
+              : 'ПРОЕКТЫ'
+          }}
+        </div>
+        <div class="btn-rec" @click="() => redirect('/account', 0)">Избранные</div>
       </div>
     </div>
     <div class="container-proj my-projects">
@@ -133,6 +142,7 @@ const loadData = () => {
   }
 
   // Ваша логика загрузки данных
+  //0
 }
 
 loadData()
@@ -192,7 +202,14 @@ watch(
 // } else if (!isNaN(+id) && data.length - 8 < +id * 8) {
 //   router.resolve(`/projects/${Math.floor(data.length / 8)}`)
 // }
-function redirect(attr: string) {
+
+if (store.state.project_state === 1) {
+  localData.value = localData.value.reverse()
+} else {
+  localData.value = localData.value
+}
+function redirect(attr: string, index: number) {
+  store.commit('setProjState', index)
   router.push(attr)
 }
 
@@ -221,13 +238,19 @@ const change = async (id: number, state: boolean) => {
     }
 
     try {
-      await store.dispatch('fetchData')
+      await store.dispatch('fetchData', store.state.project_state)
     } catch (error) {
       console.error('Error fetching data:', error)
     }
   } else {
     router.push('/reg')
   }
+}
+
+try {
+  store.dispatch('fetchData', store.state.project_state)
+} catch (error) {
+  console.error('Error fetching data:', error)
 }
 </script>
 <style>

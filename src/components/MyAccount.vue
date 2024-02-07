@@ -13,7 +13,8 @@ if (store.state.logged) {
   router.push('/reg')
 }
 
-function redirect(attr: string) {
+function redirect(attr: string, index: number) {
+  store.commit('setProjState', index)
   router.push(attr)
 }
 
@@ -58,9 +59,9 @@ const change = async (id: number, state: boolean) => {
   <div class="container-wrap my-projects-wrp cont-top-smth" id="up">
     <div class="buttons-recenltly container-wrap">
       <div class="btns-res-wrap container-proj">
-        <div class="btn-rec" @click="() => redirect('/')">Главная</div>
-        <div class="btn-rec rec-choosen" @click="() => redirect('/account')">ИЗБРАННЫЕ</div>
-        <div class="btn-rec" @click="() => redirect('/projects/1')">Проекты</div>
+        <div class="btn-rec" @click="() => redirect('/', 0)">Главная</div>
+        <div class="btn-rec rec-choosen" @click="() => redirect('/account', 0)">ИЗБРАННЫЕ</div>
+        <div class="btn-rec" @click="() => redirect('/projects/1', 0)">Проекты</div>
       </div>
     </div>
     <div class="container-proj my-projects">

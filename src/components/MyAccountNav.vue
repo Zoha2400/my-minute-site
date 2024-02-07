@@ -19,7 +19,7 @@
 
     <RouterLink
       class="btn admpanel"
-      v-if="$store.state.token == '3ce45802-6e74-47ee-b59b-3ce3dd032837'"
+      v-if="$store.state.token == 'a004fc46-6236-4cea-9394-16f03037a7be'"
       to="/api/admin"
       >Админ Панель</RouterLink
     >
@@ -31,7 +31,7 @@ import { Icon } from '@iconify/vue'
 import store from '@/store/index'
 import { useRouter } from 'vue-router'
 
-store.state.token !== '3ce45802-6e74-47ee-b59b-3ce3dd032837'
+store.state.token !== 'a004fc46-6236-4cea-9394-16f03037a7be'
 
 const router = useRouter()
 
