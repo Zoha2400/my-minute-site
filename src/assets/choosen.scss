@@ -101,3 +101,84 @@
 .admpanel {
   background-color: rgb(205, 205, 205);
 }
+
+.choosen-at {
+  width: 80%;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  position: relative;
+
+  // .closeAtt {
+  //   background-color: #f83d28;
+  //   color: white;
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 100%;
+  //   display: flex;
+  //   opacity: 0;
+  //   justify-content: center;
+  //   align-items: center;
+  //   transition: 0.3s ease-in-out;
+  // }
+  .closeAtt {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgb(240, 42, 42);
+    opacity: 0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease-in-out;
+    gap: 0;
+  }
+
+  .p-attr {
+    background-color: white;
+    box-sizing: border-box;
+    position: relative;
+    width: 95%;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 1px !important;
+  }
+  .noneattr {
+    display: none !important;
+    position: absolute;
+    right: 150px !important;
+  }
+
+  &:hover {
+    .closeAtt {
+      opacity: 1;
+    }
+  }
+}
+
+.btn-wrap {
+  width: 80%;
+  display: flex;
+}
+
+.btn-clearup {
+  border: none;
+  outline: none;
+  padding: 5px;
+  color: white;
+  border-radius: 5px;
+  background-color: rgb(253, 72, 72);
+  transition: 0.3s ease-in-out;
+  margin-top: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($color: rgb(253, 72, 72), $amount: 15);
+  }
+}

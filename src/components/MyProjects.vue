@@ -65,18 +65,6 @@
       >
       <button class="af pagbs pag-btn" @click="aftbef">{{ '>' }}</button>
     </div>
-
-    <div class="choosen-attr" @click="$store.commit('clearAll')">
-      <div class="closeAttr">Сброс фильтра</div>
-
-      <p
-        :class="{ 'p-attr noneattr': !chsn, 'p-attr': chsn }"
-        v-for="chsn in $store.state.type"
-        :key="chsn"
-      >
-        {{ chsn }}
-      </p>
-    </div>
   </div>
 
   <MyFooter />

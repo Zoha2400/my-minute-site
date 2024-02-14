@@ -30,6 +30,22 @@ const selectedAreaA = ref(0)
   </div> -->
 
   <div class="style-lable area">
+    <p>Фильтр</p>
+    <div class="choosen-at">
+      <p
+        :class="{ 'p-attr noneattr': !chsn, 'p-attr': chsn }"
+        v-for="chsn in $store.state.type"
+        :key="chsn"
+      >
+        {{ chsn }}
+      </p>
+    </div>
+    <div class="btn-wrap">
+      <button class="btn-clearup" @click="$store.commit('clearAll')">Сброс Фильтра</button>
+    </div>
+  </div>
+
+  <div class="style-lable area">
     <p>Номер проекта</p>
 
     <div class="area-items">
@@ -65,4 +81,5 @@ const selectedAreaA = ref(0)
 <style>
 @import url('../assets/choosen.scss');
 @import url('../assets/navbar.scss');
+@import url('../assets/myproj.scss');
 </style>
