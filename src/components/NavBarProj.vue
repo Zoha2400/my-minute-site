@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { Icon } from '@iconify/vue'
+import store from '@/store'
 
 import MyStyles from './MyStylesProj.vue'
 import MyType from './MyTypeProj.vue'
@@ -28,18 +29,24 @@ const selectedAreaA = ref(0)
     </p>
   </div> -->
 
-  <MyStyles />
-
-  <!-- <MyType /> -->
-
   <div class="style-lable area">
     <p>Номер проекта</p>
 
     <div class="area-items">
-      <input type="number" id="mt2" placeholder="1000" v-model="$store.state.type.num" />
-      <button @click="$store.commit('setArea', selectedAreaM + 'x' + selectedAreaA)">OK</button>
+      <input
+        type="number"
+        id="mt5"
+        placeholder="1000"
+        v-model="$store.state.type.num"
+        @change="$store.commit('setNum', $store.state.type.num)"
+      />
+      <!-- <button @click="$store.commit('setNum', $store.state.type.num)">OK</button> -->
     </div>
   </div>
+
+  <MyStyles />
+
+  <MyType />
 
   <div class="style-lable area">
     <p>Участок</p>

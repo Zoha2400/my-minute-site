@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 
-const ph = 'http://89.111.153.226:3000'
+// const ph = 'http://89.111.153.226:3000'
+const ph = 'http://localhost:3000'
 
 function getCookieToken() {
   const name = 'token='
@@ -120,6 +121,9 @@ export default createStore({
     setPlot(state: State, data: string) {
       state.type.plot = data
     },
+    setNum(state: State, data: string) {
+      state.type.num = data
+    },
     setArea(state: State, data: string) {
       if (+data.split('x')[0] != 0 && +data.split('x')[1] != 0) {
         state.type.size = data
@@ -234,26 +238,27 @@ export default createStore({
   getters: {
     filteredData(state: State) {
       const { style, plot, size, acres, num } = state.type
+
       // Фильтруем массив data по всем четырем параметрам
       return state.data.filter((item) => {
         const isStyleMatch = !style || item.style === style
         const isPlotMatch = !plot || item.plot === plot
-        const isNumber = !num || +item.pk === +num
+        const isNumber = !num || item.pk == num
 
         const [xValue, yValue] = item.size.split('x').map(parseFloat)
 
-        // Парсим значение из строки area и проверяем, находятся ли xValue и yValue в заданных пределах
+        // Парсим значение из строки size и проверяем, находятся ли xValue и yValue в заданных пределах
         const [targetX, targetY] = size.split('x').map(parseFloat)
         const isAreaMatch =
-          !size || (Math.abs(+xValue - +targetX) <= 1 && Math.abs(+yValue - +targetY) <= 1)
+          !size || (Math.abs(xValue - targetX) <= 1 && Math.abs(yValue - targetY) <= 1)
 
+        console.log(state.type)
         // Проверяем приблизительное значение acres
         const isAcresMatch = !acres || Math.abs(+item.acres - acres) <= 1
 
-        return isStyleMatch && isPlotMatch && isAreaMatch && isAcresMatch && isNumber
+        return isNumber && isStyleMatch && isPlotMatch && isAreaMatch && isAcresMatch
       })
     },
-
     getIsLogged(state: State) {
       state.logged = !state.logged
 

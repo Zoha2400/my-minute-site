@@ -153,10 +153,10 @@ watch(
     data.value = store.state.data
     if (
       store.state.type.style !== '' ||
-      store.state.type.plot !== '' ||
-      store.state.type.size !== '' ||
-      store.state.type.acres !== '' ||
-      store.state.type.num !== ''
+      store.state.type.plot != '' ||
+      store.state.type.size != '' ||
+      store.state.type.acres != '' ||
+      store.state.type.num != ''
     ) {
       localData.value = store.getters.filteredData
       paginationState.value = false
@@ -171,10 +171,106 @@ watch(
   () => {
     if (
       store.state.type.style !== '' ||
-      store.state.type.plot !== '' ||
-      store.state.type.size !== '' ||
-      store.state.type.acres !== '' ||
-      store.state.type.num !== ''
+      store.state.type.plot != '' ||
+      store.state.type.size != '' ||
+      store.state.type.acres != '' ||
+      store.state.type.num != ''
+    ) {
+      localData.value = store.getters.filteredData
+    }
+  },
+  { deep: true }
+)
+
+watch(
+  () => store.state.type.style,
+  () => {
+    if (
+      store.state.type.style !== '' ||
+      store.state.type.plot != '' ||
+      store.state.type.size != '' ||
+      store.state.type.acres != '' ||
+      store.state.type.num != ''
+    ) {
+      localData.value = store.getters.filteredData
+    }
+  },
+  { deep: true }
+)
+
+watch(
+  () => store.state.type.style,
+  () => {
+    if (
+      store.state.type.style !== '' ||
+      store.state.type.plot != '' ||
+      store.state.type.size != '' ||
+      store.state.type.acres != '' ||
+      store.state.type.num != ''
+    ) {
+      localData.value = store.getters.filteredData
+    }
+  },
+  { deep: true }
+)
+
+watch(
+  () => store.state.type.plot,
+  () => {
+    if (
+      store.state.type.style !== '' ||
+      store.state.type.plot != '' ||
+      store.state.type.size != '' ||
+      store.state.type.acres != '' ||
+      store.state.type.num != ''
+    ) {
+      localData.value = store.getters.filteredData
+    }
+  },
+  { deep: true }
+)
+
+watch(
+  () => store.state.type.size,
+  () => {
+    if (
+      store.state.type.style !== '' ||
+      store.state.type.plot != '' ||
+      store.state.type.size != '' ||
+      store.state.type.acres != '' ||
+      store.state.type.num != ''
+    ) {
+      localData.value = store.getters.filteredData
+    }
+  },
+  { deep: true }
+)
+
+watch(
+  () => store.state.type.acres,
+  () => {
+    if (
+      store.state.type.style !== '' ||
+      store.state.type.plot != '' ||
+      store.state.type.size != '' ||
+      store.state.type.acres != '' ||
+      store.state.type.num != ''
+    ) {
+      localData.value = store.getters.filteredData
+    }
+  },
+  { deep: true }
+)
+
+watch(
+  () => store.state.type.num,
+  () => {
+    if (
+      store.state.type.style !== '' ||
+      store.state.type.plot != '' ||
+      store.state.type.size != '' ||
+      store.state.type.acres != '' ||
+      store.state.type.num != ''
     ) {
       localData.value = store.getters.filteredData
     }
