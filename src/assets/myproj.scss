@@ -625,3 +625,23 @@
     width: 200px !important;
   }
 }
+
+.icons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .cst {
+    color: white;
+    font-weight: 400;
+    font-size: 19px;
+  }
+  .icn-wrp {
+    display: flex;
+    gap: 3px;
+  }
+  p {
+    width: 30px !important;
+  }
+}

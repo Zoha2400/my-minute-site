@@ -31,25 +31,46 @@
         </div>
         <div class="text-proj">
           <p class="name">ПРОЕКТ № {{ proj.pk }}</p>
-          <p class="area">{{ proj.acres }} соток</p>
-          <p class="cost" v-if="proj.like_state">
-            <span>{{ proj.cost }} UZS</span>
-            <Icon
-              icon="mdi:heart"
-              width="25"
-              color="#F9B60A"
-              @click.stop="change(proj.pk, proj.like_state)"
-            />
-          </p>
-          <p class="cost" v-else>
-            <span>{{ proj.cost }} UZS</span>
-            <Icon
-              icon="mdi:heart-outline"
-              width="25"
-              color="#F9B60A"
-              @click.stop="change(proj.pk, proj.like_state)"
-            />
-          </p>
+          <p class="area">Лайков: {{ proj.rank }}</p>
+
+          <div class="icons">
+            <span class="cst">{{ proj.cost }} UZS</span>
+            <div class="icn-wrp">
+              <p class="cost" v-if="proj.rank_state">
+                <Icon
+                  icon="mdi:heart"
+                  width="30"
+                  color="#F9B60A"
+                  @click.stop="rankup(proj.pk, proj.rank_state)"
+                />
+              </p>
+              <p class="cost" v-else>
+                <Icon
+                  icon="mdi:heart-outline"
+                  width="30"
+                  color="#F9B60A"
+                  @click.stop="rankup(proj.pk, proj.rank_state)"
+                />
+              </p>
+
+              <p class="cost" v-if="proj.like_state">
+                <Icon
+                  icon="material-symbols:bookmark"
+                  width="30"
+                  color="#F9B60A"
+                  @click.stop="change(proj.pk, proj.like_state)"
+                />
+              </p>
+              <p class="cost" v-else>
+                <Icon
+                  icon="material-symbols:bookmark-outline"
+                  width="30"
+                  color="#F9B60A"
+                  @click.stop="change(proj.pk, proj.like_state)"
+                />
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -297,6 +318,40 @@ const change = async (id: number, state: boolean) => {
 
   if (token != '') {
     const response = await fetch(`${store.state.path}/api/likes`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        id: id,
+        state: !state,
+        token: token
+      })
+    })
+
+    if (response.ok) {
+      const responseData = await response.json()
+
+      console.log('Успешно отправлено:', responseData)
+    } else {
+      console.error('Ошибка при загрузке данных')
+    }
+
+    try {
+      await store.dispatch('fetchData', store.state.project_state)
+    } catch (error) {
+      console.error('Error fetching data:', error)
+    }
+  } else {
+    router.push('/reg')
+  }
+}
+
+const rankup = async (id: number, state: boolean) => {
+  const token = await store.state.token // Если token - Promise
+
+  if (token != '') {
+    const response = await fetch(`${store.state.path}/api/rank`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

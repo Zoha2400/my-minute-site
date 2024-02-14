@@ -98,7 +98,6 @@ export default {
               <p>Площадь: {{ $store.state.choosen.area }}</p>
               <p>Cоток: {{ $store.state.choosen.acres }}</p>
               <p>Стиль: {{ $store.state.choosen.style }}</p>
-              <p>Лайков: {{ $store.state.choosen.likes }}</p>
             </div>
 
             <div class="footer-info">
