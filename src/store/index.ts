@@ -1,7 +1,7 @@
 import { createStore } from 'vuex'
 
-// const ph = 'http://89.111.153.226:3000'
-const ph = 'http://localhost:3000'
+const ph = 'http://89.111.153.226:3000'
+// const ph = 'http://localhost:3000'
 
 function getCookieToken() {
   const name = 'token='
@@ -197,9 +197,14 @@ export default createStore({
         })
 
         if (response.ok) {
+          //return state.data.sort((a, b) => b.likes - a.likes).slice(0, 8)
           if (index === 1) {
             let responseData = await response.json()
             responseData = responseData.reverse()
+            commit('setData', responseData)
+          } else if (index === 2) {
+            let responseData = await response.json()
+            responseData = responseData.sort((a, b) => b.rank - a.rank)
             commit('setData', responseData)
           } else {
             const responseData = await response.json()
@@ -265,7 +270,7 @@ export default createStore({
       return state.logged
     },
     getTopEight(state: State) {
-      return state.data.sort((a, b) => b.likes - a.likes).slice(0, 8)
+      return state.data.sort((a, b) => b.rank - a.rank).slice(0, 8)
     }
   },
 

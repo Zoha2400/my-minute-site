@@ -12,7 +12,7 @@
               ? 'ПРОЕКТЫ'
               : $store.state.project_state === 1
               ? 'НОВЫЕ'
-              : 'ПРОЕКТЫ'
+              : 'ПОПУЛЯРНОЕ'
           }}
         </div>
         <div class="btn-rec" @click="() => redirect('/account', 0)">Избранные</div>

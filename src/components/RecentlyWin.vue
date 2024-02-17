@@ -5,7 +5,7 @@
         <div class="lgitem"></div>
       </div>
       <div class="btn-rec" @click="() => redirect('/projects/1', 1)">Новые</div>
-      <div class="btn-rec rec-choosen" @click="() => redirect('/projects/1', 0)">ПОПУЛЯРНЫE</div>
+      <div class="btn-rec rec-choosen" @click="() => redirect('/projects/1', 2)">ПОПУЛЯРНЫE</div>
       <div class="btn-rec" @click="() => redirect('/account', 0)">Избранные</div>
     </div>
   </div>
