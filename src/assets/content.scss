@@ -178,7 +178,7 @@
   p {
     font-size: 20px;
     color: white;
-    margin-bottom: 15px;
+    margin: 0 5px 15px 5px;
 
     span {
       font-weight: 700;
@@ -211,6 +211,12 @@
     align-items: center;
     grid-gap: 7px;
     padding: 40px 0;
+
+    .t {
+      img {
+        width: 70px;
+      }
+    }
 
     @media (max-width: 950px) {
       grid-template-areas: 'it it' 'it it';
@@ -320,7 +326,7 @@
     border-radius: 0 !important;
 
     .banner-item {
-      width: 180px;
+      width: 200px;
       flex-direction: row;
       .banner-text {
         padding: 10px;

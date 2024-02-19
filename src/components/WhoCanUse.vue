@@ -14,6 +14,10 @@ import car from '../img/car.svg'
 import albom from '../img/albom.svg'
 import compass from '../img/compas.svg'
 import prj from '../img/prj.svg'
+import up from '../img/up.svg'
+import builder from '../img/builder.svg'
+import chert from '../img/chert.svg'
+import homes from '../img/homes.svg'
 
 import store from '@/store/index'
 
@@ -115,11 +119,13 @@ async function sendMessage() {
       <div class="container ourNums banner bn-t2">
         <div class="banner-item t">
           <div class="ticon-wrapper">
-            <Icon
+            <!-- <Icon
               class="ticon"
               icon="streamline:money-graph-arrow-increase-ascend-growth-up-arrow-stats-graph-right-grow"
               width="70"
-            />
+            /> -->
+
+            <img :src="up" />
           </div>
           <div class="banner-text">
             <p><span>11 лет</span> на рынке</p>
@@ -127,7 +133,8 @@ async function sendMessage() {
         </div>
         <div class="banner-item t">
           <div class="ticon-wrapper">
-            <Icon class="ticon" icon="ic:twotone-architecture" width="70" />
+            <!-- <Icon class="ticon" icon="ic:twotone-architecture" width="70" /> -->
+            <img :src="builder" />
           </div>
 
           <div class="banner-text">
@@ -136,7 +143,8 @@ async function sendMessage() {
         </div>
         <div class="banner-item t">
           <div class="ticon-wrapper">
-            <Icon class="ticon" icon="octicon:project-template-16" width="70" />
+            <!-- <Icon class="ticon" icon="octicon:project-template-16" width="70" /> -->
+            <img :src="chert" />
           </div>
 
           <div class="banner-text">
@@ -145,7 +153,8 @@ async function sendMessage() {
         </div>
         <div class="banner-item t">
           <div class="ticon-wrapper">
-            <Icon class="ticon" icon="mdi:house-outline" width="70" />
+            <!-- <Icon class="ticon" icon="mdi:house-outline" width="70" /> -->
+            <img :src="homes" />
           </div>
 
           <div class="banner-text">

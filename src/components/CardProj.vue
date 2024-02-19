@@ -101,7 +101,8 @@ export default {
             </div>
 
             <div class="footer-info">
-              {{ $store.state.choosen.data }}
+              <!-- {{ $store.state.choosen.data }} -->
+              <p v-html="$store.state.choosen.data"></p>
             </div>
 
             <BtnCardTelegram :pk="$store.state.choosen.pk" />

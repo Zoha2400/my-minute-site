@@ -270,7 +270,7 @@ function changeCost() {
 function changeData() {
   const formData = new FormData()
 
-  formData.append('data', data.value.data)
+  formData.append('data', data.value.data.replace(/\n/g, '<br>'))
   formData.append('pk', store.state.choosenAdmin.pk)
 
   const requestOptions = {

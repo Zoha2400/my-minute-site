@@ -124,7 +124,7 @@ function add() {
   formData.append('acres', data.value.acres)
   formData.append('style', data.value.style)
   formData.append('cost', data.value.cost)
-  formData.append('data', data.value.data)
+  formData.append('data', data.value.data.replace(/\n/g, '<br>'))
 
   const requestOptions = {
     method: 'POST',
