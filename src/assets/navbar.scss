@@ -69,7 +69,6 @@ a {
   flex-direction: column;
   grid-gap: 8px;
   margin: 40px 0;
-
   .btn {
     width: 80%;
     color: #132244;
@@ -266,7 +265,6 @@ a {
   z-index: 3;
   display: none;
 
-  background-color: red;
   @media (max-width: 1320px) {
     display: block !important;
   }
@@ -306,7 +304,7 @@ a {
   width: 280px;
   max-height: 100vh;
   min-height: auto;
-  background-color: rgb(255, 255, 255);
+  padding-bottom: 50px;
   overflow-y: auto;
   position: absolute;
   display: flex;
@@ -314,6 +312,7 @@ a {
   flex-direction: column;
   z-index: 3;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.351);
+  background-color: white;
   right: 0;
   transition: 0.3s ease-in-out;
   overflow-y: auto;
