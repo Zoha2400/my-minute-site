@@ -62,7 +62,7 @@ const selectedAreaA = ref(0)
 
   <MyStyles />
 
-  <!-- <MyType /> -->
+  <MyType />
 
   <div class="style-lable area">
     <p>Участок</p>
