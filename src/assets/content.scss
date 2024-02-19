@@ -329,7 +329,8 @@
         }
       }
       p {
-        font-size: 19px;
+        width: 100% !important;
+        font-size: 18px;
         text-align: start;
       }
     }
@@ -383,6 +384,7 @@
         padding: 2px;
         p {
           text-align: start;
+          width: 100%;
         }
       }
     }
@@ -857,11 +859,15 @@
       }
 
       @media (max-width: 520px) {
-        width: 350px !important;
+        width: 320px !important;
       }
 
       @media (max-width: 370px) {
-        width: 250px !important;
+        width: 200px !important;
+      }
+
+      @media (max-width: 270px) {
+        width: 190px !important;
       }
 
       .cal-el {

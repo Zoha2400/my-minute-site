@@ -71,7 +71,9 @@
   </div>
   <div class="buttons-recenltly container-wrap cont-top-smth nonmarg">
     <div class="btns-res-wrap container-proj">
-      <div class="btn-rec rec-choosen" @click="() => redirect('/projects/1', 0)">ВСЕ ПРОЕКТЫ</div>
+      <div class="btn-rec rec-choosen chsnmrg" @click="() => redirect('/projects/1', 0)">
+        ВСЕ ПРОЕКТЫ
+      </div>
     </div>
   </div>
 </template>

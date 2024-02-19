@@ -8,7 +8,7 @@
   width: 100%;
   font-size: 20px;
   text-align: center;
-  margin: 15px;
+  margin: 7px;
   color: white;
 }
 
@@ -61,7 +61,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   color: white;
   font-size: 14px;
   font-weight: 600;
@@ -77,14 +77,25 @@
   border-radius: 5px;
 }
 
+.chsnmrg {
+  margin: 10px 0 45px 0;
+}
+
 .btn-rec {
   padding: 5px;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 19px;
   transition: 0.2s ease-in-out;
 
   @media (max-width: 430px) {
-    font-size: 14px;
+    font-size: 17px;
+  }
+
+  @media (max-width: 370px) {
+    font-size: 15px;
+  }
+  @media (max-width: 340px) {
+    font-size: 13px;
   }
 
   &:hover {
@@ -96,4 +107,8 @@
 
 .nonmarg {
   margin-top: -30px;
+}
+
+.cont-top-smth {
+  margin-top: 20px;
 }

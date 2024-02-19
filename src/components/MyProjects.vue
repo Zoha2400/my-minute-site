@@ -39,7 +39,7 @@
               <p class="cost" v-if="proj.rank_state">
                 <Icon
                   icon="mdi:heart"
-                  width="30"
+                  width="28"
                   color="#F9B60A"
                   @click.stop="rankup(proj.pk, proj.rank_state)"
                 />
@@ -47,7 +47,7 @@
               <p class="cost" v-else>
                 <Icon
                   icon="mdi:heart-outline"
-                  width="30"
+                  width="28"
                   color="#F9B60A"
                   @click.stop="rankup(proj.pk, proj.rank_state)"
                 />
@@ -56,7 +56,7 @@
               <p class="cost" v-if="proj.like_state">
                 <Icon
                   icon="material-symbols:bookmark"
-                  width="30"
+                  width="28"
                   color="#F9B60A"
                   @click.stop="change(proj.pk, proj.like_state)"
                 />
@@ -64,7 +64,7 @@
               <p class="cost" v-else>
                 <Icon
                   icon="material-symbols:bookmark-outline"
-                  width="30"
+                  width="28"
                   color="#F9B60A"
                   @click.stop="change(proj.pk, proj.like_state)"
                 />

@@ -334,7 +334,8 @@ async function sendMessage() {
                 <Icon icon="solar:map-point-linear" width="15" class="icon-lc" />
               </div>
               <p>
-                +998 71 200 35 35 / +998 90 996 80 30
+                +998 71 200 35 35 <br />
+                +998 90 996 80 30
                 <Icon icon="bxs:phone" width="15" class="icon-lc" />
               </p>
             </div>
